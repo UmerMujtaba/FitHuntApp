@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable comma-dangle */
 import React from 'react';
@@ -5,6 +6,7 @@ import First from '../screens/First';
 import Second from '../screens/Second';
 import Third from '../screens/Third';
 import Forth from '../screens/Forth';
+import Fifth from '../screens/Fifth';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -44,6 +46,13 @@ const App = () => {
       <Tab.Screen
         name={'forth'}
         component={Forth}
+        options={{
+          tabBarIcon: () => <Icon name={'cloud'} size={30} color={'green'} />
+        }}
+      />
+      <Tab.Screen
+        name={'fifth'}
+        component={Fifth}
         options={{
           tabBarIcon: () => <Icon name={'cloud'} size={30} color={'green'} />
         }}

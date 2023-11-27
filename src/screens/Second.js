@@ -48,6 +48,7 @@ const Second = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
   },
   imageLayout: {
     flex: 1,
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
     height: 210,
     width: 130,
     alignSelf: 'center',
+    
   },
   mainHeading: {
     marginTop: 0,

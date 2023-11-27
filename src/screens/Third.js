@@ -1,19 +1,22 @@
-/* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable comma-dangle */
-/* eslint-disable no-unused-vars */
-import React from 'react';
+
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   Text,
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
+  TextInput,
+  View
 } from 'react-native';
 
 const Third = () => {
+  const [password, setPassword] = useState('');
+  const [username, setusername] = useState('');
   return (
     <SafeAreaView>
        
@@ -21,17 +24,31 @@ const Third = () => {
             source={require('../../assets/third-screen.jpg')}
             style={styles.imageLayout}>
 
+            <View style = {styles.overlay}>
             <ImageBackground
                 source={require('../../assets/new-logo.jpg')}
                 style={styles.imageLayout1}>
+
             </ImageBackground>
 
             <TouchableOpacity style={styles.btn1}>
-                <Text style={styles.btnText1}>Username/Email</Text>
+            <TextInput 
+              style={styles.btnText1}
+              placeholder="Username/Email"
+              secureTextEntry={true}
+              value={username}
+              onChangeText={(text) => setusername(text)}
+            />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btn2}>
-                <Text style={styles.btnText1}>Password</Text>
+                <TextInput
+                  style={styles.btnText1}
+                  placeholder="Password"
+                  secureTextEntry={true}
+                  value={password}
+                  onChangeText={(text) => setPassword(text)}
+                />
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.btn3}>
@@ -41,7 +58,7 @@ const Third = () => {
             <Text style = {styles.txt}>
                 Forgot Password?
             </Text>
-
+      </View>
       </ImageBackground>
 
     </SafeAreaView>
@@ -60,31 +77,37 @@ const styles = StyleSheet.create({
   imageLayout: {
     height: 700,
     width: 450,
-    backgroundColor: '#000000c0',
+    backgroundColor: '#000000c0'
   },
-  btn1: {
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'hsla(0, 100%, 90%, 0.3);', // Adjust the last value (0.5) for opacity
+  },
+    btn1: {
     backgroundColor: '#ECF4D6',
     borderRadius: 15,
-    padding: 10,
     fontSize: 25,
     fontWeight: 'bold',
     marginBottom: 30,
     marginRight: 90,
-    marginLeft: 50,
+    marginLeft: 30,
     borderColor: 'black',
     borderWidth: 2,
+    width: 320
+    
   },
   btn2: {
     backgroundColor: '#ECF4D6',
     borderRadius: 15,
-    padding: 10,
     fontSize: 25,
     fontWeight: 'bold',
     marginRight: 90,
-    marginLeft: 50,
+    marginLeft: 30,
     marginBottom: 80,
     borderColor: 'black',
-    borderWidth: 2
+    borderWidth: 2,
+    width: 320
+    
   },
   btn3: {
     backgroundColor: '#0174BE',
@@ -96,13 +119,11 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 2,
     marginRight: 90,
-    marginLeft: 40,
+    marginLeft: 40
     
   },
   btnText1: {
-    color: 'black',
-    fontSize: 18,
-    fontWeight: 'normal'
+    height: 40, borderColor: 'gray', borderWidth: 1, paddingLeft: 10,
   },
   btnText: {
     color: 'white',
@@ -114,7 +135,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 120,
     marginTop: 25,
-    marginRight: 30,
+    marginRight: 50,
     fontSize: 20
   }
 });
