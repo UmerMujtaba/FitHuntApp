@@ -16,25 +16,32 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const First = () => {
+const Account1 = () => {
+  const {
+    container,
+    imageLayout,
+    mainHeading,
+    btn1,
+    btnText,
+    btn2
+  } = styles
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={container}>
       <ImageBackground
         source={require('../../assets/new-logo.jpg')}
-        style={styles.imageLayout}></ImageBackground>
-      <Text style={styles.mainHeading}>
+        style={imageLayout}></ImageBackground>
+      <Text style={mainHeading}>
         MAKE {'\n'}
         YOUR SELF {'\n'}
         BETTER
       </Text>
-      <Text style ={styles.headingtwo}>Sign in as</Text>
 
-      <TouchableOpacity style={styles.btn1}>
-        <Text style={styles.btnText}>Gym Owner</Text>
+      <TouchableOpacity style={btn1}>
+        <Text style={btnText}>Create Account</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.btn2}>
-        <Text style={styles.btnText}>User</Text>
+      <TouchableOpacity style={btn2}>
+        <Text style={btnText}>Sign In</Text>
       </TouchableOpacity>
       
       {/* <Button style = {styles.btn}
@@ -49,6 +56,7 @@ const First = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    
   },
   imageLayout: {
     flex: 1,
@@ -56,6 +64,7 @@ const styles = StyleSheet.create({
     height: 210,
     width: 130,
     alignSelf: 'center',
+    
   },
   mainHeading: {
     marginTop: 0,
@@ -67,8 +76,7 @@ const styles = StyleSheet.create({
     textAlign: 'center', // Set textAlign to center
     lineHeight: 60, // Adjust this value to control the line height
     color: 'black',
-    
-    
+    marginBottom: 20 
   },
   headingtwo: {
     color: 'black',
@@ -111,4 +119,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default First;
+export default Account1;

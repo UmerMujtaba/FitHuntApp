@@ -18,7 +18,7 @@ import {
   TextInput,
 } from 'react-native';
 import SelectGender from '../components/SelectGender';
-const Forth = () => {
+const Registeration = () => {
   const [username, setusername] = useState('');
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
@@ -150,4 +150,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
 });
-export default Forth;
+export default Registeration;

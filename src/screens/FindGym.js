@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Fifth = () => {
+const FindGym = () => {
   const {
     backgrndImg,
     container,
@@ -150,4 +150,4 @@ const styles = StyleSheet.create({
   },
   
 });
-export default Fifth;
+export default FindGym;

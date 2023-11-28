@@ -14,7 +14,7 @@ import {
   View
 } from 'react-native';
 
-const Third = () => {
+const Login = () => {
   const [password, setPassword] = useState('');
   const [username, setusername] = useState('');
   return (
@@ -139,4 +139,4 @@ const styles = StyleSheet.create({
     fontSize: 20
   }
 });
-export default Third;
+export default Login;

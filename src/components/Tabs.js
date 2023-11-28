@@ -2,11 +2,12 @@
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable comma-dangle */
 import React from 'react';
-import First from '../screens/First';
-import Second from '../screens/Second';
-import Third from '../screens/Third';
-import Forth from '../screens/Forth';
-import Fifth from '../screens/Fifth';
+import First from '../screens/Selection';
+import Second from '../screens/Account1';
+import Third from '../screens/Login';
+import Forth from '../screens/Registeration';
+import Fifth from '../screens/FindGym';
+import Sixth from '../screens/Menu';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -16,45 +17,53 @@ const App = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'grey',
+        tabBarActiveTintColor: 'black',
+        tabBarInactiveTintColor: 'blue',
         tabBarStyle: {
-          backgroundColor: 'lightblue'
+          backgroundColor: 'lightgrey',
+          
         }
       }}>
       <Tab.Screen
         name={'Main'}
         component={First}
         options={{
-          tabBarIcon: () => <Icon name={'home'} size={30} color={'green'} />
+          tabBarIcon: () => <Icon name={'home'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
-        name={'second'}
+        name={'Select'}
         component={Second}
         options={{
-          tabBarIcon: () => <Icon name={'music'} size={30} color={'green'} />
+          tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
-        name={'third'}
+        name={'Log In'}
         component={Third}
         options={{
-          tabBarIcon: () => <Icon name={'gears'} size={30} color={'green'} />
+          tabBarIcon: () => <Icon name={'gears'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
-        name={'forth'}
+        name={'Registeration'}
         component={Forth}
         options={{
-          tabBarIcon: () => <Icon name={'cloud'} size={30} color={'green'} />
+          tabBarIcon: () => <Icon name={'cloud'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
-        name={'fifth'}
+        name={'Location'}
         component={Fifth}
         options={{
-          tabBarIcon: () => <Icon name={'cloud'} size={30} color={'green'} />
+          tabBarIcon: () => <Icon name={'map'} size={30} color={'black'} />
+        }}
+      />
+       <Tab.Screen
+        name={'Exercise'}
+        component={Sixth}
+        options={{
+          tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />
         }}
       />
     </Tab.Navigator>
