@@ -18,8 +18,19 @@ import {
 } from 'react-native';
 
 const Template = () => {
-  const { container, main1, nav, icn, txt, txt1,txt2, heading, heading2, txt3 } =
-    styles;
+  const {
+    container,
+    main1,
+    nav,
+    img,
+    txt,
+    txt1,
+    txt2,
+    heading,
+    heading2,
+    txt3,
+    main2
+  } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -29,64 +40,148 @@ const Template = () => {
         <Text style={heading2}>2 Days a week</Text>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt} > Get in Shape </Text>
-        <Text style={txt1}> Full Body Split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt}> Get in Shape </Text>
+
+              <Text style={txt1}> Full Body Split </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/2days/1.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt2}> Shreding </Text>
-        <Text style={txt1}> Full, Upper & Lower body split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt2}> Shreding </Text>
+
+              <Text style={txt1}> Upper & Lower body </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/2days/2.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt3} > Muscle Gain </Text>
-        <Text style={txt1}> Full, Upper & Lower body split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt3}> Muscle Gain </Text>
+              <Text style={txt1}> Full, Upper & Lower body split </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/2days/3.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         {/* 4days a week */}
+
         <Text style={heading2}>4 Days a week</Text>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt}> Get in Shape </Text>
-        <Text style={txt1}> Full Body Split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt}> Get in Shape </Text>
+              <Text style={txt1}> Full Body Split </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/4days/1.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt2}> Shreding </Text>
-        <Text style={txt1}> Full, Upper & Lower Push, Pull, Bro Split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt2}> Shreading </Text>
+              <Text style={txt1}>
+                Full, Upper & Lower Push, Pull, Bro Split
+              </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/4days/2.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt2}> Shreding </Text>
-        <Text style={txt1}> Chest, Arms, Back, Shoulders & Abs Focus </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt2}> Shreding </Text>
+              <Text style={txt1}>Chest, Arms, Back, Shoulders & Abs Focus</Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/4days/3.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt3}>Muscle Gain </Text>
-        <Text style={txt1}>Upper & Lower Push, Pull, Full Body Split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt3}>Muscle Gain </Text>
+              <Text style={txt1}>
+                Upper & Lower Push, Pull, Full Body Split{' '}
+              </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/4days/4.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
-
 
         {/* 6days a week */}
         <Text style={heading2}>6 Days a week</Text>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt2}>Shreding </Text>
-        <Text style={txt1}> Push, Pull / Bro Split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt2}>Shreading </Text>
+              <Text style={txt1}> Push, Pull / Bro Split </Text>
+            </View>
+            <View>
+              <Image
+                source={require('../../assets/template/6days/1.png')}
+                style={img}
+              />
+            </View>
+          </View>
         </View>
 
         <View style={main1}>
-        {/* <Image source={require('../../assets/template/2days/1.1.png')} style={icn} /> */}
-        <Text style={txt3}> Muscle Gain </Text>
-        <Text style={txt1}> Push, Pull / Bro Split </Text>
+          <View style={main2}>
+            <View>
+              <Text style={txt3}> Muscle Gain </Text>
+              <Text style={txt1}> Push, Pull / Bro Split </Text>
+            </View>
+            <View>
+              <Image source={require('../../assets/template/6days/2.png')} style={img} />
+            </View>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -99,14 +194,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#1F1717'
   },
   heading: {
-    fontSize: 22,
+    fontSize: 20,
     color: 'white',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginTop: 20
+    marginTop: 10
   },
   nav: {
-    height: 70,
+    height: 50,
     width: 395,
     backgroundColor: '#3e5287',
     opacity: 0.9
@@ -126,11 +221,12 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     marginBottom: 10
   },
+  main2: {
+    flexDirection: 'row'
+  },
   img: {
-    alignSelf: 'center',
-    height: 20,
-    width: 150,
-    marginTop: 30,
+    height: 200,
+    width: 280
   },
   txt: {
     fontSize: 22,
@@ -143,7 +239,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'normal',
     marginTop: 10,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    width: 140
   },
   txt3: {
     fontSize: 22,

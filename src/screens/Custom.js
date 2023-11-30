@@ -16,7 +16,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const Custom = () => {
+const Custom = ({navigation}) => {
   const { container, main, nav, img, txt, btn1, btn2, btnText, heading } =
     styles;
   return (
@@ -29,7 +29,7 @@ const Custom = () => {
         <Text style={txt}> You haven't created any custom workouts yet </Text>
       </View>
 
-      <TouchableOpacity style={btn1}>
+      <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Tmplt')}>
         <Text style={btnText}>Use a Template</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[btn2,btn1]}>
