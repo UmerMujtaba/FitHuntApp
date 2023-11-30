@@ -2,18 +2,18 @@
 /* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable comma-dangle */
 import React from 'react';
-import First from '../screens/Selection';
-import Second from '../screens/Account1';
-import Third from '../screens/Login';
-import Forth from '../screens/Registeration';
-import Fifth from '../screens/FindGym';
-import Sixth from '../screens/Menu';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Account1 from '../screens/Account1';
+import Selection from '../screens/Selection';
+import Login from '../screens/Login';
+import Registeration from '../screens/Registeration';
+import FindGym from '../screens/FindGym';
+import Menu from '../screens/Menu';
 
 const Tab = createBottomTabNavigator(); //intilizting the tab object
 
-const App = () => {
+const TabCmpnont = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -25,43 +25,43 @@ const App = () => {
         }
       }}>
       <Tab.Screen
-        name={'Main'}
-        component={First}
+        name={'Select'}
+        component={Selection}
         options={{
           tabBarIcon: () => <Icon name={'home'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
-        name={'Select'}
-        component={Second}
+        name={'Main'}
+        component={Account1}
         options={{
           tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
         name={'Log In'}
-        component={Third}
+        component={Login}
         options={{
           tabBarIcon: () => <Icon name={'gears'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
-        name={'Registeration'}
-        component={Forth}
+        name={'Registration'}
+        component={Registeration}
         options={{
           tabBarIcon: () => <Icon name={'cloud'} size={30} color={'black'} />
         }}
       />
       <Tab.Screen
         name={'Location'}
-        component={Fifth}
+        component={FindGym}
         options={{
           tabBarIcon: () => <Icon name={'map'} size={30} color={'black'} />
         }}
       />
        <Tab.Screen
         name={'Exercise'}
-        component={Sixth}
+        component={Menu}
         options={{
           tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />
         }}
@@ -70,4 +70,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default TabCmpnont;

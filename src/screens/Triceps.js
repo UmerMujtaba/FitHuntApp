@@ -1,0 +1,128 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable comma-dangle */
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Image,
+  imgs,
+  ScrollView
+} from 'react-native';
+
+const Triceps = ({navigation}) => {
+  const { container, box, nav, heading, boxTxt, heading2, image } = styles;
+  return (
+    <SafeAreaView style={container}>
+      <ScrollView>
+        <View style={nav}>
+          <Icon
+            name={'angle-left'}
+            size={50}
+            color={'white'}
+            marginLeft={20}
+            marginTop={2}
+            onPress={() => navigation.goBack()}
+          />
+          <Text style={heading}>Trcieps</Text>
+        </View>
+
+        <Text style={heading2}>Standing Cable</Text>
+        <View style={box}>
+        <Image
+            source={require('../../assets/tricep/StandingCableTricepPushdown,Rope.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Rope Pushdown</Text>
+        </View>
+        <View style={box}>
+        <Image
+            source={require('../../assets/tricep/StandingCableTricepPushdown,SingleArm.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Single Arm Pushdown</Text>
+        </View>
+        <Text style={heading2}>Skull Crushers</Text>
+        <View style={box}>
+        <Image
+            source={require('../../assets/tricep/DumbellSkullCrusher.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>On Head</Text>
+        </View>
+        <View style={box}>
+        <Image
+            source={require('../../assets/tricep/DumbellSkullCusher,BehindHead.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Behind Head</Text>
+        </View>
+
+        <Text style={heading2}>Tricep Extension Overhead</Text>
+        <View style={box}>
+        <Image
+            source={require('../../assets/tricep/StandingCableOverheadTricepExtensios,StraightBar.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Staright Bar</Text>
+        </View>
+        <View style={box}>
+        <Image
+            source={require('../../assets/tricep/SeatedDumbellOverheadTricepExtensions.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Seated Dumbell</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1F1717'
+  },
+  nav: {
+    height: 60,
+    width: 400,
+    marginTop: 25,
+    flexDirection: 'row'
+  },
+  heading: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    color: 'white',
+    marginLeft: 115
+  },
+  box: {
+    backgroundColor: '#176B87',
+    height: 110,
+    marginBottom: 15,
+    flexDirection: 'row'
+  },
+  boxTxt: {
+    color: 'white',
+    fontSize: 18,
+    marginTop: 40
+  },
+  image: {
+    height: 110, // Adjust the height to fit within the view
+    width: 140, // Adjust the width to fit within the view
+    marginRight: 5,
+    marginLeft: 0 // Ensure the image fits within the specified dimensions
+  },
+  heading2: {
+    fontSize: 20,
+    color: 'white',
+    marginLeft: 5,
+    fontWeight: 'bold'
+  }
+});
+
+export default Triceps;

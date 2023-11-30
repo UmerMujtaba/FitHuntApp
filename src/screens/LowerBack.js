@@ -1,0 +1,103 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable comma-dangle */
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Image,
+  imgs,
+  ScrollView
+} from 'react-native';
+
+const LowerBack = ({navigation}) => {
+  const { container, box, nav, heading, boxTxt, heading2, image } = styles;
+  return (
+    <SafeAreaView style={container}>
+      <ScrollView>
+        <View style={nav}>
+          <Icon
+            name={'angle-left'}
+            size={50}
+            color={'white'}
+            marginLeft={20}
+            marginTop={2}
+            onPress={() => navigation.goBack()}
+          />
+          <Text style={heading}>LowerBack</Text>
+        </View>
+
+        <View style={box}>
+          <Image
+            source={require('../../assets/back/lower/floorbackextension.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Floor Back Extension </Text>
+        </View>
+        <View style={box}>
+          <Image
+            source={require('../../assets/back/lower/superman.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Superman</Text>
+        </View>
+        <View style={box}>
+          <Image
+            source={require('../../assets/back/lower/deadlift.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Deadlift</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#1F1717'
+  },
+  nav: {
+    height: 60,
+    width: 400,
+    marginTop: 25,
+    flexDirection: 'row'
+  },
+  heading: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    color: 'white',
+    marginLeft: 95
+  },
+  box: {
+    backgroundColor: '#176B87',
+    height: 110,
+    marginBottom: 15,
+    flexDirection: 'row'
+  },
+  boxTxt: {
+    color: 'white',
+    fontSize: 18,
+    marginTop: 40
+  },
+  image: {
+    height: 110, // Adjust the height to fit within the view
+    width: 140, // Adjust the width to fit within the view
+    marginRight: 5,
+    marginLeft: 0 // Ensure the image fits within the specified dimensions
+  },
+  heading2: {
+    fontSize: 20,
+    color: 'white',
+    marginLeft: 5,
+    fontWeight: 'bold'
+  }
+});
+
+export default LowerBack;

@@ -18,7 +18,7 @@ import {
   TextInput,
 } from 'react-native';
 import SelectGender from '../components/SelectGender';
-const Registeration = () => {
+const Registeration = ({navigation}) => {
   const [username, setusername] = useState('');
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
@@ -66,7 +66,7 @@ const Registeration = () => {
         </TouchableOpacity>
         <SelectGender />
 
-        <TouchableOpacity style={styles.btn4}>
+        <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('Log')}>
                 <Text style={styles.btnText}> Register </Text>
             </TouchableOpacity>
           </View>
@@ -77,7 +77,7 @@ const Registeration = () => {
 
 const styles = StyleSheet.create({
   imageLayout: {
-    height: 700,
+    height: 730,
     width: 450,
     backgroundColor: '#000000c0',
   
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     width: 320,
   },
   btn4: {
-    backgroundColor: '#0174BE',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,

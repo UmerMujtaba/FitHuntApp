@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable no-trailing-spaces */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable comma-dangle */
 
@@ -14,7 +13,7 @@ import {
   View
 } from 'react-native';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [username, setusername] = useState('');
   return (
@@ -51,7 +50,7 @@ const Login = () => {
                 />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btn3}>
+            <TouchableOpacity style={styles.btn3} onPress={() => navigation.navigate('FG')}>
                 <Text style={styles.btnText}>Login</Text>
             </TouchableOpacity>
 
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
         marginRight: 60
     },
   imageLayout: {
-    height: 700,
+    height: 730,
     width: 450,
     backgroundColor: '#000000c0'
   },
@@ -110,7 +109,7 @@ const styles = StyleSheet.create({
     
   },
   btn3: {
-    backgroundColor: '#0174BE',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,

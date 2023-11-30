@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   backgrndImg: {
-    height: 680,
+    height: 730,
     width: 400
   },
   overlay: {
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   btn4: {
-    backgroundColor: '#0174BE',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,

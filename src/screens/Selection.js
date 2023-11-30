@@ -16,7 +16,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const Selction = () => {
+const Selection = ({navigation}) => {
 
   const {
     container,
@@ -44,7 +44,7 @@ const Selction = () => {
         <Text style={btnText}>Gym Owner</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={btn2}>
+      <TouchableOpacity style={btn2} onPress={() => navigation.navigate('Acc')} > 
         <Text style={btnText}>User</Text>
       </TouchableOpacity>
       
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     marginLeft: 30
   },
   btn1: {
-    backgroundColor: '#841584',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     borderWidth: 2
   },
   btn2: {
-    backgroundColor: '#841584',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,

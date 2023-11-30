@@ -17,8 +17,8 @@ import {
   ScrollView
 } from 'react-native';
 
-const Traps = () => {
-  const { container, box, nav, heading, boxTxt } = styles;
+const Traps = ({navigation}) => {
+  const { container, box, nav, heading, boxTxt,heading2,image } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -26,21 +26,36 @@ const Traps = () => {
           <Icon
             name={'angle-left'}
             size={50}
-            color={'black'}
+            color={'white'}
             marginLeft={20}
             marginTop={2}
+            onPress={() => navigation.goBack()}
           />
           <Text style={heading}>Traps</Text>
         </View>
-
+        <Text style={heading2}>Barbell</Text>
         <View style={box}>
-          <Text style={boxTxt}>Standing Barbell Shrugs </Text>
+        <Image
+            source={require('../../assets/back/traps/standingshrugs.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Standing Shrugs </Text>
         </View>
+        <Text style={heading2}>Dumbbell</Text>
         <View style={box}>
-          <Text style={boxTxt}>Standing Dumbbell Shrugs</Text>
+        <Image
+            source={require('../../assets/back/traps/standingdmblshrugs.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Shrugs</Text>
         </View>
+        
         <View style={box}>
-          <Text style={boxTxt}>Incline Prone Dumbbell Shrugs</Text>
+        <Image
+            source={require('../../assets/back/traps/incline_prone.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Incline Prone Shrugs</Text>
         </View>
     
       </ScrollView>
@@ -51,7 +66,7 @@ const Traps = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'skyblue'
+    backgroundColor: '#1F1717'
   },
   nav: {
     height: 60,
@@ -63,19 +78,31 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     alignSelf: 'center',
-    color: 'black',
+    color: 'white',
     marginLeft: 115
   },
   box: {
-    backgroundColor: 'pink',
+    backgroundColor: '#176B87',
     height: 110,
-    marginBottom: 15
+    marginBottom: 15,
+    flexDirection: 'row'
   },
   boxTxt: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
-    
+    color: 'white',
+    fontSize: 20,
+    marginTop: 40
+  },
+  image: {
+    height: 110, // Adjust the height to fit within the view
+    width: 140, // Adjust the width to fit within the view
+    marginRight: 5,
+    marginLeft: 0 // Ensure the image fits within the specified dimensions
+  },
+  heading2: {
+    fontSize: 20,
+    color: 'white',
+    marginLeft: 5,
+    fontWeight: 'bold'
   }
 });
 

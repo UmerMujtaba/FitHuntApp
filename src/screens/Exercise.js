@@ -16,142 +16,147 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Exercise = () => {
-  const { container, nav, txt1, exercise1, txt2 } = styles;
+
+const Exercise = ({navigation}) => {
+ 
+  const { container, nav, txt1, exercise1, txt2,image,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
         <Icon
           name={'arrow-left'}
           size={30}
-          color={'black'}
+          color={'white'}
           margin={15}
           marginTop={28}
+         
         />
         <Text style={txt1}>Exercises</Text>
 
         <Icon
           name={'bars'}
           size={30}
-          color={'black'}
+          color={'white'}
           marginTop={30}
           marginLeft={175}
         />
       </View>
       <ScrollView>
         {/* ABSS SECTION */}
-        <View style={exercise1}>   
+        <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
-          <Text style={txt2}>ABS</Text>
+            source={require('../../assets/abs.png')}
+            style={image}
+          />
+          <Text style={ txt2}>ABS </Text>
           <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={140}
-            marginTop={18}
+            style={icon}
+            onPress={() => navigation.navigate('AbsScreen')}
           />
-        </View> 
+       
+        </View>
         {/* Biceps SECTION */}
         <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/bicep.png')}
+            style={image}></Image>
           <Text style={txt2}>Biceps</Text>
           <Icon
-            style={styles.icn}
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={115}
-            marginTop={18}
+            style={ icon}
+            onPress={() => navigation.navigate('Bicp')}
           />
         </View>
         {/* Back SECTION */}
         <View style={exercise1}>
           <Image
-            source={require('../../assets/back.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/back.jpeg')}
+            style={image}></Image>
           <Text style={txt2}>Back</Text>
           <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={135}
-            marginTop={18}
+            style={icon}
+            onPress={() => navigation.navigate('BM')}
           />
         </View>
         {/* Chest SECTION */}
         <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/chest.png')}
+            style={image}></Image>
           <Text style={txt2}>Chest</Text>
           <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={125}
-            marginTop={18}
+            style={icon}
+            onPress={() => navigation.navigate('Chst')}
           />
         </View>
         {/* Forearm SECTION */}
         <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/forearm.png')}
+            style={image}></Image>
           <Text style={txt2}>Forearm</Text>
           <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={95}
-            marginTop={18}
+            style={icon}
+            onPress={() => navigation.navigate('FM')}
           />
         </View>
-      
+
         {/* Triceps SECTION */}
         <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/triceps.png')}
+            style={image}></Image>
           <Text style={txt2}>Triceps</Text>
           <Icon
-            name={'angle-right'}
-            size={50}
-            color={'black'}
-            marginLeft={105}
-            marginTop={18}
+           name={'angle-right'}
+           size={50}
+           color={'black'}
+           style={[icon]}
+           onPress={() => navigation.navigate('Tri')}
           />
         </View>
         {/* Shoulders SECTION */}
         <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/shoulders.png')}
+            style={image}></Image>
           <Text style={txt2}>Shoulders</Text>
           <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={75}
-            marginTop={18}
+            style={icon}
+            onPress={() => navigation.navigate('Shldr')}
           />
         </View>
-         {/* Legs SECTION */}
-         <View style={exercise1}>
+        {/* Legs SECTION */}
+        <View style={exercise1}>
           <Image
-            source={require('../../assets/abss2.png')}
-            marginLeft={15}></Image>
+            source={require('../../assets/legs.png')}
+            style={image}></Image>
           <Text style={txt2}>Legs</Text>
           <Icon
-            name={'angle-right'}
-            size={50}
-            color={'black'}
-            marginLeft={135}
-            marginTop={18}
+           name={'angle-right'}
+           size={50}
+           color={'black'}
+           style={[icon]}
           />
         </View>
       </ScrollView>
@@ -162,7 +167,7 @@ const Exercise = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'skyblue'
+    backgroundColor: '#1F1717'
   },
   nav: {
     flexDirection: 'row'
@@ -171,22 +176,32 @@ const styles = StyleSheet.create({
     marginTop: 25,
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'white'
   },
   exercise1: {
-    backgroundColor: 'grey',
+    backgroundColor: '#176B87',
     height: 92,
     width: 394,
     marginTop: 15,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center' // Center items vertically
+  },
+  image: {
+    height: 395, // Adjust the height to fit within the view
+    width: 90, // Adjust the width to fit within the view
+    marginRight: 10,
+   marginLeft: 0 // Ensure the image fits within the specified dimensions
   },
   txt2: {
-    textAlign: 'center',
     fontSize: 25,
     color: 'white',
     fontWeight: 'bold',
-    marginLeft: 35,
-    marginTop: 25
-  }
+    marginLeft: 10
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 40
+  },
+ 
 });
 export default Exercise;

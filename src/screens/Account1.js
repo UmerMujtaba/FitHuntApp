@@ -16,7 +16,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const Account1 = () => {
+const Account1 = ({navigation}) => {
   const {
     container,
     imageLayout,
@@ -36,11 +36,11 @@ const Account1 = () => {
         BETTER
       </Text>
 
-      <TouchableOpacity style={btn1}>
-        <Text style={btnText}>Create Account</Text>
+      <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Reg')}>
+        <Text style={btnText}>Create Account</Text> 
       </TouchableOpacity>
 
-      <TouchableOpacity style={btn2}>
+      <TouchableOpacity style={btn2} onPress={() => navigation.navigate('Log')}>
         <Text style={btnText}>Sign In</Text>
       </TouchableOpacity>
       
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     marginLeft: 30
   },
   btn1: {
-    backgroundColor: '#841584',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     borderWidth: 2
   },
   btn2: {
-    backgroundColor: '#841584',
+    backgroundColor: '#176B87',
     borderRadius: 40,
     padding: 20,
     fontSize: 25,

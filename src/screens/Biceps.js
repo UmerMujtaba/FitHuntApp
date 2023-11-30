@@ -17,8 +17,8 @@ import {
   ScrollView
 } from 'react-native';
 
-const Biceps = () => {
-  const { container, box, nav, heading, boxTxt } = styles;
+const Biceps = ({navigation}) => {
+  const { container, box, nav, heading, boxTxt,image,heading2 } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -26,33 +26,64 @@ const Biceps = () => {
           <Icon
             name={'angle-left'}
             size={50}
-            color={'black'}
+            color={'white'}
             marginLeft={20}
             marginTop={2}
+            onPress={() => navigation.goBack()}
           />
           <Text style={heading}>Bicep</Text>
         </View>
-
+        <Text style={heading2}>EZ Bar</Text>
         <View style={box}>
-          <Text style={boxTxt}>Ez Bar Standing Barbel Curl, Narrow Grip</Text>
+        <Image
+            source={require('../../assets/bicep/EZNarrow.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Narrow Grip Curl</Text>
         </View>
         <View style={box}>
-          <Text style={boxTxt}>Standing Straight Bar Barbel Curl</Text>
+        <Image
+            source={require('../../assets/bicep/EZPreacher.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Preacher Curl</Text>
+        </View>
+        <Text style={heading2}>Straight Bar</Text>
+        <View style={box}>
+        <Image
+            source={require('../../assets/bicep/StraightBarCurl.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Straight Bar Barbel Curl</Text>
+        </View>
+        <Text style={heading2}>Dumbbell</Text>
+        <View style={box}>
+        <Image
+            source={require('../../assets/bicep/DumbellCurl.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Standing Curl</Text>
         </View>
         <View style={box}>
-          <Text style={boxTxt}>Ez Bar Preacher Curl</Text>
+        <Image
+            source={require('../../assets/bicep/SeatedCurl.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Seated Curl</Text>
         </View>
         <View style={box}>
-          <Text style={boxTxt}>Standing Dumbbell Curl</Text>
+        <Image
+            source={require('../../assets/bicep/HammerCurl.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Hammer Curl</Text>
         </View>
         <View style={box}>
-          <Text style={boxTxt}>Seated Dumbbell Curl</Text>
-        </View>
-        <View style={box}>
-          <Text style={boxTxt}>Dumbbel Hammer Curl</Text>
-        </View>
-        <View style={box}>
-          <Text style={boxTxt}>Incline Dumbbel Curl</Text>
+        <Image
+            source={require('../../assets/bicep/InclineDumbel.png')}
+            style={image}
+          />
+          <Text style={boxTxt}>Incline Curl</Text> 
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -62,7 +93,7 @@ const Biceps = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'skyblue'
+    backgroundColor: '#1F1717'
   },
   nav: {
     height: 60,
@@ -74,19 +105,34 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     alignSelf: 'center',
-    color: 'black',
+    color: 'white',
     marginLeft: 115
   },
   box: {
-    backgroundColor: 'pink',
+    backgroundColor: '#176B87',
     height: 110,
-    marginBottom: 15
+    marginBottom: 15,
+    flexDirection: 'row',
+    width: 395
+   
   },
   boxTxt: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 15,
+    color: 'white',
+    fontSize: 18,
+    marginTop: 40,
     
+  },
+  image: {
+    height: 110, // Adjust the height to fit within the view
+    width: 140, // Adjust the width to fit within the view
+    marginRight: 5,
+    marginLeft: 0 // Ensure the image fits within the specified dimensions
+  },
+  heading2: {
+    fontSize: 20,
+    color: 'white',
+    marginLeft: 5,
+    fontWeight: 'bold'
   }
 });
 
