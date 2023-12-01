@@ -10,7 +10,7 @@ import Login from '../screens/Login';
 import Registeration from '../screens/Registeration';
 import FindGym from '../screens/FindGym';
 import Menu from '../screens/Menu';
-
+import Exercise from '../screens/Exercise';
 const Tab = createBottomTabNavigator(); //intilizting the tab object
 
 const TabCmpnont = () => {
@@ -25,19 +25,20 @@ const TabCmpnont = () => {
         }
       }}>
       <Tab.Screen
-        name={'Select'}
-        component={Selection}
+        name={'Exercise'}
+        component={Exercise}
         options={{
-          tabBarIcon: () => <Icon name={'home'} size={30} color={'black'} />
+          tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />,
         }}
       />
       <Tab.Screen
-        name={'Main'}
-        component={Account1}
+        name={'Menu'}
+        component={Menu}
         options={{
-          tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />
+          tabBarIcon: () => <Icon name={'menu'} size={30} color={'black'} />,
         }}
       />
+
       <Tab.Screen
         name={'Log In'}
         component={Login}
