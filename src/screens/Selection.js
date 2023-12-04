@@ -40,7 +40,7 @@ const Selection = ({navigation}) => {
       </Text>
       <Text style ={headingtwo}>Sign in as</Text>
 
-      <TouchableOpacity style={btn1}>
+      <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Acc')}>
         <Text style={btnText}>Gym Owner</Text>
       </TouchableOpacity>
 
@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
+
   },
 });
 

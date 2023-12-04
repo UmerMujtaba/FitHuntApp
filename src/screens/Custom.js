@@ -29,8 +29,8 @@ const Custom = ({navigation}) => {
         <Text style={txt}> You haven't created any custom workouts yet </Text>
       </View>
 
-      <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Tmplt')}>
-        <Text style={btnText}>Use a Template</Text>
+      <TouchableOpacity style={btn1} >
+        <Text style={btnText} onPress={() => navigation.navigate('Tmplt')}>Use a Template</Text>
       </TouchableOpacity>
       <TouchableOpacity style={[btn2,btn1]}>
         <Text style={btnText}>Create my Own</Text>

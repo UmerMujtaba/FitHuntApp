@@ -17,7 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const MuscleGain4days = () => {
+const MuscleGain4days = ({navigation}) => {
   const {
     container,
     mid,
@@ -48,8 +48,15 @@ const MuscleGain4days = () => {
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
-        {/* <Icon name={'arrow-left'} size={30} color={'black'}/> */}
-        <Image source={require('../../assets/back-50.png')} style={img} />
+      <Icon
+            name={'angle-left'}
+            size={30}
+            color={'black'}
+            marginTop={10}
+            marginLeft={15}
+            marginRight={15}
+            onPress={() => navigation.goBack()}
+          />
       </View>
 
       <Text style={heading}>Upper & Lower Push, Pull, Bro Split</Text>
@@ -263,7 +270,7 @@ const styles = StyleSheet.create({
     width: 80
   },
   txt5: {
-    backgroundColor: 'lightblue',
+    backgroundColor: '#61677A',
     height: 80,
     width: 210
   },
@@ -274,11 +281,16 @@ const styles = StyleSheet.create({
   },
   txt6: {
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginLeft: 5,
+    
   },
   txt7: {
+    marginLeft: 5,
     fontSize: 14,
-    color: 'yellow'
+    marginTop: 5,
+    color: 'orange',
+    
   },
   btn4: {
     backgroundColor: 'skyblue',

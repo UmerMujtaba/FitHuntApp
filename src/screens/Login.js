@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         marginRight: 60
     },
   imageLayout: {
-    height: 730,
+    height: 785,
     width: 450,
     backgroundColor: '#000000c0'
   },

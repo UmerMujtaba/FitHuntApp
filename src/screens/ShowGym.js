@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const ShowGym = () => {
+const ShowGym = ({navigation}) => {
   const {
     container,
     mid,
@@ -35,10 +35,11 @@ const ShowGym = () => {
       <View style={nav}>
         <Icon
           name={'angle-left'}
-          size={25}
+          size={30}
           color={'white'}
-          marginTop={15}
+          marginTop={10}
           marginLeft={15}
+          onPress={() => navigation.goBack()}
         />
 
         <Icon
@@ -47,6 +48,7 @@ const ShowGym = () => {
           color={'white'}
           marginTop={15}
           marginLeft={310}
+          onPress={() => navigation.navigate('MN')}
         />
       </View>
 
@@ -60,16 +62,16 @@ const ShowGym = () => {
       <Text style={head}>Searched Results</Text>
 
         <View>
-        <Text style={[head,txt]}>Shapes</Text>
-      <View style={mid}>
+        <Text style={[head,txt]} onPress={() => navigation.navigate('GP')}>Shapes</Text>
+      <View style={mid} onPress={() => navigation.navigate('GP')}>
             <Image source={require('../../assets/show/shapes1.png')} style={img2}/>
       </View>
       </View>
 
       <View>
-        <Text style={[head,txt]}>Fitness Hub</Text>
-      <View style={mid}>
-      <Image source={require('../../assets/show/fithub.png')} style={img2}/>
+        <Text style={[head,txt]} onPress={() => navigation.navigate('GP1')}>Fitness Hub</Text>
+      <View style={mid} >
+      <Image source={require('../../assets/show/fithub.png')} style={img2} onPress={() => navigation.navigate('GP1')}/>
       </View>
       </View>
 

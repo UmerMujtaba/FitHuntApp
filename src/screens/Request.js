@@ -16,7 +16,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const Request = () => {
+const Request = ({navigation}) => {
   const {
     container,
     mid,
@@ -35,10 +35,11 @@ const Request = () => {
       <View style={nav}>
       <Icon
           name={'angle-left'}
-          size={25}
+          size={30}
           color={'white'}
-          marginTop={15}
+          marginTop={12}
           marginLeft={15}
+          onPress={() => navigation.goBack()}
         />
         <Text style={hdng}>Social</Text>
         <Icon
@@ -52,7 +53,7 @@ const Request = () => {
 
       <View style={opt2}>
         <View>
-          <Text style={hdng1}>All</Text>
+          <Text style={hdng1} onPress={() => navigation.navigate('AF')}>All</Text>
         </View>
         <View>
           <Text style={hdng3}>Requests</Text>
@@ -61,9 +62,9 @@ const Request = () => {
 
       
 
-      <View style={mid}>
-      <TouchableOpacity style={btn2} > 
-        <Text style={btnText}>Add Friends</Text>
+      <View style={mid} onPress={() => navigation.navigate('AF')}> 
+      <TouchableOpacity style={btn2} onPress={() => navigation.navigate('AF')}> 
+        <Text style={btnText} onPress={() => navigation.navigate('AF')}>Add Friends</Text>
       </TouchableOpacity>
       </View>
     </SafeAreaView>

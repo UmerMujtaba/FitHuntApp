@@ -1,72 +1,78 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable comma-dangle */
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Account1 from '../screens/Account1';
-import Selection from '../screens/Selection';
-import Login from '../screens/Login';
-import Registeration from '../screens/Registeration';
-import FindGym from '../screens/FindGym';
-import Menu from '../screens/Menu';
+
+import Template from '../screens/Template'; // Import your Training screen component
 import Exercise from '../screens/Exercise';
-const Tab = createBottomTabNavigator(); //intilizting the tab object
+import Menu from '../screens/Menu';
+import Social from '../screens/Social';
+import AboutMe from '../screens/AboutMe';
+
+const Tab = createBottomTabNavigator();
 
 const TabCmpnont = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: 'black',
-        tabBarInactiveTintColor: 'blue',
-        tabBarStyle: {
-          backgroundColor: 'lightgrey',
-          
-        }
-      }}>
-      <Tab.Screen
-        name={'Exercise'}
-        component={Exercise}
-        options={{
-          tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />,
-        }}
-      />
-      <Tab.Screen
-        name={'Menu'}
-        component={Menu}
-        options={{
-          tabBarIcon: () => <Icon name={'menu'} size={30} color={'black'} />,
-        }}
-      />
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          let imageSource;
 
-      <Tab.Screen
-        name={'Log In'}
-        component={Login}
-        options={{
-          tabBarIcon: () => <Icon name={'gears'} size={30} color={'black'} />
-        }}
-      />
-      <Tab.Screen
-        name={'Registration'}
-        component={Registeration}
-        options={{
-          tabBarIcon: () => <Icon name={'cloud'} size={30} color={'black'} />
-        }}
-      />
-      <Tab.Screen
-        name={'Location'}
-        component={FindGym}
-        options={{
-          tabBarIcon: () => <Icon name={'map'} size={30} color={'black'} />
-        }}
-      />
-       <Tab.Screen
-        name={'Exercise'}
-        component={Menu}
-        options={{
-          tabBarIcon: () => <Icon name={'music'} size={30} color={'black'} />
-        }}
-      />
+          switch (route.name) {
+            case 'Training':
+              imageSource = require('../../assets/dumbell.png');
+              return (
+                <Image
+                  source={imageSource}
+                  style={{ width: size, height: size }}
+                />
+              );
+            case 'Exercise':
+              imageSource = require('../../assets/exercise.png');
+              return (
+                <Image
+                  source={imageSource}
+                  style={{ width: size, height: size }}
+                />
+              );
+            case 'Social':
+              iconName = 'group';
+              break;
+              case 'Menu':
+                imageSource = require('../../assets/dots.png');
+                return (
+                  <Image
+                    source={imageSource}
+                    style={{ width: size, height: size }}
+                  />
+                );
+            case 'ME':
+              iconName = 'user';
+              break;
+            default:
+              break;
+          }
+
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+      })}
+      
+      tabBarOptions={{
+        activeTintColor: 'blue',
+        inactiveTintColor: 'black',
+        tabBarStyle: {
+          backgroundColor: 'lightgrey'
+        },
+      }}>
+          <Tab.Screen name="Menu" component={Menu} />
+      <Tab.Screen name="Training" component={Template} />
+      <Tab.Screen name="Exercise" component={Exercise} />
+      <Tab.Screen name="Social" component={Social} />
+    
+      <Tab.Screen name="ME" component={AboutMe} />
     </Tab.Navigator>
   );
 };

@@ -16,7 +16,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const Nutrition = () => {
+const Nutrition = ({navigation}) => {
   const {
     container,
     mid,
@@ -37,18 +37,19 @@ const Nutrition = () => {
       <View style={nav}>
         <Icon
           name={'angle-left'}
-          size={25}
+          size={30}
           color={'white'}
-          marginTop={15}
+          marginTop={12}
           marginLeft={15}
+          onPress={() => navigation.goBack()}
         />
-        <Text style={hdng}>nutri Plan</Text>
+        <Text style={hdng}>Nutrition Plan</Text>
       </View>
       <View>
         <Text style={hdng1}>Find a Plan</Text>
 
         <Text style={[hdng1, hdng3]}>
-          nutri plans, workout plans. Start a plan, follow along, and reach your
+          nutri plan. Start a plan, follow along, and reach your
           goals
         </Text>
       </View>
@@ -56,13 +57,13 @@ const Nutrition = () => {
       <Text style={midtxt}>Available Plans</Text>
       
         <View style={mid}>
-          <View style={mid1}>
+          <View style={mid1} onPress={() => navigation.navigate('OV2')}>
             <Image
               source={require('../../assets/plan/nutri/5.png')}
-              style={img}
+              style={img} onPress={() => navigation.navigate('OV2')}
             />
 
-            <Text style={midtxt1}>Jumpstart Your Health</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Jumpstart Your Health</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
 
@@ -72,7 +73,7 @@ const Nutrition = () => {
               style={img}
             />
 
-            <Text style={midtxt1}>Support Your Immune System</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Support Your Immune System</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
 
@@ -82,7 +83,7 @@ const Nutrition = () => {
               style={img}
             />
 
-            <Text style={midtxt1}>Intermittent Fasting</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Intermittent Fasting</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
 
@@ -92,7 +93,7 @@ const Nutrition = () => {
               style={img}
             />
 
-            <Text style={midtxt1}>Eat Green</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Eat Green</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
 
@@ -102,7 +103,7 @@ const Nutrition = () => {
               style={img}
             />
 
-            <Text style={midtxt1}>Healthy Kickstart</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Healthy Kickstart</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
 
@@ -112,9 +113,31 @@ const Nutrition = () => {
               style={img}
             />
 
-            <Text style={midtxt1}>Eat Right</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Eat Right</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
+
+          <View style={mid1} onPress={() => navigation.navigate('OV1')}>
+          
+          <Image
+            source={require('../../assets/plan/meal/lowcarb.png')}
+            style={img} onPress={() => navigation.navigate('OV1')}
+          />
+
+          <Text style={midtxt1} onPress={() => navigation.navigate('OV1')}>Low Carb</Text>
+          <Text style={midtxt2}>28 Days . Daily</Text>
+        </View>
+
+        <View style={mid1}>
+          
+          <Image
+            source={require('../../assets/plan/meal/highprotein.png')}
+            style={img}
+          />
+
+          <Text style={midtxt1} onPress={() => navigation.navigate('OV1')}>High Protien</Text>
+          <Text style={midtxt2}>28 Days . Daily</Text>
+        </View>
         </View>
       </ScrollView>
     </SafeAreaView>

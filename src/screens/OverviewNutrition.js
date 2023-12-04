@@ -17,7 +17,7 @@ import {
   ImageBackground
 } from 'react-native';
 
-const OverviewNutrition = () => {
+const OverviewNutrition = ({navigation}) => {
   const {
     container,
     mid,
@@ -46,6 +46,7 @@ const OverviewNutrition = () => {
             color={'white'}
             marginTop={15}
             marginLeft={15}
+            onPress={() => navigation.goBack()}
           />
           <Text style={imgtxt}>Plan Details</Text>
         </View>

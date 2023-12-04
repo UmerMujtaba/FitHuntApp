@@ -16,17 +16,18 @@ import {
   ScrollView
 } from 'react-native';
 
-const AddFirend = () => {
+const AddFirend = ({navigation}) => {
   const { container, mid, nav, opt2, hdng, hdng1, opt3, icn,hdng3 } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
       <Icon
           name={'angle-left'}
-          size={25}
+          size={30}
           color={'white'}
-          marginTop={15}
+          marginTop={12}
           marginLeft={15}
+          onPress={() => navigation.goBack()}
         />
         <Text style={hdng}>Add Friends</Text>
       </View>

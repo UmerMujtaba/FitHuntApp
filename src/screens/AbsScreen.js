@@ -22,21 +22,15 @@ const AbsScreen = ({navigation }) => {
         <View style={nav}>
           <Icon
             name={'angle-left'}
-            size={50}
+            size={30}
             color={'white'}
             marginLeft={20}
-            marginTop={2}
+            marginTop={15}
            
             onPress={() => navigation.goBack()}
           />
           <Text style={heading}>ABS</Text>
-          <Icon
-            name={'bars'}
-            size={30}
-            color={'white'}
-            marginTop={30}
-            marginLeft={175}
-          />
+         
         </View>
         <Text style={heading2}>Raises</Text>
         <View style={box}>
@@ -99,7 +93,7 @@ const styles = StyleSheet.create({
   nav: {
     height: 60,
     width: 400,
-    marginTop: 25,
+    marginTop: 0,
     flexDirection: 'row'
   },
   heading: {
@@ -107,7 +101,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     color: 'white',
-    marginLeft: 135
+    marginLeft: 140,
+  
   },
   box: {
     backgroundColor: '#176B87',

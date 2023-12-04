@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const FindGym = () => {
+const FindGym = ({navigation}) => {
   const {
     backgrndImg,
     container,
@@ -68,7 +68,7 @@ const FindGym = () => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.btn4}>
+          <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('SP')}>
                 <Text style={styles.btnText}> Find </Text>
             </TouchableOpacity>
         </View>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   backgrndImg: {
-    height: 730,
+    height: 795,
     width: 400
   },
   overlay: {

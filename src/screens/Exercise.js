@@ -26,22 +26,24 @@ const Exercise = ({navigation}) => {
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
-        <Icon
-          name={'arrow-left'}
-          size={30}
-          color={'white'}
-          margin={15}
-          marginTop={28}
-         
-        />
+      <Icon
+            name={'angle-left'}
+            size={30}
+            color={'white'}
+            marginTop={27}
+            marginLeft={15}
+            marginRight={15}
+            onPress={() => navigation.goBack()}
+          />
         <Text style={txt1}>Exercises</Text>
 
         <Icon
           name={'bars'}
-          size={30}
+          size={25}
           color={'white'}
           marginTop={30}
-          marginLeft={175}
+          marginLeft={185}
+          onPress={() => navigation.navigate('MN1')}
         />
       </View>
       <ScrollView>

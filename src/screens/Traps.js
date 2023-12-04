@@ -25,10 +25,10 @@ const Traps = ({navigation}) => {
         <View style={nav}>
           <Icon
             name={'angle-left'}
-            size={50}
+            size={30}
             color={'white'}
             marginLeft={20}
-            marginTop={2}
+            marginTop={15}
             onPress={() => navigation.goBack()}
           />
           <Text style={heading}>Traps</Text>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   nav: {
     height: 60,
     width: 400,
-    marginTop: 25,
+    marginTop: 0,
     flexDirection: 'row'
   },
   heading: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     color: 'white',
-    marginLeft: 115
+    marginLeft: 140
   },
   box: {
     backgroundColor: '#176B87',

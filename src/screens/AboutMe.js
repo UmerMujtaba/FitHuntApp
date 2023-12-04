@@ -18,11 +18,11 @@ import {
   TextInput
 } from 'react-native';
 
-const AboutMe = () => {
+const AboutMe = ({navigation}) => {
   const {
     container,
     mid,
-    mid1,
+   
     nav,
     img,
     imgtxt,
@@ -30,13 +30,9 @@ const AboutMe = () => {
     maintxt,
     maintxt2,
     maintxt21,
-    chstxt2,
-    midtxt1,
-    chs2,
-    midtxt,
+    
     choose,
-    dot,
-    chstxt,
+   
     btn1,
     btnText1
   } = styles;
@@ -51,6 +47,7 @@ const AboutMe = () => {
             color={'white'}
             marginTop={10}
             marginLeft={15}
+            onPress={() => navigation.goBack()}
           />
           <Text style={imgtxt}>Profile</Text>
           <Text style={[imgtxt,imgtxt2]}>Save</Text>

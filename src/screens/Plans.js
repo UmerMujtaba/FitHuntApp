@@ -12,35 +12,36 @@ import {
   Text,
   StyleSheet,
   Image,
+  ImageBackground,
   TouchableOpacity,
   ScrollView
 } from 'react-native';
 
-const Plans = () => {
+const Plans = ({ navigation }) => {
   const {
     container,
     mid,
-    mid1,
-    mid2,
     nav,
-    img,
     hdng,
     hdng1,
-    midtxt1,
+    btn,
     midtxt2,
     hdng3,
     midtxt,
-    txtbox
+    midtxt3,
+    img,
+    overlay
   } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
-      <Icon
+        <Icon
           name={'angle-left'}
-          size={25}
+          size={30}
           color={'white'}
-          marginTop={15}
+          marginTop={12}
           marginLeft={15}
+          onPress={() => navigation.goBack()}
         />
         <Text style={hdng}>Meal Plan</Text>
       </View>
@@ -48,34 +49,23 @@ const Plans = () => {
         <Text style={hdng1}>Find a Plan</Text>
 
         <Text style={[hdng1, hdng3]}>
-          Meal plans, workout plans. Start a plan, follow along, and reach your
-          goals
+          Meal plan, Start a plan, follow along, and reach your goals
         </Text>
       </View>
-      <Text style={midtxt}>Available Plans</Text>
+    
       <View style={mid}>
-        <View style={mid1}>
-          
-          <Image
-            source={require('../../assets/plan/meal/lowcarb.png')}
-            style={img}
-          />
-
-          <Text style={midtxt1}>Low Carb</Text>
-          <Text style={midtxt2}>28 Days . Daily</Text>
+        <ImageBackground source={require('../../assets/breakfast.png')} style={img}>
+        
+        <View style={overlay}><Text style={midtxt}>Manage your eating habits</Text>
+        <Text style={[midtxt,midtxt2]}>Start the meal plan that will help you with your diet and also make your life healthy</Text>
+        <View style={btn}>
+        <Text style={[midtxt,midtxt3]}  onPress={() => navigation.navigate('Goal')}>Get Started</Text>
         </View>
-
-        <View style={mid1}>
-          
-          <Image
-            source={require('../../assets/plan/meal/highprotein.png')}
-            style={img}
-          />
-
-          <Text style={midtxt1}>High Protien</Text>
-          <Text style={midtxt2}>28 Days . Daily</Text>
         </View>
+        </ImageBackground>
+        
       </View>
+      
     </SafeAreaView>
   );
 };
@@ -99,6 +89,10 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginLeft: 20
   },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'hsla(0, 100%, 90%, 0.3);' // Adjust the last value (0.5) for opacity
+  },
   hdng1: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -114,38 +108,33 @@ const styles = StyleSheet.create({
     marginTop: 10,
     height: 525
   },
-  mid1: {
-    height: 250,
-    marginBottom: 15
-  },
-  mid2: {
-    backgroundColor: 'purple',
-    height: 225
-  },
+
   midtxt: {
-    fontSize: 20,
+    marginTop: 65,
+    fontSize: 25,
     color: 'black',
-    backgroundColor: 'grey',
-    padding: 10,
-    marginTop: 10
-  },
-  img: {
-    height: 160,
-    width: 393
-  },
-  midtxt1: {
-    fontSize: 20,
-    color: 'black',
+    // backgroundColor: '#B6BBC4',
+    textAlign: 'center',
+    width: 393,
+    height: 45,
     fontWeight: 'bold',
-    backgroundColor: 'grey',
-    paddingLeft: 10
+    textAlignVertical: 'center'
   },
   midtxt2: {
-    fontSize: 14,
-    color: 'black',
-    backgroundColor: 'grey',
-    paddingLeft: 10,
-    paddingBottom: 5
+    marginTop: 25,
+    fontSize: 18,
+    opacity: 0.7,
+  },
+  btn:{
+    
+  },
+  midtxt3:{
+    marginTop: 105
+  },
+  img:{
+    height: 620,
+    width: 393,
+    position: 'absolute',
   }
 });
 export default Plans;

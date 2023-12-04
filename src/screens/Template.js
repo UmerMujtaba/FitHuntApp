@@ -17,7 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const Template = () => {
+const Template = ({navigation}) => {
   const {
     container,
     main1,
@@ -35,21 +35,29 @@ const Template = () => {
     <SafeAreaView style={container}>
       <ScrollView>
         <View style={nav}>
+        <Icon
+          name={'angle-left'}
+          size={30}
+          color={'white'}
+          marginTop={12}
+          marginLeft={15}
+          onPress={() => navigation.goBack()}
+        />
           <Text style={heading}>Workout Templates</Text>
         </View>
         <Text style={heading2}>2 Days a week</Text>
 
-        <View style={main1}>
-          <View style={main2}>
+        <View style={main1} >
+          <View style={main2} >
             <View>
-              <Text style={txt}> Get in Shape </Text>
+              <Text style={txt} onPress={() => navigation.navigate('GT2')}> Get in Shape </Text>
 
               <Text style={txt1}> Full Body Split </Text>
             </View>
-            <View>
+            <View >
               <Image
                 source={require('../../assets/template/2days/1.png')}
-                style={img}
+                style={img} 
               />
             </View>
           </View>
@@ -58,7 +66,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt2}> Shreding </Text>
+              <Text style={txt2} onPress={() => navigation.navigate('ST2')}> Shreading </Text>
 
               <Text style={txt1}> Upper & Lower body </Text>
             </View>
@@ -74,7 +82,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt3}> Muscle Gain </Text>
+              <Text style={txt3} onPress={() => navigation.navigate('MG2')}> Muscle Gain </Text>
               <Text style={txt1}> Full, Upper & Lower body split </Text>
             </View>
             <View>
@@ -93,7 +101,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt}> Get in Shape </Text>
+              <Text style={txt} onPress={() => navigation.navigate('GT4')}> Get in Shape </Text>
               <Text style={txt1}> Full Body Split </Text>
             </View>
             <View>
@@ -108,7 +116,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt2}> Shreading </Text>
+              <Text style={txt2} onPress={() => navigation.navigate('ST4L')}> Shreading </Text>
               <Text style={txt1}>
                 Full, Upper & Lower Push, Pull, Bro Split
               </Text>
@@ -125,7 +133,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt2}> Shreding </Text>
+              <Text style={txt2} onPress={() => navigation.navigate('ST4B')}> Shreading </Text>
               <Text style={txt1}>Chest, Arms, Back, Shoulders & Abs Focus</Text>
             </View>
             <View>
@@ -140,7 +148,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt3}>Muscle Gain </Text>
+              <Text style={txt3} onPress={() => navigation.navigate('MG4')}>Muscle Gain </Text>
               <Text style={txt1}>
                 Upper & Lower Push, Pull, Full Body Split{' '}
               </Text>
@@ -160,7 +168,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt2}>Shreading </Text>
+              <Text style={txt2} onPress={() => navigation.navigate('ST6')}>Shreading </Text>
               <Text style={txt1}> Push, Pull / Bro Split </Text>
             </View>
             <View>
@@ -175,7 +183,7 @@ const Template = () => {
         <View style={main1}>
           <View style={main2}>
             <View>
-              <Text style={txt3}> Muscle Gain </Text>
+              <Text style={txt3} onPress={() => navigation.navigate('MG6')}> Muscle Gain </Text>
               <Text style={txt1}> Push, Pull / Bro Split </Text>
             </View>
             <View>
@@ -197,14 +205,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     textAlign: 'center',
-    fontWeight: 'bold',
-    marginTop: 10
+    marginTop: 13,
+    marginLeft: 90,
+    fontWeight: 'bold'
   },
   nav: {
     height: 50,
     width: 395,
     backgroundColor: '#3e5287',
-    opacity: 0.9
+    opacity: 0.9,
+    flexDirection: 'row'
   },
   heading2: {
     fontSize: 22,
@@ -215,7 +225,7 @@ const styles = StyleSheet.create({
   main1: {
     height: 200,
     width: 395,
-    backgroundColor: '#0E1F87',
+    backgroundColor: '#B2B2B2',
     marginTop: 10,
     flexDirection: 'column',
     opacity: 0.8,
@@ -250,7 +260,7 @@ const styles = StyleSheet.create({
   },
   txt2: {
     fontSize: 22,
-    color: '#175624',
+    color: '#005B41',
     fontWeight: 'bold',
     marginTop: 65
   }

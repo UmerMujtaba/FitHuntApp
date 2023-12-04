@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 
-const Menu = () => {
+const Menu = ({navigation}) => {
   const {
     container,
     imageLayout,
@@ -32,7 +32,15 @@ const Menu = () => {
         style={imageLayout}>
         <View style={overlay}>
           <View style={nav}>
-            <Icon name={'arrow-left'} size={30} color={'black'} margin={15} />
+          <Icon
+            name={'angle-left'}
+            size={30}
+            color={'black'}
+            marginTop={15}
+            marginLeft={15}
+            marginRight={15}
+            onPress={() => navigation.goBack()}
+          />
             <Text style={txt1}>Fit Hunt</Text>
 
             <Icon
@@ -41,6 +49,7 @@ const Menu = () => {
               color={'black'}
               marginTop={15}
               marginLeft={195}
+              onPress={() => navigation.navigate('MN1')} //for us
             />
           </View>
 
@@ -51,8 +60,9 @@ const Menu = () => {
               color={'black'}
               marginLeft={25}
               marginTop={2}
+              onPress={() => navigation.navigate('plan')}
             />
-            <Text style={optText}>Personalized Diet Plan</Text>
+            <Text style={optText} onPress={() => navigation.navigate('plan')}>Personalized Diet Plan</Text>
           </View>
           <View style={opt1}>
             <Icon
@@ -61,8 +71,9 @@ const Menu = () => {
               color={'black'}
               marginLeft={25}
               marginTop={2}
+              
             />
-            <Text style={optText}>Workout Tracking</Text>
+            <Text style={optText} onPress={() => navigation.navigate('GT2')}>Workout Tracking</Text>
           </View>
           <View style={opt1}>
             <Icon
@@ -81,8 +92,9 @@ const Menu = () => {
               color={'black'}
               marginLeft={25}
               marginTop={2}
+              onPress={() => navigation.navigate('NUT')}
             />
-            <Text style={optText}>Nutrition</Text>
+            <Text style={optText} onPress={() => navigation.navigate('NUT')}>Nutrition</Text>
           </View>
           <View style={opt1}>
             <Icon
@@ -91,8 +103,9 @@ const Menu = () => {
               color={'black'}
               marginLeft={25}
               marginTop={2}
+              onPress={() => navigation.navigate('CU')}
             />
-            <Text style={optText}>Customized Workout Plan</Text>
+            <Text style={optText} onPress={() => navigation.navigate('TR')}>Customized Workout Plan</Text>
           </View>
         </View>
       </ImageBackground>
@@ -106,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'skyblue'
   },
   imageLayout: {
-    height: 680,
+    height: 700,
     width: 400
   },
   overlay: {

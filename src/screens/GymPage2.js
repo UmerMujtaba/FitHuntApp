@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const GymPage2 = () => {
+const GymPage2 = ({navigation}) => {
   const {
     container,
     mid,
@@ -34,10 +34,11 @@ const GymPage2 = () => {
       <View style={nav}>
         <Icon
           name={'angle-left'}
-          size={25}
+          size={30}
           color={'white'}
-          marginTop={15}
+          marginTop={12}
           marginLeft={15}
+          onPress={() => navigation.goBack()}
         />
         <Text style={navTxt}> Fitness Hub!</Text>
         <Icon
@@ -46,6 +47,7 @@ const GymPage2 = () => {
           color={'white'}
           marginTop={15}
           marginLeft={190}
+          onPress={() => navigation.navigate('MN')}
         />
       </View>
 
@@ -110,7 +112,7 @@ const styles = StyleSheet.create({
   },
   mid: {
     height: 250,
-    marginTop: 40,
+    marginTop: 20,
     marginLeft: 5,
     marginRight: 5
   },
