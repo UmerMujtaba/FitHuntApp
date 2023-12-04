@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   },
   mid: {
     marginTop: 10,
-    height: 525
+    height: 525,
   },
 
   midtxt: {
@@ -118,14 +118,13 @@ const styles = StyleSheet.create({
     width: 393,
     height: 45,
     fontWeight: 'bold',
-    textAlignVertical: 'center'
+    textAlignVertical: 'center',
+   
   },
   midtxt2: {
     marginTop: 25,
     fontSize: 18,
-    opacity: 0.7,
-  },
-  btn:{
+    opacity: 0.6,
     
   },
   midtxt3:{

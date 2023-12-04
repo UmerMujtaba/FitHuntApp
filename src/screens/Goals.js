@@ -50,7 +50,7 @@ const Goals = ({ navigation }) => {
             <Text style={midtxt}>What's your goal?</Text>
           </View>
           <View style={mid2}>
-            <Text style={midtxt2} onPress={() => navigation.navigate('WG')}>
+            <Text style={midtxt2} onPress={() => navigation.navigate('Days')}>
               {' '}
               Gain Muscle
             </Text>

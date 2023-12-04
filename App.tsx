@@ -46,6 +46,7 @@ import OverviewNutrition from './src/screens/OverviewNutrition';
 import AboutMe from './src/screens/AboutMe';
 import Goals from './src/screens/Goals';
 import GainWeight from './src/screens/GainWeight';
+import Days from './src/screens/Days';
 
 
 const Stack = createNativeStackNavigator();
@@ -57,7 +58,7 @@ const App = () => {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Selection" >
+      <Stack.Navigator initialRouteName="plan" >
         <Stack.Screen name="Selection" component={Selection} options={{ headerShown: false }}/>
         <Stack.Screen name="Acc" component={Account1} options={{ headerShown: false }}/>
         <Stack.Screen name="Log" component={Login} options={{ headerShown: false }}/>
@@ -99,6 +100,7 @@ const App = () => {
         <Stack.Screen name="ME" component={AboutMe} options={{ headerShown: false }}/>
         <Stack.Screen name="Goal" component={Goals} options={{ headerShown: false }}/>
         <Stack.Screen name="WG" component={GainWeight} options={{ headerShown: false }}/>
+        <Stack.Screen name="Days" component={Days} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
 
