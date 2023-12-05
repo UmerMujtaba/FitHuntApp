@@ -53,6 +53,8 @@ import CustomWorkout from './src/screens/CustomWorkout';
 import Beginner from './src/screens/Begineer';
 import Intermediate from './src/screens/Intermediate';
 import LegRaiseVid from './src/screens/LegRaiseVid';
+import ChrunchesVid from './src/screens/ChrunchesVid';
+import SitupsVid from './src/screens/SitupsVid';
 // import Payment from './src/screens/Payment';
 
 
@@ -114,6 +116,8 @@ const App = () => {
         <Stack.Screen name="Begin" component={Beginner} options={{ headerShown: false }}/>
         <Stack.Screen name="Inter" component={Intermediate} options={{ headerShown: false }}/>
         <Stack.Screen name="LRV" component={LegRaiseVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="ChrnchVid" component={ChrunchesVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="SitVid" component={SitupsVid} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
 

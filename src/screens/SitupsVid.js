@@ -18,7 +18,7 @@ import {
 import VideoPlayer from 'react-native-video-player';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const LegRaiseVid = ({ navigation }) => {
+const SitupsVid = ({ navigation }) => {
   const {
     container,
     nav,
@@ -45,7 +45,7 @@ const LegRaiseVid = ({ navigation }) => {
 
       <View style={Vid}>
         <VideoPlayer
-          video={require('../../assets/videos/Abs/legraises1.mp4')}
+          video={require('../../assets/videos/Abs/chrunches.mp4')}
           autoplay={false}
           defaultMuted={true}
           videoWidth={1200}
@@ -55,11 +55,11 @@ const LegRaiseVid = ({ navigation }) => {
       </View>
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
-        <Text style={txt}>
-        Starting position is at a full hang on a pull up bar with your legs in a dead hang below your body.
-        While keeping your knees straight, raise your thighs as high as you can.
-        Lower your legs back to the starting position in a slow and controlled manner.
-        </Text>
+      <Text style={txt}>
+        Lie on the ground with your arms crossed behind your head.
+        Flex your torso, starting from the head, shoulder blades, mid back and finally the lower back.
+        Raise your torso until your chest touches your knees.
+      </Text>
       </View>
     </SafeAreaView>
   );
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   Vid: {
-   
+  
     height: 250,
     marginTop: 20
   },
@@ -113,4 +113,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-export default LegRaiseVid;
+export default SitupsVid;

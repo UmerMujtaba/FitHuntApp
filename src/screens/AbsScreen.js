@@ -60,7 +60,7 @@ const AbsScreen = ({navigation }) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('Bicp')}
+            onPress={() => navigation.navigate('ChrnchVid')}
           />
         </View>
         <View style={box}>
@@ -90,7 +90,7 @@ const AbsScreen = ({navigation }) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('Bicp')}
+            onPress={() => navigation.navigate('SitVid')}
           />
         </View>
         <View style={box}>
