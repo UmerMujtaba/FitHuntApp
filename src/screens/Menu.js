@@ -103,9 +103,9 @@ const Menu = ({navigation}) => {
               color={'black'}
               marginLeft={25}
               marginTop={2}
-              onPress={() => navigation.navigate('CU')}
+              onPress={() => navigation.navigate('CW')}
             />
-            <Text style={optText} onPress={() => navigation.navigate('TR')}>Customized Workout Plan</Text>
+            <Text style={optText} onPress={() => navigation.navigate('CW')}>Customized Workout Plan</Text>
           </View>
         </View>
       </ImageBackground>

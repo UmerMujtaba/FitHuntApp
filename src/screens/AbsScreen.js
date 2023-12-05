@@ -15,7 +15,7 @@ import {
 
 const AbsScreen = ({navigation }) => {
 
-  const { container, box, nav, heading, boxTxt, image, heading2 } = styles;
+  const { container, box, nav, heading, boxTxt, image, heading2,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -39,6 +39,13 @@ const AbsScreen = ({navigation }) => {
             style={image}
           />
           <Text style={boxTxt}>Hanging Leg Raises</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('LRV')}
+          />
         </View>
 
         <Text style={heading2}>Chrunches</Text>
@@ -48,6 +55,13 @@ const AbsScreen = ({navigation }) => {
             style={image}
           />
           <Text style={boxTxt}>Crunches</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('Bicp')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -55,6 +69,13 @@ const AbsScreen = ({navigation }) => {
             style={image}
           />
           <Text style={boxTxt}>Decline</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('Bicp')}
+          />
         </View>
 
         <Text style={heading2}>Sit ups</Text>
@@ -64,6 +85,13 @@ const AbsScreen = ({navigation }) => {
             style={image}
           />
           <Text style={boxTxt}>Sit ups</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('Bicp')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -71,6 +99,13 @@ const AbsScreen = ({navigation }) => {
             style={image}
           />
           <Text style={boxTxt}>Weighted</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('Bicp')}
+          />
         </View>
 
         <View style={box}>
@@ -79,6 +114,13 @@ const AbsScreen = ({navigation }) => {
             style={image}
           />
           <Text style={boxTxt}>Decline</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('Bicp')}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -126,7 +168,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default AbsScreen;

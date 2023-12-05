@@ -49,6 +49,10 @@ import GainWeight from './src/screens/GainWeight';
 import LossWeight from './src/screens/LossWeight';
 import DaysLoss from './src/screens/DaysLoss';
 import DaysGain from './src/screens/DaysGain';
+import CustomWorkout from './src/screens/CustomWorkout';
+import Beginner from './src/screens/Begineer';
+import Intermediate from './src/screens/Intermediate';
+import LegRaiseVid from './src/screens/LegRaiseVid';
 // import Payment from './src/screens/Payment';
 
 
@@ -61,7 +65,7 @@ const App = () => {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="plan" >
+      <Stack.Navigator initialRouteName="MN" >
         <Stack.Screen name="Selection" component={Selection} options={{ headerShown: false }}/>
         <Stack.Screen name="Acc" component={Account1} options={{ headerShown: false }}/>
         <Stack.Screen name="Log" component={Login} options={{ headerShown: false }}/>
@@ -106,7 +110,10 @@ const App = () => {
         <Stack.Screen name="WL" component={LossWeight} options={{ headerShown: false }}/>
         <Stack.Screen name="DaysG" component={DaysGain} options={{ headerShown: false }}/>
         <Stack.Screen name="DaysL" component={DaysLoss} options={{ headerShown: false }}/>
-
+        <Stack.Screen name="CW" component={CustomWorkout} options={{ headerShown: false }}/>
+        <Stack.Screen name="Begin" component={Beginner} options={{ headerShown: false }}/>
+        <Stack.Screen name="Inter" component={Intermediate} options={{ headerShown: false }}/>
+        <Stack.Screen name="LRV" component={LegRaiseVid} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
 

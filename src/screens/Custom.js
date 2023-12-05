@@ -22,6 +22,15 @@ const Custom = ({navigation}) => {
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
+      <Icon
+            name={'angle-left'}
+            size={30}
+            color={'white'}
+            marginTop={14}
+            marginLeft={15}
+            marginRight={15}
+            onPress={() => navigation.goBack()}
+          />
         <Text style={heading}>Customized Workout</Text>
       </View>
       <View style={main}>
@@ -49,13 +58,16 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     fontWeight: 'bold',
-    marginTop: 20,
+    marginTop: 12,
+    marginLeft: 55
   },
   nav: {
-    height: 70,
+    height: 50,
     width: 395,
     backgroundColor: '#3e5287',
-    opacity: 0.9
+    opacity: 0.9,
+    flexDirection: 'row',
+    
   },
   main: {
     height: 250,

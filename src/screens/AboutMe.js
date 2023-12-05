@@ -119,7 +119,7 @@ const AboutMe = ({navigation}) => {
        <View style={mid}>
         <View>
           <Text style={[maintxt2,maintxt21]}>
-          Mobile No
+          Mob No
           </Text>
         </View>
 

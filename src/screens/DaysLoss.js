@@ -1,10 +1,12 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useState } from 'react';
+import Payment from './Payment'; // Adjust the path accordingly
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {
@@ -12,6 +14,7 @@ import {
   View,
   Text,
   StyleSheet,
+  Modal,
   Image,
   ImageBackground,
   TouchableOpacity,
@@ -19,6 +22,15 @@ import {
 } from 'react-native';
 
 const DaysLoss = ({ navigation }) => {
+  const [isPaymentModalVisible, setPaymentModalVisible] = useState(false);
+
+  const showPaymentModal = () => {
+    setPaymentModalVisible(true);
+  };
+
+  const hidePaymentModal = () => {
+    setPaymentModalVisible(false);
+  };
   const {
     container,
     nav,
@@ -28,8 +40,10 @@ const DaysLoss = ({ navigation }) => {
     namee,
     day,
     icon,
+    modalContainer,
     midtxt3,
     img,
+    modalContent,
     overlay
   } = styles;
   return (
@@ -48,13 +62,9 @@ const DaysLoss = ({ navigation }) => {
 
       <View style={mid}>
         <View style={mid2}>
-            <Text style={day}>
-                Day 1
-            </Text>
-            <Text style={namee}>
-                /  Monday
-            </Text>
-            <Icon
+          <Text style={day}>Day 1</Text>
+          <Text style={namee}>/ Monday</Text>
+          <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
@@ -63,67 +73,95 @@ const DaysLoss = ({ navigation }) => {
           />
         </View>
 
-        <View style={mid2}>
-            <Text style={day}>
-                Day 2
-            </Text>
-            <Text style={namee}>
-                /  Tuesday
-            </Text>
-            <Icon
+        <View>
+      <View style={mid2}>
+        <Text style={day}>
+          Day 2
+        </Text>
+        <Text style={namee}>
+          /  Tuesday
+        </Text>
+        <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
+          <Icon
             name={'angle-right'}
             size={50}
             color={'black'}
             style={icon}
-            onPress={() => navigation.navigate('Pay')}
+          />
+        </TouchableOpacity>
+      </View>
+
+      <Modal
+        transparent
+        animationType="slide"
+        visible={isPaymentModalVisible}
+        onRequestClose={hidePaymentModal}
+      >
+        <View style={modalContainer}>
+          <View style={modalContent}>
+            <Payment onClose={hidePaymentModal} />
+          </View>
+        </View>
+      </Modal>
+    </View>
+
+        <View>
+          <View style={mid2}>
+            <Text style={day}>Day 3</Text>
+            <Text style={namee}>/ Wednesday</Text>
+            <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
+              <Icon
+                name={'angle-right'}
+                size={50}
+                color={'black'}
+                style={icon}
+                
+              />
+            </TouchableOpacity>
+          </View>
+          <Payment
+            isVisible={isPaymentModalVisible}
+            onClose={hidePaymentModal}
           />
         </View>
 
-        <View style={mid2}>
-            <Text style={day}>
-                Day 3
-            </Text>
-            <Text style={namee}>
-                /  Wednesday
-            </Text>
-            <Icon
-            name={'angle-right'}
-            size={50}
-            color={'black'}
-            style={icon}
-            onPress={() => navigation.navigate('Pay')}
+        <View>
+          <View style={mid2}>
+            <Text style={day}>Day 4</Text>
+            <Text style={namee}>/ Thrusday</Text>
+            <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
+              <Icon
+                name={'angle-right'}
+                size={50}
+                color={'black'}
+                style={icon}
+                
+              />
+            </TouchableOpacity>
+          </View>
+          <Payment
+            isVisible={isPaymentModalVisible}
+            onClose={hidePaymentModal}
           />
         </View>
 
-        <View style={mid2}>
-            <Text style={day}>
-                Day 4
-            </Text>
-            <Text style={namee}>
-                /  Thursday
-            </Text>
-            <Icon
-            name={'angle-right'}
-            size={50}
-            color={'black'}
-            style={icon}
-            onPress={() => navigation.navigate('Pay')}
-          />
-        </View>
-
-        <View style={mid2}>
-            <Text style={day}>
-                Day 5
-            </Text>
-            <Text style={namee}>
-                /  Friday
-            </Text>
-            <Icon
-            name={'angle-right'}
-            size={50}
-            color={'black'}
-            style={icon}
-            onPress={() => navigation.navigate('Pay')}
+        <View>
+          <View style={mid2}>
+            <Text style={day}>Day 5</Text>
+            <Text style={namee}>/ Friday</Text>
+            <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
+              <Icon
+                name={'angle-right'}
+                size={50}
+                color={'black'}
+                style={icon}
+                
+              />
+            </TouchableOpacity>
+          </View>
+          <Payment
+            isVisible={isPaymentModalVisible}
+            onClose={hidePaymentModal}
           />
         </View>
       </View>
@@ -152,17 +190,17 @@ const styles = StyleSheet.create({
   mid: {
     // backgroundColor: 'green',
     height: 650,
-    flexDirection: 'column',
+    flexDirection: 'column'
   },
-  mid2:{
-    flexDirection :'row',
+  mid2: {
+    flexDirection: 'row',
     borderWidth: 2,
     borderColor: 'black',
     borderRadius: 20,
     margin: 25,
     padding: 20,
     alignItems: 'center',
-    backgroundColor: '#7D7C7C',
+    backgroundColor: '#7D7C7C'
   },
   namee: {
     fontSize: 20,
@@ -182,9 +220,19 @@ const styles = StyleSheet.create({
     marginRight: 5
   },
   icon: {
-    marginLeft: 'auto',
-    marginRight: 10
+    marginLeft: 'auto'
   },
- 
+  modalContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    width: '80%',
+    padding: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Adjust opacity here
+    borderRadius: 10,
+  },
 });
 export default DaysLoss;
