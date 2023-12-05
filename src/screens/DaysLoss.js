@@ -18,7 +18,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const Days = ({ navigation }) => {
+const DaysLoss = ({ navigation }) => {
   const {
     container,
     nav,
@@ -59,7 +59,7 @@ const Days = ({ navigation }) => {
             size={50}
             color={'black'}
             style={icon}
-            onPress={() => navigation.navigate('WG')}
+            onPress={() => navigation.navigate('WL')}
           />
         </View>
 
@@ -75,7 +75,7 @@ const Days = ({ navigation }) => {
             size={50}
             color={'black'}
             style={icon}
-            // onPress={() => navigation.navigate('AbsScreen')}
+            onPress={() => navigation.navigate('Pay')}
           />
         </View>
 
@@ -91,7 +91,7 @@ const Days = ({ navigation }) => {
             size={50}
             color={'black'}
             style={icon}
-            // onPress={() => navigation.navigate('AbsScreen')}
+            onPress={() => navigation.navigate('Pay')}
           />
         </View>
 
@@ -107,7 +107,7 @@ const Days = ({ navigation }) => {
             size={50}
             color={'black'}
             style={icon}
-            // onPress={() => navigation.navigate('AbsScreen')}
+            onPress={() => navigation.navigate('Pay')}
           />
         </View>
 
@@ -123,7 +123,7 @@ const Days = ({ navigation }) => {
             size={50}
             color={'black'}
             style={icon}
-            // onPress={() => navigation.navigate('AbsScreen')}
+            onPress={() => navigation.navigate('Pay')}
           />
         </View>
       </View>
@@ -187,4 +187,4 @@ const styles = StyleSheet.create({
   },
  
 });
-export default Days;
+export default DaysLoss;

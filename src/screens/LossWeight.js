@@ -17,7 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const GainWeight = ({ navigation }) => {
+const LossWeight = ({ navigation }) => {
   const {
     container,
     nav,
@@ -31,12 +31,12 @@ const GainWeight = ({ navigation }) => {
     midtxt3,
     midtxt4,
     dot,
-    dot1,
     midtxt5,
     midtxt6,
     hdng6,
     hdng7,
     hdng8,
+    dot1,
     overlay
   } = styles;
   return (
@@ -51,7 +51,7 @@ const GainWeight = ({ navigation }) => {
             marginLeft={15}
             onPress={() => navigation.goBack()}
           />
-          <Text style={hdng}>Weight Gain</Text>
+          <Text style={hdng}>Weight Loss</Text>
         </View>
 
         <View style={mid}>
@@ -62,23 +62,18 @@ const GainWeight = ({ navigation }) => {
           <View style={mid2}>
             <View style={midimg}>
               <Image
-                source={require('../../assets/gain/morning.png')}
+                source={require('../../assets/LW/morningdiet.png')}
                 style={midimg}
               />
             </View>
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Yougurt</Text>
+                <Text style={midtxt5}>1 Cup Tea</Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Fresh Juice</Text>
-              </View>
-
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Oats</Text>
+                <Text style={midtxt5}>2 Apple</Text>
               </View>
             </View>
           </View>
@@ -90,23 +85,18 @@ const GainWeight = ({ navigation }) => {
           <View style={mid2}>
             <View style={midimg}>
               <Image
-                source={require('../../assets/gain/breakfast.png')}
+                source={require('../../assets/LW/brownbread.png')}
                 style={midimg}
               />
             </View>
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>2 Piece Bread with 2 eggs</Text>
+                <Text style={midtxt5}>2 Slice Brown Bread </Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Salad</Text>
-              </View>
-
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Seasonal Fruit</Text>
+                <Text style={midtxt5}>2 Omelette</Text>
               </View>
             </View>
           </View>
@@ -118,18 +108,22 @@ const GainWeight = ({ navigation }) => {
           <View style={mid2}>
             <View style={midimg}>
               <Image
-                source={require('../../assets/gain/lunch.png')}
+                source={require('../../assets/LW/lunch.png')}
                 style={midimg}
               />
             </View>
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>2 Chapatis</Text>
+                <Text style={midtxt5}>1 Chapati</Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Boiled Rice</Text>
+                <Text style={midtxt5}>Green Vegetable</Text>
+              </View>
+              <View style={midtxt4}>
+                <Text style={dot}>.</Text>
+                <Text style={midtxt5}>Curd & Salad</Text>
               </View>
             </View>
           </View>
@@ -140,15 +134,11 @@ const GainWeight = ({ navigation }) => {
           <View style={mid2}>
             <View style={midimg}>
               <Image
-                source={require('../../assets/gain/preworkout.png')}
+                source={require('../../assets/LW/yogurt.png')}
                 style={midimg}
               />
             </View>
             <View style={midtxt3}>
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Boiled Potato </Text>
-              </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
                 <Text style={midtxt5}>Banana with 2 dates</Text>
@@ -180,44 +170,11 @@ const GainWeight = ({ navigation }) => {
                 <Text style={dot}>.</Text>
                 <Text style={midtxt5}>Chicken Breast</Text>
               </View>
-
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Shake</Text>
-              </View>
             </View>
           </View>
 
           <View style={mid3}>
-            <Text style={hdng3}>Dinner</Text>
-            <Text style={[hdng3, hdng4, hdng7]}> 09:00 pm</Text>
-          </View>
-          <View style={mid2}>
-            <View style={midimg}>
-              <Image
-                source={require('../../assets/gain/dinner.png')}
-                style={midimg}
-              />
-            </View>
-            <View style={midtxt3}>
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Boiled Rice</Text>
-              </View>
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Minced Beef</Text>
-              </View>
-
-              <View style={midtxt4}>
-                <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Minced Mutton</Text>
-              </View>
-            </View>
-          </View>
-
-          <View style={mid3}>
-            <Text style={hdng3}>Before Sleep</Text>
+            <Text style={hdng3}>Evening Diet</Text>
           </View>
           <View style={mid2}>
             <View style={midimg}>
@@ -229,11 +186,30 @@ const GainWeight = ({ navigation }) => {
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>250 / 500 ML Milk</Text>
+                <Text style={midtxt5}>1 Glass Milk</Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={mid3}>
+            <Text style={hdng3}>Dinner</Text>
+            <Text style={[hdng3, hdng4, hdng7]}> 09:00 pm</Text>
+          </View>
+          <View style={mid2}>
+            <View style={midimg}>
+              <Image
+                source={require('../../assets/LW/cereal.png')}
+                style={midimg}
+              />
+            </View>
+            <View style={midtxt3}>
+              <View style={midtxt4}>
+                <Text style={dot}>.</Text>
+                <Text style={midtxt5}>Boiled Rice</Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>2 Dates</Text>
+                <Text style={midtxt5}>Cereal (1 Bowl)</Text>
               </View>
             </View>
           </View>
@@ -244,15 +220,7 @@ const GainWeight = ({ navigation }) => {
 
           <View style={[midtxt4]}>
             <Text style={[dot, dot1]}>.</Text>
-            <Text style={midtxt5}>Adjust diet according to your workout</Text>
-          </View>
-          <View style={[midtxt4]}>
-            <Text style={[dot, dot1]}>.</Text>
-            <Text style={midtxt5}>Eat 4 bananas in a day</Text>
-          </View>
-          <View style={[midtxt4]}>
-            <Text style={[dot, dot1]}>.</Text>
-            <Text style={midtxt5}>After 40min of workout (recommended)</Text>
+            <Text style={midtxt5}>Eat 2 bananas everyday </Text>
           </View>
           <View style={[midtxt4, midtxt6]}>
             <Text style={[dot, dot1]}>.</Text>
@@ -333,7 +301,7 @@ const styles = StyleSheet.create({
   dot: {
     fontSize: 35,
     color: 'white',
-    marginLeft: 15
+    marginLeft: 5
   },
   dot1: {
     marginLeft: 20
@@ -341,11 +309,11 @@ const styles = StyleSheet.create({
   midtxt5: {
     color: 'white',
     fontSize: 20,
-    marginLeft: 5,
+    marginLeft: 2,
     marginTop: 20
   },
   midtxt6: {
     marginBottom: 25
   }
 });
-export default GainWeight;
+export default LossWeight;
