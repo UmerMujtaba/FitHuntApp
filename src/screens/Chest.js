@@ -132,7 +132,7 @@ const Chest = ({navigation}) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('EZVid')}
+            onPress={() => navigation.navigate('SMBPVid')}
           />
         </View>
         <View style={box}>
@@ -146,7 +146,7 @@ const Chest = ({navigation}) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('EZVid')}
+            onPress={() => navigation.navigate('SMIPVid')}
           />
         </View>
       </ScrollView>

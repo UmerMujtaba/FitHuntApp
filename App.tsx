@@ -70,6 +70,18 @@ import DeclineFlyVid from './src/screens/DeclineFlyVid';
 import BrblBnchPrsVid from './src/screens/BrblBnchPrsVid';
 import BrblInclineBnchPVid from './src/screens/BrblInclineBnchPVid';
 import DeclineBrblPrsVid from './src/screens/DeclineBrblPrsVid';
+import SmthMchnBnchVid from './src/screens/SmthMchnBnchVid';
+import SmthMchnInclnPrsVid from './src/screens/SmthMchnInclnPrsVid';
+import StndWrstCurl from './src/screens/StndWrstCurl';
+import PrchrWrstCrlVid from './src/screens/PrchrWrstCrlVid';
+import PrchrWrstCrlRvrsVid from './src/screens/PrchrWrstCrlRvrsVid';
+import BrblWrstCrlVid from './src/screens/BrblWrstCrlVid';
+import RpePshDwnVid from './src/screens/RpePshDwnVid';
+import SnglArmPshDwnVid from './src/screens/SnglArmPshDwnVid';
+import SklCrshronHed from './src/screens/SklCrshronHed';
+import SklCrshrBhndHed from './src/screens/SklCrshrBhndHed';
+import ExtnsnOvrHedStrghtBrVid from './src/screens/ExtnsnOvrHedStrghtBrVid';
+import ExtnsnOvrHrdStdDmblVid from './src/screens/ExtnsnOvrHrdStdDmblVid';
 // import Payment from './src/screens/Payment';
 
 
@@ -149,8 +161,20 @@ const App = () => {
         <Stack.Screen name="BBPVid" component={BrblBnchPrsVid} options={{ headerShown: false }}/>
         <Stack.Screen name="BIBPVid2" component={BrblInclineBnchPVid} options={{ headerShown: false }}/>
         <Stack.Screen name="DBPVid" component={DeclineBrblPrsVid} options={{ headerShown: false }}/>
-      
-      
+        <Stack.Screen name="SMBPVid" component={SmthMchnBnchVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="SMIPVid" component={SmthMchnInclnPrsVid} options={{headerShown: false}}/>
+        <Stack.Screen name="SWCVid" component={StndWrstCurl} options={{headerShown: false}}/>
+        <Stack.Screen name="PWCVid" component={PrchrWrstCrlVid} options={{headerShown: false}}/>
+        <Stack.Screen name="PWRCVid" component={PrchrWrstCrlRvrsVid} options={{headerShown: false}}/>
+        <Stack.Screen name="BWCVid" component={BrblWrstCrlVid} options={{headerShown: false}}/>
+        <Stack.Screen name="RPDVid" component={RpePshDwnVid} options={{headerShown: false}}/>
+        <Stack.Screen name="SAPDVid" component={SnglArmPshDwnVid} options={{headerShown: false}}/>
+        <Stack.Screen name="SCONHVid" component={SklCrshronHed} options={{headerShown: false}}/>
+        <Stack.Screen name="SKBHNDHVid" component={SklCrshrBhndHed} options={{headerShown: false}}/>
+        <Stack.Screen name="EOHSBVid" component={ExtnsnOvrHedStrghtBrVid} options={{headerShown: false}}/>
+        <Stack.Screen name="EOHSDVid" component={ExtnsnOvrHrdStdDmblVid} options={{headerShown: false}}/>
+        {/* <Stack.Screen name="" component={} options={{headerShown: false}}/> */}
+        {/* <Stack.Screen name="" component={} options={{headerShown: false}}/> */}
       
       
       

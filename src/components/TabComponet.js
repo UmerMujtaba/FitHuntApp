@@ -61,13 +61,7 @@ const TabCmpnont = () => {
         },
       })}
       
-      tabBarOptions={{
-        activeTintColor: 'blue',
-        inactiveTintColor: 'black',
-        tabBarStyle: {
-          backgroundColor: 'lightgrey'
-        },
-      }}>
+      >
           <Tab.Screen name="Menu" component={Menu} />
       <Tab.Screen name="Training" component={Template} />
       <Tab.Screen name="Exercise" component={Exercise} />
@@ -77,5 +71,11 @@ const TabCmpnont = () => {
     </Tab.Navigator>
   );
 };
-
+// tabBarOptions={{  to be written above line 64
+//   activeTintColor: 'blue',
+//   inactiveTintColor: 'black',
+//   tabBarStyle: {
+//     backgroundColor: 'lightgrey'
+//   },
+// }}
 export default TabCmpnont;

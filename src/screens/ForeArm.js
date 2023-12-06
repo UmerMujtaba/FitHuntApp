@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const ForeArm = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt,image,heading2 } = styles;
+  const { container, box, nav, heading, boxTxt,image,heading2,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -37,6 +37,13 @@ const ForeArm = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Standing Wrist Curls</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('SWCVid')}
+          />
         </View>
         <Text style={heading2}>Preacher</Text>
         <View style={box}>
@@ -45,6 +52,13 @@ const ForeArm = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Wrist Curls</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('PWCVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -52,6 +66,13 @@ const ForeArm = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Reverse Wrist Curls</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('PWRCVid')}
+          />
         </View>
         <Text style={heading2}>Barbell</Text>
         <View style={box}>
@@ -60,6 +81,13 @@ const ForeArm = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Behind Back Wrist Curls</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BWCVid')}
+          />
         </View>
         
       </ScrollView>
@@ -108,7 +136,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default ForeArm;
