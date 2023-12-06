@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 const Biceps = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt,image,heading2 } = styles;
+  const { container, box, nav, heading, boxTxt,image,heading2,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -40,6 +40,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Narrow Grip Curl</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('EZVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -47,6 +54,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Preacher Curl</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('EZVid2')}
+          />
         </View>
         <Text style={heading2}>Straight Bar</Text>
         <View style={box}>
@@ -55,6 +69,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Straight Bar Barbel Curl</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BCVid')}
+          />
         </View>
         <Text style={heading2}>Dumbbell</Text>
         <View style={box}>
@@ -63,6 +84,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Standing Curl</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DStndCVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -70,6 +98,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Seated Curl</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DStdCVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -77,6 +112,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Hammer Curl</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DHCVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -84,6 +126,13 @@ const Biceps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Incline Curl</Text> 
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DICVid')}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -133,7 +182,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default Biceps;

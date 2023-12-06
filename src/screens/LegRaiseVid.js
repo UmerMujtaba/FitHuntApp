@@ -45,7 +45,7 @@ const LegRaiseVid = ({ navigation }) => {
 
       <View style={Vid}>
         <VideoPlayer
-          video={require('../../assets/videos/Abs/legraises1.mp4')}
+          video={require('../../assets/videos/Abs/legraises2.mp4')}
           autoplay={false}
           defaultMuted={true}
           videoWidth={1200}

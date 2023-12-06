@@ -18,16 +18,8 @@ import {
 import VideoPlayer from 'react-native-video-player';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const SitupsVid = ({ navigation }) => {
-  const {
-    container,
-    nav,
-    txt1,
-    Vid,
-    ins,
-    heading,
-    txt
-  } = styles;
+const BrblInclineBnchPVid = ({ navigation }) => {
+  const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
@@ -45,7 +37,7 @@ const SitupsVid = ({ navigation }) => {
 
       <View style={Vid}>
         <VideoPlayer
-          video={require('../../assets/videos/Abs/situps.mp4')}
+          video={require('../../assets/videos/chest/inclnbrblpress.mp4')}
           autoplay={false}
           defaultMuted={true}
           videoWidth={1200}
@@ -55,11 +47,13 @@ const SitupsVid = ({ navigation }) => {
       </View>
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
-      <Text style={txt}>
-        Lie on the ground with your arms crossed behind your head.
-        Flex your torso, starting from the head, shoulder blades, mid back and finally the lower back.
-        Raise your torso until your chest touches your knees.
-      </Text>
+        <Text style={txt}>
+        Lie with your glutes and shoulders in contact with the bench, feet flat on the ground.
+        Grip the bar slightly wider than shoulder width.
+        Squeeze your shoulder blades together.
+        Lower the bar with control until contact is made with your upper chest, then extend your elbows until they are locked.
+
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -86,7 +80,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   Vid: {
-  
     height: 250,
     marginTop: 20
   },
@@ -98,13 +91,13 @@ const styles = StyleSheet.create({
   },
   ins: {
     backgroundColor: 'grey',
-    height: 230,
+    height: 260,
     marginTop: 10,
     borderWidth: 1,
     borderColor: 'white',
     margin: 10
   },
-  txt:{
+  txt: {
     fontSize: 20,
     color: 'black',
     alignSelf: 'center',
@@ -113,4 +106,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-export default SitupsVid;
+export default BrblInclineBnchPVid;

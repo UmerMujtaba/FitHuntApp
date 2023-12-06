@@ -18,7 +18,7 @@ import {
 import VideoPlayer from 'react-native-video-player';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const SitupsVid = ({ navigation }) => {
+const DeclineChrcnh = ({ navigation }) => {
   const {
     container,
     nav,
@@ -45,7 +45,7 @@ const SitupsVid = ({ navigation }) => {
 
       <View style={Vid}>
         <VideoPlayer
-          video={require('../../assets/videos/Abs/situps.mp4')}
+          video={require('../../assets/videos/Abs/declinechrunch.mp4')}
           autoplay={false}
           defaultMuted={true}
           videoWidth={1200}
@@ -113,4 +113,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-export default SitupsVid;
+export default DeclineChrcnh;

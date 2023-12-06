@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const Chest = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt, image, heading2 } = styles;
+  const { container, box, nav, heading, boxTxt, image, heading2,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -37,13 +37,27 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}> Bench Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BVid')}
+          />
         </View>
         <View style={box}>
           <Image
             source={require('../../assets/chest/declinefly.png')}
             style={image}
           />
-          <Text style={boxTxt}>Decline  Fly</Text>
+          <Text style={boxTxt}>Decline Fly</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DFVid')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -51,6 +65,13 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Incline Bench Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('IVid')}
+          />
         </View>
 
         <Text style={heading2}>Bench Press</Text>
@@ -61,6 +82,13 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Barbell Bench Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BBPVid')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -68,6 +96,13 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Incline Barbell</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BIBPVid2')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -75,6 +110,13 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Decline Barbell </Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DBPVid')}
+          />
         </View>
 
         <Text style={heading2}> Smith Machine</Text>
@@ -85,6 +127,13 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Bench Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('EZVid')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -92,6 +141,13 @@ const Chest = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Incline Bench Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            // onPress={() => navigation.navigate('EZVid')}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -139,7 +195,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default Chest;

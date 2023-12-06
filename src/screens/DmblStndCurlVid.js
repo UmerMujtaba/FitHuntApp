@@ -18,16 +18,8 @@ import {
 import VideoPlayer from 'react-native-video-player';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const SitupsVid = ({ navigation }) => {
-  const {
-    container,
-    nav,
-    txt1,
-    Vid,
-    ins,
-    heading,
-    txt
-  } = styles;
+const DmblStndCurlVid = ({ navigation }) => {
+  const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
@@ -45,7 +37,7 @@ const SitupsVid = ({ navigation }) => {
 
       <View style={Vid}>
         <VideoPlayer
-          video={require('../../assets/videos/Abs/situps.mp4')}
+          video={require('../../assets/videos/bic/dmblstndcurl.mp4')}
           autoplay={false}
           defaultMuted={true}
           videoWidth={1200}
@@ -55,11 +47,12 @@ const SitupsVid = ({ navigation }) => {
       </View>
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
-      <Text style={txt}>
-        Lie on the ground with your arms crossed behind your head.
-        Flex your torso, starting from the head, shoulder blades, mid back and finally the lower back.
-        Raise your torso until your chest touches your knees.
-      </Text>
+        <Text style={txt}>
+        Stand upright.
+        At the starting position, hold the weight at a dead hang with your arms straight and use an underhand grip.
+        In a controlled manner, perform the curl by bending your elbows until the dumbbells are in front of your neck.
+        Control the descent and avoid using momentum.
+        </Text>
       </View>
     </SafeAreaView>
   );
@@ -86,7 +79,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   Vid: {
-  
     height: 250,
     marginTop: 20
   },
@@ -98,13 +90,13 @@ const styles = StyleSheet.create({
   },
   ins: {
     backgroundColor: 'grey',
-    height: 230,
+    height: 280,
     marginTop: 10,
     borderWidth: 1,
     borderColor: 'white',
     margin: 10
   },
-  txt:{
+  txt: {
     fontSize: 20,
     color: 'black',
     alignSelf: 'center',
@@ -113,4 +105,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   }
 });
-export default SitupsVid;
+export default DmblStndCurlVid;

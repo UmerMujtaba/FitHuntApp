@@ -55,6 +55,21 @@ import Intermediate from './src/screens/Intermediate';
 import LegRaiseVid from './src/screens/LegRaiseVid';
 import ChrunchesVid from './src/screens/ChrunchesVid';
 import SitupsVid from './src/screens/SitupsVid';
+import EZbarVid from './src/screens/EZbarVid';
+import BenchVid from './src/screens/BenchVid';
+import InclineVid from './src/screens/InclineVid';
+import DeclineSitVid from './src/screens/DeclineSitVid';
+import DeclineChrcnh from './src/screens/DeclineChrcnh';
+import EZbarVid2 from './src/screens/EZbarVid2';
+import BarbellCurlVid from './src/screens/BarbellCurlVid';
+import DmblStndCurlVid from './src/screens/DmblStndCurlVid';
+import DmblStdCurlVid from './src/screens/DmblStdCurlVid';
+import DmblHmrCurlVid from './src/screens/DmblHmrCurlVid';
+import DmblInclnCurlVid from './src/screens/DmblInclnCurlVid';
+import DeclineFlyVid from './src/screens/DeclineFlyVid';
+import BrblBnchPrsVid from './src/screens/BrblBnchPrsVid';
+import BrblInclineBnchPVid from './src/screens/BrblInclineBnchPVid';
+import DeclineBrblPrsVid from './src/screens/DeclineBrblPrsVid';
 // import Payment from './src/screens/Payment';
 
 
@@ -118,6 +133,32 @@ const App = () => {
         <Stack.Screen name="LRV" component={LegRaiseVid} options={{ headerShown: false }}/>
         <Stack.Screen name="ChrnchVid" component={ChrunchesVid} options={{ headerShown: false }}/>
         <Stack.Screen name="SitVid" component={SitupsVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="EZVid" component={EZbarVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="BVid" component={BenchVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="IVid" component={InclineVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DSitVid" component={DeclineSitVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DChrnch" component={DeclineChrcnh} options={{ headerShown: false }}/>
+        <Stack.Screen name="EZVid2" component={EZbarVid2} options={{ headerShown: false }}/>
+        
+        <Stack.Screen name="BCVid" component={BarbellCurlVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DStndCVid" component={DmblStndCurlVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DStdCVid" component={DmblStdCurlVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DHCVid" component={DmblHmrCurlVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DICVid" component={DmblInclnCurlVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DFVid" component={DeclineFlyVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="BBPVid" component={BrblBnchPrsVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="BIBPVid2" component={BrblInclineBnchPVid} options={{ headerShown: false }}/>
+        <Stack.Screen name="DBPVid" component={DeclineBrblPrsVid} options={{ headerShown: false }}/>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       </Stack.Navigator>
     </NavigationContainer>
 

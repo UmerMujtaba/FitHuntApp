@@ -74,7 +74,7 @@ const AbsScreen = ({navigation }) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('Bicp')}
+            onPress={() => navigation.navigate('DChrnch')}
           />
         </View>
 
@@ -104,7 +104,7 @@ const AbsScreen = ({navigation }) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('Bicp')}
+            onPress={() => navigation.navigate('SitVid')}
           />
         </View>
 
@@ -119,7 +119,7 @@ const AbsScreen = ({navigation }) => {
             size={50}
             color={'black'}
             style={ icon}
-            // onPress={() => navigation.navigate('Bicp')}
+            onPress={() => navigation.navigate('DSitVid')}
           />
         </View>
       </ScrollView>
