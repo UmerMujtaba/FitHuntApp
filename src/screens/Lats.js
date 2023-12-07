@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const Lats = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt,image,heading2 } = styles;
+  const { container, box, nav, heading, boxTxt,image,heading2,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -37,6 +37,13 @@ const Lats = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Overhand Grip </Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('OHPulupVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -44,6 +51,13 @@ const Lats = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Wide Grip</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('WGPulupVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -51,6 +65,13 @@ const Lats = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Underhand Grip</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('UHGPVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -58,6 +79,13 @@ const Lats = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Machine Overhand Grip</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('MSOHGVid')}
+          />
         </View>
         <Text style={heading2}>Pull Down</Text>
         <View style={box}>
@@ -66,6 +94,13 @@ const Lats = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Overhand Grip Lat</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('OGLatPulDwnVid')}
+          />
         </View>
     
       </ScrollView>
@@ -113,7 +148,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default Lats;

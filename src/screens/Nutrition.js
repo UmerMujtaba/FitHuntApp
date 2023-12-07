@@ -49,7 +49,7 @@ const Nutrition = ({navigation}) => {
         <Text style={hdng1}>Find a Plan</Text>
 
         <Text style={[hdng1, hdng3]}>
-          nutri plan. Start a plan, follow along, and reach your
+          Nutrition plan. Start a plan, follow along, and reach your
           goals
         </Text>
       </View>
@@ -191,7 +191,8 @@ const styles = StyleSheet.create({
     color: 'black',
     backgroundColor: 'grey',
     padding: 10,
-    marginTop: 10
+    marginTop: 10,
+    fontWeight: 'bold'
   },
   img: {
     height: 160,

@@ -43,7 +43,7 @@ const Exercise = ({navigation}) => {
           color={'white'}
           marginTop={30}
           marginLeft={185}
-          onPress={() => navigation.navigate('MN1')}
+          onPress={() => navigation.navigate('MN')}
         />
       </View>
       <ScrollView>

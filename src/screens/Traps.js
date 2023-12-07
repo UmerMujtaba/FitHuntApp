@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 const Traps = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt,heading2,image } = styles;
+  const { container, box, nav, heading, boxTxt,heading2,image,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -40,6 +40,13 @@ const Traps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Standing Shrugs </Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BSShrgVid')}
+          />
         </View>
         <Text style={heading2}>Dumbbell</Text>
         <View style={box}>
@@ -48,6 +55,13 @@ const Traps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Shrugs</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DShrugVid')}
+          />
         </View>
         
         <View style={box}>
@@ -56,6 +70,13 @@ const Traps = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Incline Prone Shrugs</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DIPShrugVid')}
+          />
         </View>
     
       </ScrollView>
@@ -103,7 +124,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default Traps;

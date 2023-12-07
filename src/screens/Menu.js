@@ -49,7 +49,7 @@ const Menu = ({navigation}) => {
               color={'black'}
               marginTop={15}
               marginLeft={195}
-              onPress={() => navigation.navigate('MN1')} //for us
+              onPress={() => navigation.navigate('MN')} //for us
             />
           </View>
 

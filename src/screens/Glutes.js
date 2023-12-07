@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const Glutes = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt, heading2, image } = styles;
+  const { container, box, nav, heading, boxTxt, heading2, image,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -36,6 +36,13 @@ const Glutes = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Hip Thrust Machine</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('HipTVid')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -43,6 +50,13 @@ const Glutes = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Single Leg Hip Thrust</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('SLegHTVid')}
+          />
         </View>
         <Text style={heading2}>Barbell</Text>
         <View style={box}>
@@ -50,7 +64,14 @@ const Glutes = ({navigation}) => {
             source={require('../../assets/back/glute/barbellhipthrust.png')}
             style={image}
           />
-          <Text style={boxTxt}>Barbell Grip Thrust </Text>
+          <Text style={boxTxt}>Barbell Hip Thrust </Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BHTVid')}
+          />
         </View>
         <View style={box}>
           <Image
@@ -58,6 +79,13 @@ const Glutes = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Barbell Glute Bridge</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BGBrdgVid')}
+          />
         </View>
         <Text style={heading2}>Dumbbell</Text>
         <View style={box}>
@@ -66,6 +94,13 @@ const Glutes = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Dumbell Hip Thrust</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DHTVid')}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -113,7 +148,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default Glutes;

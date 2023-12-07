@@ -15,7 +15,7 @@ import {
 } from 'react-native';
 
 const Shoulders = ({navigation}) => {
-  const { container, box, nav, heading, boxTxt,image,heading2 } = styles;
+  const { container, box, nav, heading, boxTxt,image,heading2,icon } = styles;
   return (
     <SafeAreaView style={container}>
       <ScrollView>
@@ -30,12 +30,20 @@ const Shoulders = ({navigation}) => {
           />
           <Text style={heading}>Shoulders</Text>
         </View>
+        <Text style={heading2}>Smith Machine</Text>
         <View style={box}>
         <Image
             source={require('../../assets/shoulder/SmithMachineOverheadPress,Seated.png')}
             style={image}
           />
-          <Text style={boxTxt}>Smith Machine Overhead Press Seated</Text>
+          <Text style={boxTxt}>Seated Overhead Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('SMSOHPVid')}
+          />
         </View>
         
         <Text style={heading2}>Dumbbell</Text>
@@ -45,6 +53,13 @@ const Shoulders = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Seated Overhead Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DSOHPVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -52,6 +67,13 @@ const Shoulders = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Standing Overhead Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('DSTNDOHPVid')}
+          />
         </View>
         <Text style={heading2}>Barbell</Text>
         <View style={box}>
@@ -60,6 +82,13 @@ const Shoulders = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Seated Overhead Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BSTDOHPVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -67,6 +96,13 @@ const Shoulders = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Standing Overhead Press</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BSTNDOPVid')}
+          />
         </View>
         <View style={box}>
         <Image
@@ -74,6 +110,13 @@ const Shoulders = ({navigation}) => {
             style={image}
           />
           <Text style={boxTxt}>Barbell Upright Row</Text>
+          <Icon
+            name={'angle-right'}
+            size={50}
+            color={'black'}
+            style={ icon}
+            onPress={() => navigation.navigate('BUpRRVid')}
+          />
         </View>
        
       </ScrollView>
@@ -121,7 +164,12 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: 5,
     fontWeight: 'bold'
-  }
+  },
+  icon: {
+    marginLeft: 'auto',
+    marginRight: 20,
+    marginTop: 28
+  },
 });
 
 export default Shoulders;
