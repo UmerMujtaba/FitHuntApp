@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
   main1: {
     height: 200,
     width: 395,
-    backgroundColor: '#B2B2B2',
+    backgroundColor: '#607274',
     marginTop: 10,
     flexDirection: 'column',
     opacity: 0.8,
@@ -240,12 +240,12 @@ const styles = StyleSheet.create({
   },
   txt: {
     fontSize: 22,
-    color: '#06FB43',
+    color: '#FFC436',
     fontWeight: 'bold',
     marginTop: 65
   },
   txt1: {
-    fontSize: 18,
+    fontSize: 16,
     color: 'white',
     fontWeight: 'normal',
     marginTop: 10,
@@ -254,13 +254,13 @@ const styles = StyleSheet.create({
   },
   txt3: {
     fontSize: 22,
-    color: '#BF3232',
+    color: '#B80000',
     fontWeight: 'bold',
     marginTop: 65
   },
   txt2: {
     fontSize: 22,
-    color: '#005B41',
+    color: '#004225',
     fontWeight: 'bold',
     marginTop: 65
   }

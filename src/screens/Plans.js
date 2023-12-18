@@ -29,6 +29,7 @@ const Plans = ({ navigation }) => {
     hdng3,
     midtxt,
     midtxt3,
+    midtxt4,
     img,
     overlay
   } = styles;
@@ -56,7 +57,7 @@ const Plans = ({ navigation }) => {
       <View style={mid}>
         <ImageBackground source={require('../../assets/breakfast.png')} style={img}>
         
-        <View style={overlay}><Text style={midtxt}>Manage your eating habits</Text>
+        <View style={overlay}><Text style={[midtxt,midtxt4]}>Manage your eating habits</Text>
         <Text style={[midtxt,midtxt2]}>Start the meal plan that will help you with your diet and also make your life healthy</Text>
         <View style={btn}>
         <Text style={[midtxt,midtxt3]}  onPress={() => navigation.navigate('Goal')}>Get Started</Text>
@@ -91,7 +92,8 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'hsla(0, 100%, 90%, 0.3);' // Adjust the last value (0.5) for opacity
+    backgroundColor: 'hsla(0, 100%, 90%, 0.3);', // Adjust the last value (0.5) for opacity
+ 
   },
   hdng1: {
     fontSize: 20,
@@ -115,10 +117,12 @@ const styles = StyleSheet.create({
     color: 'black',
     // backgroundColor: '#B6BBC4',
     textAlign: 'center',
-    width: 393,
+    width: 380,
     height: 45,
     fontWeight: 'bold',
     textAlignVertical: 'center',
+    marginLeft: 7,
+    marginRight: 5
    
   },
   midtxt2: {
@@ -128,8 +132,12 @@ const styles = StyleSheet.create({
     
   },
   midtxt3:{
-    marginTop: 105
+    marginTop: 105,
+     backgroundColor: '#7D7C7C',
   },
+  midtxt4:{ 
+    backgroundColor: '#7D7C7C',
+  }, 
   img:{
     height: 620,
     width: 393,

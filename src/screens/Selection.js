@@ -10,14 +10,12 @@ import {
   View,
   Text,
   StyleSheet,
-  imageLayout,
   ImageBackground,
-  Button,
   TouchableOpacity
 } from 'react-native';
 
-const Selection = ({navigation}) => {
 
+const Selection = ({ navigation }) => {
   const {
     container,
     imageLayout,
@@ -25,29 +23,29 @@ const Selection = ({navigation}) => {
     headingtwo,
     btn1,
     btnText,
-    btn2,
-
-  } = styles
+    btn2
+  } = styles;
   return (
     <SafeAreaView style={container}>
       <ImageBackground
         source={require('../../assets/new-logo.jpg')}
         style={imageLayout}></ImageBackground>
-      <Text style={mainHeading}>
+
+<Text style={mainHeading}>
         MAKE {'\n'}
         YOUR SELF {'\n'}
         BETTER
       </Text>
-      <Text style ={headingtwo}>Sign in as</Text>
 
+      <Text style={headingtwo}>Sign in as</Text>
       <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Acc')}>
         <Text style={btnText}>Gym Owner</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={btn2} onPress={() => navigation.navigate('Acc')} > 
+      <TouchableOpacity style={btn2} onPress={() => navigation.navigate('Acc')}>
         <Text style={btnText}>User</Text>
       </TouchableOpacity>
-      
+
       {/* <Button style = {styles.btn}
         title="Gym Owner"
         color="#841584"
@@ -59,33 +57,31 @@ const Selection = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   imageLayout: {
     flex: 1,
     marginTop: 0,
     height: 210,
     width: 130,
-    alignSelf: 'center',
+    alignSelf: 'center'
   },
   mainHeading: {
     marginTop: 0,
     alignSelf: 'center',
-    padding: 5,    
+    padding: 5,
     fontWeight: 'bold',
     fontSize: 45,
-    marginLeft: 20,
+    marginLeft: 15,
     textAlign: 'center', // Set textAlign to center
     lineHeight: 60, // Adjust this value to control the line height
-    color: 'black',
-    
-    
+    color: 'black'
   },
   headingtwo: {
     color: 'black',
     fontWeight: 'bold',
     fontSize: 20,
-    marginTop: 0,
+    marginTop: 10,
     marginBottom: 15,
     marginLeft: 30
   },
@@ -118,9 +114,8 @@ const styles = StyleSheet.create({
   btnText: {
     color: 'white',
     fontSize: 18,
-    fontWeight: 'bold',
-
-  },
+    fontWeight: 'bold'
+  }
 });
 
 export default Selection;

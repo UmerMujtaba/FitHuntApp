@@ -36,7 +36,7 @@ const Menu = ({navigation}) => {
             name={'angle-left'}
             size={30}
             color={'black'}
-            marginTop={15}
+            marginTop={14}
             marginLeft={15}
             marginRight={15}
             onPress={() => navigation.goBack()}
@@ -48,7 +48,7 @@ const Menu = ({navigation}) => {
               size={30}
               color={'black'}
               marginTop={15}
-              marginLeft={195}
+              marginLeft={205}
               onPress={() => navigation.navigate('MN')} //for us
             />
           </View>
