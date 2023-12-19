@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-undef */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
@@ -14,13 +15,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-
 const Selection = ({ navigation }) => {
   const {
     container,
     imageLayout,
     mainHeading,
     headingtwo,
+    linearGradient,
     btn1,
     btnText,
     btn2
@@ -31,16 +32,21 @@ const Selection = ({ navigation }) => {
         source={require('../../assets/new-logo.jpg')}
         style={imageLayout}></ImageBackground>
 
-<Text style={mainHeading}>
+      <Text style={mainHeading}>
         MAKE {'\n'}
         YOUR SELF {'\n'}
         BETTER
       </Text>
 
       <Text style={headingtwo}>Sign in as</Text>
-      <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Acc')}>
-        <Text style={btnText}>Gym Owner</Text>
-      </TouchableOpacity>
+
+      
+        <TouchableOpacity
+          style={btn1}
+          onPress={() => navigation.navigate('Acc')}>
+          <Text style={btnText}>Gym Owner</Text>
+        </TouchableOpacity>
+      
 
       <TouchableOpacity style={btn2} onPress={() => navigation.navigate('Acc')}>
         <Text style={btnText}>User</Text>
@@ -70,12 +76,13 @@ const styles = StyleSheet.create({
     marginTop: 0,
     alignSelf: 'center',
     padding: 5,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 45,
     marginLeft: 15,
     textAlign: 'center', // Set textAlign to center
     lineHeight: 60, // Adjust this value to control the line height
-    color: 'black'
+    color: 'black',
+    fontFamily: 'Poppins-Bold'
   },
   headingtwo: {
     color: 'black',

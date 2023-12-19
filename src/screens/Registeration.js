@@ -77,7 +77,7 @@ const Registeration = ({navigation}) => {
 
 const styles = StyleSheet.create({
   imageLayout: {
-    height: 730,
+    height: 780,
     width: 450,
     backgroundColor: '#000000c0',
   
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   imageLayout1: {
     marginTop: 0,
     height: 190,
-    width: 140,
+    width: 'auto',
     alignSelf: 'center',
     marginRight: 60,
   },
