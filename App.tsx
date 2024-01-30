@@ -147,7 +147,7 @@ const App = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="SP"
+          name="SSp"
           component={ShowGym}
           options={{ headerShown: false }}
         />
