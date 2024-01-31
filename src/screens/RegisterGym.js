@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import axios from 'axios';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -5,6 +6,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import * as ImagePicker from 'react-native-image-picker';
 import Error from 'react-native-vector-icons/MaterialIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 import {
   SafeAreaView,
   Text,
@@ -249,7 +251,8 @@ function RegisterGym({ props }) {
                   size={25}
                   color="black"
                   style={styles.icon}
-                />
+                ></FontAwesome>
+                
                 <TextInput
                   style={styles.input}
                   placeholder=" Click to add picture"
@@ -257,6 +260,7 @@ function RegisterGym({ props }) {
                   value={gymlocation}
                   onChange={e => handleLocation(e)}
                 />
+
                 {selectedImage ? (
                   <Image
                     source={{ uri: selectedImage.uri }}
@@ -266,8 +270,9 @@ function RegisterGym({ props }) {
                   <FontAwesome
                     name="plus"
                     size={25}
-                    color="white"
+                    color="black"
                     style={styles.icon}
+                    marginRight={55}
                   />
                 )}
               </TouchableOpacity>

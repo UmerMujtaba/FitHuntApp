@@ -29,6 +29,7 @@ const ShowGym = ({navigation}) => {
     img2,
     btnText
   } = styles;
+  
   return (
     <SafeAreaView style={container}>
         <ScrollView>
@@ -47,7 +48,7 @@ const ShowGym = ({navigation}) => {
           size={25}
           color={'white'}
           marginTop={15}
-          marginLeft={310}
+          marginLeft={300}
           onPress={() => navigation.navigate('MN')}
         />
       </View>
@@ -93,7 +94,7 @@ const styles = StyleSheet.create({
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'

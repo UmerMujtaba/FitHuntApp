@@ -105,13 +105,14 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     borderColor: 'black',
     borderWidth: 2,
-    width: 320
+    width: 320,
   },
   btnText1: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    paddingLeft: 10
+    paddingLeft: 10,
+  
   },
   btn4: {
     backgroundColor: '#176B87',
