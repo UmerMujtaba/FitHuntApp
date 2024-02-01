@@ -95,11 +95,11 @@ const AddFirend = ({ navigation }) => {
           </View>
 
           {/* Display contacts */}
-          {contacts.map((contact) => (
+          {/* {contacts.map((contact) => (
             <View key={contact.recordID}>
               <Text>{`${contact.givenName} ${contact.familyName}`}</Text>
             </View>
-          ))}
+          ))} */}
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -30,14 +30,16 @@ const AboutMe = ({navigation}) => {
     maintxt,
     maintxt2,
     maintxt21,
-    
+    btn2,
     choose,
    
     btn1,
     btnText1
   } = styles;
   const [username, setusername] = useState('');
-  
+  const[useremail,setuseremail] = useState('');
+  const[userage,setuserage] = useState('');
+  const[usermobile,setusermobile] = useState('');
   return (
         <SafeAreaView style={container}>
           <View style={nav}>
@@ -70,7 +72,7 @@ const AboutMe = ({navigation}) => {
               <TextInput
                 style={btnText1}
                 placeholder=" Enter your name" //there should be dropdown
-                secureTextEntry={true}
+                placeholderTextColor="gray"
                 value={username}
                 onChangeText={text => setusername(text)}
               />
@@ -89,9 +91,9 @@ const AboutMe = ({navigation}) => {
               <TextInput
                 style={btnText1}
                 placeholder=" Enter your email" //there should be dropdown
-                secureTextEntry={true}
-                value={username}
-                onChangeText={text => setusername(text)}
+                placeholderTextColor="gray"
+                value={useremail}
+                onChangeText={text => setuseremail(text)}
               />
               {/* <Icon name={'user'} size={30} color='white' /> */}
             </TouchableOpacity>
@@ -108,9 +110,9 @@ const AboutMe = ({navigation}) => {
               <TextInput
                 style={btnText1}
                 placeholder=" Enter your age" //there should be dropdown
-                secureTextEntry={true}
-                value={username}
-                onChangeText={text => setusername(text)}
+                placeholderTextColor="gray"
+                value={userage}
+                onChangeText={text => setuserage(text)}
               />
               {/* <Icon name={'user'} size={30} color='white' /> */}
             </TouchableOpacity>
@@ -119,17 +121,17 @@ const AboutMe = ({navigation}) => {
        <View style={mid}>
         <View>
           <Text style={[maintxt2,maintxt21]}>
-          Mob No
+          Mobile No
           </Text>
         </View>
 
-        <TouchableOpacity style={btn1}>
+        <TouchableOpacity style={[btn1,btn2]}>
               <TextInput
                 style={btnText1}
                 placeholder=" Enter your mobile no" //there should be dropdown
-                secureTextEntry={true}
-                value={username}
-                onChangeText={text => setusername(text)}
+                placeholderTextColor="gray"
+                value={usermobile}
+                onChangeText={text => setusermobile(text)}
               />
               {/* <Icon name={'user'} size={30} color='white' /> */}
             </TouchableOpacity>
@@ -152,13 +154,13 @@ const styles = StyleSheet.create({
     imgtxt: {
       fontSize: 18,
       color: 'white',
-  
       alignSelf: 'center',
       marginLeft: 10,
       marginTop: 5
     },
     imgtxt2:{
-      marginLeft: 235
+      marginLeft: 'auto',
+      marginRight: 10
     },
     img: {
       backgroundColor: 'lightgrey',
@@ -178,8 +180,8 @@ const styles = StyleSheet.create({
       color: '#39A7FF',
       alignSelf:'center',
       fontWeight: 'normal',
-      marginLeft: 5,
-      marginTop: 5
+      marginLeft: 25,
+      marginTop: 10
     },
     maintxt2: {
       fontSize: 18,
@@ -198,21 +200,24 @@ const styles = StyleSheet.create({
       flexDirection: 'column'
     },
     btn1: {
-      backgroundColor: '#D0D4CA',
-      borderRadius: 15,
+      backgroundColor: 'white',
+      borderRadius: 10,
       fontSize: 25,
       fontWeight: 'bold',
-      marginRight: 90,
-      marginLeft: 15,
       marginTop: 25,
       borderColor: 'black',
       borderWidth: 2,
-      width: 300
+      width: '78%',
+      height: 45
     },
+    // btn2: {
+    //   height: 45
+    // },
     btnText1: {
       height: 40,
       borderColor: 'gray',
-      paddingLeft: 10
+      paddingLeft: 10,
+      color: 'black'
     },
 })
 

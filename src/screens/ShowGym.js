@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/self-closing-comp */
-import React, { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
   Text,
@@ -13,8 +15,11 @@ import {
   ScrollView
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
+;
+function ShowGym(props) {
 
-const ShowGym = ({navigation}) => {
+ 
   const {
     container,
     mid,
@@ -29,63 +34,94 @@ const ShowGym = ({navigation}) => {
     img2,
     btnText
   } = styles;
-  
+
+  const navigation = useNavigation();
+
+
+  console.log("Props", props);
+  console.log(props);
+  const [gymData, setGymData] = useState([]);
+  const [userData, setUserData] = useState('');
+
+  async function getData() {
+    const token = await AsyncStorage.getItem('token');
+    console.log("User Token",token);
+    axios
+      .post('http://192.168.2.6:5001/userdata', { token: token })
+      .then(res => {
+        console.log(res.data);
+        setUserData(res.data.data);
+
+        
+      });
+  }
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getGymData() {
+    const token = await AsyncStorage.getItem('token');
+    console.log("token:", token);
+    axios
+      .post('http://192.168.2.6:5003/gymdata', { token: token })
+      .then(res => {
+        console.log("Response Gym Data:",JSON.parse(res.data.data) );
+        setGymData(JSON.parse(res.data.data));
+      });
+  }
+
+  useEffect(() => {
+    getGymData();
+  }, []);
+
   return (
     <SafeAreaView style={container}>
-        <ScrollView>
-      <View style={nav}>
-        <Icon
-          name={'angle-left'}
-          size={30}
-          color={'white'}
-          marginTop={10}
-          marginLeft={15}
-          onPress={() => navigation.goBack()}
-        />
+      <ScrollView>
+        <View style={nav}>
+          <Icon
+            name={'angle-left'}
+            size={30}
+            color={'white'}
+            marginTop={10}
+            marginLeft={15}
+            onPress={() => navigation.goBack()}
+          />
 
-        <Icon
-          name={'bars'}
-          size={25}
-          color={'white'}
-          marginTop={15}
-          marginLeft={300}
-          onPress={() => navigation.navigate('MN')}
-        />
-      </View>
-
-      <View style={nav2}>
-        <Image source={require('../../assets/show/man.png')} style={img} />
-        <View style={hdng1}>
-          <Text style={hdng}>Hey! Welcome</Text>
-          <Text style={[hdng,hdng3]}>Jack!</Text>
+          <Icon
+            name={'bars'}
+            size={25}
+            color={'white'}
+            marginTop={15}
+            marginLeft={290}
+            onPress={() => navigation.navigate('MN')}
+          />
         </View>
-      </View>
-      <Text style={head}>Searched Results</Text>
 
+        <View style={nav2}>
+          <Image source={require('../../assets/show/man.png')} style={img} />
+          <View style={hdng1}>
+            <Text style={hdng}>Hey! Welcome</Text>
+            <Text style={[hdng, hdng3]}>{userData?.name}</Text>
+            {/* name not rendering */}
+          </View>
+        </View>
+        <Text style={head}>Searched Results</Text>
+        {gymData.forEach((gym)=>{console.log(gym?.name)})}
         <View>
-        <Text style={[head,txt]} onPress={() => navigation.navigate('GP')}>Shapes</Text>
-      <View style={mid} onPress={() => navigation.navigate('GP')}>
-            <Image source={require('../../assets/show/shapes1.png')} style={img2}/>
-      </View>
-      </View>
-
-      <View>
-        <Text style={[head,txt]} onPress={() => navigation.navigate('GP1')}>Fitness Hub</Text>
-      <View style={mid} >
-      <Image source={require('../../assets/show/fithub.png')} style={img2} onPress={() => navigation.navigate('GP1')}/>
-      </View>
-      </View>
-
-      <View>
-        <Text style={[head,txt]}>Shoaib Gym</Text>
-      <View style={mid}>
-      <Image source={require('../../assets/show/shoaib1.png')} style={img2}/>
-      </View>
-      </View>
+          {gymData.map((gym) => (
+            <><Text style={head} key={gym.id} onPress={() => navigation.navigate('GP', { location: gym.location, fee: gym.fee , name: gym.name})}>
+              {gym.name}
+            </Text><View style={mid} key={gym.id} >
+                <Image 
+                  source={require('../../assets/show/shapes1.png')}
+                  style={img2} />
+              </View></>
+          ))}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -101,7 +137,7 @@ const styles = StyleSheet.create({
   },
   nav2: {
     height: 80,
-    flexDirection:'row'
+    flexDirection: 'row'
   },
   img: {
     marginTop: 10,
@@ -119,9 +155,9 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   hdng3: {
-    marginTop:0,
+    marginTop: 0
   },
-  head:{
+  head: {
     marginTop: 18,
     marginLeft: 15,
     fontSize: 18,
@@ -136,11 +172,11 @@ const styles = StyleSheet.create({
   },
   txt: {
     marginTop: 10,
-    fontSize: 22,
+    fontSize: 22
   },
-  img2:{
+  img2: {
     height: 200,
-    width: 365,
+    width: "auto",
     borderRadius: 15
   }
 });

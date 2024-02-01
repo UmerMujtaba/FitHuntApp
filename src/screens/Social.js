@@ -47,7 +47,9 @@ const Social = ({navigation}) => {
           size={20}
           color={'white'}
           marginTop={18}
-          marginLeft={125}
+          marginRight={'auto'}
+          marginLeft={'auto'}
+          paddingLeft={50}
         />
       </View>
 

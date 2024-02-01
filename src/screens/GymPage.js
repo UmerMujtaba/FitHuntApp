@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const GymPage = ({navigation}) => {
+const GymPage = ({navigation, route}) => {
   const {
     container,
     mid,
@@ -27,8 +27,10 @@ const GymPage = ({navigation}) => {
     midtxt,
     navTxt,
     btn3,
-    btnText
+    btnText,
+    midtxt2
   } = styles;
+  const { fee, location, name } = route.params;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
@@ -40,13 +42,14 @@ const GymPage = ({navigation}) => {
           marginLeft={15}
           onPress={() => navigation.goBack()}
         />
-        <Text style={navTxt}> Shapes!</Text>
+        <Text style={navTxt}> {name}</Text>
         <Icon
           name={'bars'}
           size={25}
           color={'white'}
           marginTop={15}
-          marginLeft={210}
+          marginLeft={190}
+          marginRight={'auto'}
           onPress={() => navigation.navigate('MN')}
         />
       </View>
@@ -56,6 +59,7 @@ const GymPage = ({navigation}) => {
           <Text style={midtxt}>Gym Location</Text>
         </View>
         <View>
+          <Text>{location}</Text>
           <Image source={require('../../assets/gym/loc.png')} style={img} />
         </View>
       </View>
@@ -66,7 +70,8 @@ const GymPage = ({navigation}) => {
 
       <View style={mid}>
         <View>
-          <Text style={midtxt}>Timing</Text>
+          <Text style={[midtxt,midtxt2]}>Timing</Text>
+          <Text style={[midtxt,midtxt2]}>Fees {fee}</Text>
         </View>
         <View style={time}>
             <View>
@@ -114,20 +119,26 @@ const styles = StyleSheet.create({
     height: 250,
     marginTop: 20,
     marginLeft: 5,
-    marginRight: 5
+    marginRight: 60,
+    width: '100%',
+    backgroundColor: 'grey'
   },
   midtxt: {
     fontSize: 25,
-    textAlign: 'center',
+   textAlign: 'center',
     color: 'black',
     backgroundColor: 'grey',
-    width: 382,
+   width: '100%',
     opacity: 0.5,
     height: 40
   },
+  midtxt2:{
+    marginLeft: 0,
+    marginRight: 60
+  },
   img: {
     height: 217,
-    width: 382
+    width: '100%'
   },
   btn3: {
     backgroundColor: '#176B87',
@@ -138,8 +149,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: 'black',
     borderWidth: 2,
-    marginRight: 130,
-    marginLeft: 140,
+    width: 130,
+    marginRight: 90,
+    marginLeft: 110,
     marginTop: 30,
   },
   btnText: {

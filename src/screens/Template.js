@@ -145,11 +145,11 @@ const Template = ({navigation}) => {
           </View>
         </View>
 
-        <View style={main1}>
+        <View style={main1} >
           <View style={main2}>
-            <View>
+            <View >
               <Text style={txt3} onPress={() => navigation.navigate('MG4')}>Muscle Gain </Text>
-              <Text style={txt1}>
+              <Text style={txt1} onPress={() => navigation.navigate('MG4')}>
                 Upper & Lower Push, Pull, Full Body Split{' '}
               </Text>
             </View>
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: '#B80000',
     fontWeight: 'bold',
-    marginTop: 65
+    marginTop: 65,
   },
   txt2: {
     fontSize: 22,

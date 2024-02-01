@@ -25,7 +25,6 @@ import LowerBack from './src/screens/LowerBack';
 import GymPage from './src/screens/GymPage';
 import Template from './src/screens/Template';
 import ShowGym from './src/screens/ShowGym';
-import GymPage2 from './src/screens/GymPage2';
 import AddFirend from './src/screens/AddFriend';
 import Request from './src/screens/Request';
 import Custom from './src/screens/Custom';
@@ -115,7 +114,7 @@ const App = () => {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="FG">
+      <Stack.Navigator initialRouteName="RegGym">
         <Stack.Screen
           name="Selection"
           component={Selection}
@@ -155,11 +154,7 @@ const App = () => {
           name="GP"
           component={GymPage}
           options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="GP1"
-          component={GymPage2}
-          options={{ headerShown: false }}
+
         />
         <Stack.Screen
           name="MN"

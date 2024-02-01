@@ -48,7 +48,8 @@ const Menu = ({navigation}) => {
               size={30}
               color={'black'}
               marginTop={15}
-              marginLeft={205}
+              marginLeft={180}
+              marginRight={'auto'}
               onPress={() => navigation.navigate('MN')} //for us
             />
           </View>

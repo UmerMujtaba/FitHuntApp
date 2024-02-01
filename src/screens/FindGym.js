@@ -51,7 +51,7 @@ const FindGym = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('SP')}>
+          <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('SP',{ location: 'value1', priceRange: 'value2' })}>
                 <Text style={styles.btnText}> Find </Text>
             </TouchableOpacity>
         </View>
