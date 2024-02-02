@@ -55,9 +55,11 @@ function RegisterPage({ props }) {
             navigation.navigate('Log');
           } else {
             Alert.alert(JSON.stringify(res.data));
+           
           }
         })
         .catch(e => console.log(e));
+        navigation.navigate('Log');
     } else {
       Alert.alert('Fill mandatory details');
     }
@@ -248,7 +250,7 @@ function RegisterPage({ props }) {
                 ) : (
                   <Feather
                     name="eye"
-                    style={{ marginLeft: 100, marginTop: 15 }}
+                    style={{ marginLeft: 70, marginTop: 15 }}
                     color={passwordVerify ? 'green' : 'red'}
                     size={23}
                   />

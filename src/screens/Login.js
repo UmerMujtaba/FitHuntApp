@@ -110,11 +110,11 @@ const Login = ({ navigation }) => {
                   <Feather
                     name="eye"
                     style={{
-                      marginLeft: 39,
-                      marginTop: 15,
-                    }}
-                    color={passwordVerify ? 'green' : 'red'}
-                    size={18}
+                      marginLeft: 39, marginTop: 15, }}
+                      color={passwordVerify ? 'green' : 'red'}
+                      size={18}
+                   
+                   
                   />
                 )}
               </TouchableOpacity>

@@ -25,6 +25,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { endEvent } from 'react-native/Libraries/Performance/Systrace';
 
 function RegisterGym({ props }) {
   const [gymname, setgymname] = useState('');
@@ -35,8 +36,11 @@ function RegisterGym({ props }) {
   const [gymfeeVerify, setgymfeeVerify] = useState(false);
   const [gymlocation, setgymlocation] = useState('');
   const [gymlocationVerify, setgymLocationVerify] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-
+  const [oiage, setImage] = useState(null);
+  const [gymmaleTiming, setMaleTiming] = useState('');
+  const [gymfemaleTiming, setFemaleTiming] = useState('');
+    const [gymmaleVerify, setgymmaleVerify] = useState(false);
+    const [gymfemaleVerify, setgymfemaleVerify] = useState(false);
   const navigation = useNavigation();
   // const uploadImage = async () => {
   //   const formData = new FormData();
@@ -66,20 +70,29 @@ function RegisterGym({ props }) {
   //   console.log(result);
   // };
 
+// const onInputChange = (e) ={
+
+//   console.log(e.target.files[0]);
+//   setImage(e.target.files[0]);
+// }
+
   function handleSubmit() {
     const GymData = {
       name: gymname,
       fee: gymfee,
       mobile: gymmobile,
-      location: gymlocation
+      location: gymlocation,
+      maletime: gymmaleTiming,
+      femaletime: gymfemaleTiming,
     };
-    if (gymnameVerify && gymmobileVerify && gymfeeVerify && gymlocationVerify) {
+    if (gymnameVerify && gymmobileVerify && gymfeeVerify && gymmaleVerify && gymfemaleVerify  ) {
       axios
         .post('http://192.168.2.6:5003/gymregister', GymData)
         .then(res => {
           console.log(res.data);
 
           if (res.data.status == 'ok') {
+            
             Alert.alert('Registered Successfully!!');
             AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
             navigation.navigate('FG');
@@ -88,7 +101,8 @@ function RegisterGym({ props }) {
           }
         })
         .catch(e => console.log(e));
-    } else {
+    } 
+    else {
       Alert.alert('Fill mandatory details');
     }
   }
@@ -140,6 +154,24 @@ function RegisterGym({ props }) {
       setgymfeeVerify(true);
     }
   }
+
+
+  function handlemaletime(e) {
+    const malVar = e.nativeEvent.text;
+    setMaleTiming(malVar);
+    setgymmaleVerify(false);
+    if (malVar.length > 1) {
+      setgymmaleVerify(true);
+    }
+  }
+  function handlefemaletime(e) {
+    const femalVar = e.nativeEvent.text;
+    setFemaleTiming(femalVar);
+    setgymfemaleVerify(false);
+    if (femalVar.length > 1) {
+      setgymfemaleVerify(true);
+    }
+  }
   const handleImagePicker = () => {
     const options = {
       title: 'Select Image',
@@ -149,16 +181,16 @@ function RegisterGym({ props }) {
       }
     };
 
-    ImagePicker.launchImageLibrary(options, response => {
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      } else {
-        // Set the selected image
-        setSelectedImage({ uri: response.uri });
-      }
-    });
+    // ImagePicker.launchImageLibrary(options, response => {
+    //   if (response.didCancel) {
+    //     console.log('User cancelled image picker');
+    //   } else if (response.error) {
+    //     console.log('ImagePicker Error: ', response.error);
+    //   } else {
+    //     // Set the selected image
+    //     setSelectedImage({ uri: response.uri });
+    //   }
+    // });
   };
   return (
     <ScrollView>
@@ -245,7 +277,7 @@ function RegisterGym({ props }) {
               />
               <TextInput
                 style={styles.input}
-                placeholder=" Enter Mobile"
+                placeholder="     Enter Mobile"
                 placeholderTextColor="gray"
                 value={gymmobile}
                 onChange={e => handleMobile(e)}
@@ -287,28 +319,28 @@ function RegisterGym({ props }) {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.inputContainer}>
-              <Iconicons name="time" color="black" style={styles.smallIcon} />
-              <TextInput
-                style={styles.input}
-                placeholder=" Male Timing"
-                placeholderTextColor="gray"
-                value={gymlocation}
-                onChange={e => handleLocation(e)}
-              />
-            </TouchableOpacity>
+  <Iconicons name="time" color="black" style={styles.smallIcon} />
+  <TextInput
+    style={styles.input}
+    placeholder="For Male 00:00 am to 00:00 pm"
+    placeholderTextColor="gray"
+    value={gymmaleTiming}
+    onChange={e => handlemaletime(e)}
+  />
+</TouchableOpacity>
 
-            <TouchableOpacity style={styles.inputContainer}>
-              <Iconicons name="time" color="black" style={styles.smallIcon} />
-              <TextInput
-                style={styles.input}
-                placeholder=" Female Timing"
-                placeholderTextColor="gray"
-                value={gymlocation}
-                onChange={e => handleLocation(e)}
-              />
-            </TouchableOpacity>
+<TouchableOpacity style={styles.inputContainer}>
+  <Iconicons name="time" color="black" style={styles.smallIcon} />
+  <TextInput
+    style={styles.input}
+    placeholder=" For Female (00:00 am to 00:00 pm)"
+    placeholderTextColor="gray"
+    value={gymfemaleTiming}
+    onChange={e => handlefemaletime(e)}
+  />
+</TouchableOpacity>
 
-            <TouchableOpacity style={styles.inputContainer}>
+            {/* <TouchableOpacity style={styles.inputContainer}>
               <FontAwesome
                 name="camera"
                 size={25}
@@ -334,10 +366,11 @@ function RegisterGym({ props }) {
                   size={25}
                   color="black"
                   style={styles.icon}
-                  marginRight={30}
+                  marginRight={'auto'}
+                  marginLeft={10}
                 />
               )}
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <TouchableOpacity
               style={styles.btn4}
@@ -398,7 +431,7 @@ const styles = StyleSheet.create({
     width: 200,
     paddingLeft: 2,
     marginTop: 10,
-    fontSize: 16,
+    fontSize: 12,
     color: 'black'
   },
   errorText: {

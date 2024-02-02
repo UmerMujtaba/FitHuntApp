@@ -104,7 +104,7 @@ import BrblGltBrdgVid from './src/screens/BrblGltBrdgVid';
 import DmblHipThrstVid from './src/screens/DmblHipThrstVid';
 import RegisterPage from './src/screens/Registeration';
 import RegisterGym from './src/screens/RegisterGym';
-
+import UnderConstructio from './src/screens/UnderConstructio';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -114,7 +114,7 @@ const App = () => {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="RegGym">
+      <Stack.Navigator initialRouteName="Selection">
         <Stack.Screen
           name="Selection"
           component={Selection}
@@ -615,6 +615,11 @@ const App = () => {
         <Stack.Screen
           name="DHTVid"
           component={DmblHipThrstVid}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="UCC"
+          component={UnderConstructio}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

@@ -74,7 +74,7 @@ const Menu = ({navigation}) => {
               marginTop={2}
               
             />
-            <Text style={optText} onPress={() => navigation.navigate('GT2')}>Workout Tracking</Text>
+            <Text style={optText} onPress={() => navigation.navigate('UCC')}>Workout Tracking</Text>
           </View>
           <View style={opt1}>
             <Icon
@@ -84,7 +84,7 @@ const Menu = ({navigation}) => {
               marginLeft={25}
               marginTop={2}
             />
-            <Text style={optText}>Personal Interaction Tracking</Text>
+            <Text style={optText} onPress={() => navigation.navigate('UCC')}>Personal Interaction Tracking</Text>
           </View>
           <View style={opt1}>
             <Icon

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
@@ -13,7 +14,7 @@ const data = [
   { label: 'Gulberg', value: '7' }
 ];
 
-const DropdownComponent2 = () => {
+const DropdownComponent2 = ({onSelect}) => {
   const [value, setValue] = useState(null);
 
   // Custom render function for dropdown items
@@ -25,6 +26,11 @@ const DropdownComponent2 = () => {
         </Text>
       </View>
     );
+  };
+
+  const handleValueChange = (item) => {
+    setValue(item.value);
+    onSelect && onSelect(item.value); // Call the onSelect callback
   };
 
   return (
@@ -45,11 +51,14 @@ const DropdownComponent2 = () => {
       onChange={item => {
         setValue(item.value);
       }}
+      
       renderLeftIcon={() => (
         <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
       )}
       renderItem={renderItem} // Pass the custom render function
     />
+   
+   
   );
 };
 

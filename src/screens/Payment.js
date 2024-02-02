@@ -6,7 +6,8 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from 'react-native';
 import Modal from 'react-native-modal';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -32,6 +33,7 @@ const Payment = ({ navigation, isVisible, onClose }) => {
   } = styles;
 
   return (
+    
     <Modal
       isVisible={isVisible}
       animationIn="slideInUp"
@@ -93,14 +95,17 @@ const Payment = ({ navigation, isVisible, onClose }) => {
           </TouchableOpacity>
         </View>
       </SafeAreaView>
+      
     </Modal>
+  
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(31, 23, 23, 0.5)' // Adjust opacity as needed
+    backgroundColor: 'rgba(31, 23, 23, 0.5)', // Adjust opacity as needed
+    height: 'auto',
   },
   nav: {
     height: 50,
@@ -134,23 +139,24 @@ const styles = StyleSheet.create({
   },
   mid2: {
     flexDirection: 'row',
-    marginBottom: 20
+    marginBottom: 20,
+    
   },
   box: {
     backgroundColor: '#3081D0',
-    height: 120,
+    height: 110,
     width: 120,
     borderWidth: 1,
     borderColor: 'white',
-    marginLeft: 13,
+    marginLeft: 9,
     justifyContent: 'center', // Align content vertically
     alignItems: 'center', // Align content horizontally
   },
   mid2txt: {
     borderWidth: 1,
     borderColor: 'white',
-    width: 205,
-    height: 120,
+    width: 180,
+    height: 110,
     backgroundColor: '#7D7C7C',
     // marginLeft: 10,
     marginRight: 20,
@@ -165,12 +171,12 @@ const styles = StyleSheet.create({
     padding: 5
   },
   middle2: {
-    fontSize: 22,
+    fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
     alignSelf: 'center',
     textAlignVertical: 'center',
-    padding: 6
+    padding: 2
   },
   middle3: {
     color: '#FFA33C'

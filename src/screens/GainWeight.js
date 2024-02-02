@@ -97,11 +97,11 @@ const GainWeight = ({ navigation }) => {
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>2 Piece Bread with 2 eggs</Text>
+                <Text style={midtxt5}>2 Piece Bread </Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Salad</Text>
+                <Text style={midtxt5}>Salad & 2 eggs</Text>
               </View>
 
               <View style={midtxt4}>
@@ -151,7 +151,7 @@ const GainWeight = ({ navigation }) => {
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Banana with 2 dates</Text>
+                <Text style={midtxt5}>Banana &2dates</Text>
               </View>
 
               <View style={midtxt4}>
@@ -229,7 +229,7 @@ const GainWeight = ({ navigation }) => {
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>250 / 500 ML Milk</Text>
+                <Text style={midtxt5}>250/500 ml Milk</Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
@@ -288,20 +288,20 @@ const styles = StyleSheet.create({
   hdng3: {
     fontSize: 20,
     color: 'white',
-    marginLeft: 20,
+    marginLeft: 5,
     marginTop: 10
   },
   hdng6: {
-    marginLeft: 175
+    marginLeft: 155
   },
   hdng7: {
-    marginLeft: 205
+    marginLeft: 185
   },
   hdng4: {
-    marginLeft: 115
+    marginLeft: 95
   },
   hdng8: {
-    marginLeft: 205
+    marginLeft: 185
   },
   mid: {
     flexDirection: 'column'
@@ -333,15 +333,15 @@ const styles = StyleSheet.create({
   dot: {
     fontSize: 35,
     color: 'white',
-    marginLeft: 15
+    
   },
   dot1: {
     marginLeft: 20
   },
   midtxt5: {
     color: 'white',
-    fontSize: 20,
-    marginLeft: 5,
+    fontSize: 16,
+    marginLeft: 2,
     marginTop: 20
   },
   midtxt6: {

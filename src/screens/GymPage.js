@@ -13,13 +13,12 @@ import {
   ScrollView
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+// import GoogleMaps from 'react-native-maps'
 const GymPage = ({navigation, route}) => {
   const {
     container,
     mid,
     nav,
-    nav2,
     img,
     timeTxt2,
     timeTxt,
@@ -30,7 +29,8 @@ const GymPage = ({navigation, route}) => {
     btnText,
     midtxt2
   } = styles;
-  const { fee, location, name } = route.params;
+  const { fee, location, name,maletime,femaletime } = route.params;
+  
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
@@ -48,7 +48,7 @@ const GymPage = ({navigation, route}) => {
           size={25}
           color={'white'}
           marginTop={15}
-          marginLeft={190}
+          marginLeft={155}
           marginRight={'auto'}
           onPress={() => navigation.navigate('MN')}
         />
@@ -59,7 +59,7 @@ const GymPage = ({navigation, route}) => {
           <Text style={midtxt}>Gym Location</Text>
         </View>
         <View>
-          <Text>{location}</Text>
+          
           <Image source={require('../../assets/gym/loc.png')} style={img} />
         </View>
       </View>
@@ -68,10 +68,21 @@ const GymPage = ({navigation, route}) => {
         <Text style={btnText}>Navigate</Text>
       </TouchableOpacity>
 
+
+      {/* <View style={styles.container}>
+        <GoogleMaps
+          apiKey="YOUR_API_KEY"
+          initialRegion={{
+            latitude: 37.422408,
+            longitude: -122.084068,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+        />
+      </View> */}
       <View style={mid}>
         <View>
           <Text style={[midtxt,midtxt2]}>Timing</Text>
-          <Text style={[midtxt,midtxt2]}>Fees {fee}</Text>
         </View>
         <View style={time}>
             <View>
@@ -79,7 +90,7 @@ const GymPage = ({navigation, route}) => {
                     Female
                 </Text>
                 <Text  style={[timeTxt,timeTxt2]}>
-                    06:30am to 09:00am
+                    {femaletime}
                 </Text>
             </View>
 
@@ -88,7 +99,7 @@ const GymPage = ({navigation, route}) => {
                     Male
                 </Text>
                 <Text  style={[timeTxt,timeTxt2]}>
-                    10:00am to 10:00pm
+                    {maletime}
                 </Text>
             </View>
         </View>
@@ -110,10 +121,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   navTxt: {
-    fontSize: 25,
+    fontSize: 15,
     color: 'white',
-    marginTop: 10,
-    marginLeft: 5
+    marginTop: 16,
+    marginLeft: 5,
+    fontWeight: 'bold'
   },
   mid: {
     height: 250,
@@ -147,12 +159,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     alignItems: 'center',
+    alignSelf: 'center', // Center the button horizontally
     borderColor: 'black',
     borderWidth: 2,
     width: 130,
-    marginRight: 90,
-    marginLeft: 110,
-    marginTop: 30,
+    marginTop: 35,
   },
   btnText: {
     color: 'white',

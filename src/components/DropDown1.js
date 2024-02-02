@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
@@ -17,6 +18,7 @@ const DropdownComponent = () => {
     return (
       <View style={styles.dropdownItem}>
         <Text style={isSelected ? styles.selectedItemText : styles.itemText}>
+          {console.log(item.label)}
           {item.label}
         </Text>
       </View>

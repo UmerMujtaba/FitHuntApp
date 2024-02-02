@@ -65,8 +65,17 @@ function ShowGym(props) {
     axios
       .post('http://192.168.2.6:5003/gymdata', { token: token })
       .then(res => {
-        console.log("Response Gym Data:",JSON.parse(res.data.data) );
-        setGymData(JSON.parse(res.data.data));
+        
+        let originalGymData = JSON.parse(res.data.data)
+        console.log("Response Gym Data:", originalGymData.length);
+        let gymDataArray = []
+        for (let i = 0; i < 5; i++){
+          const randomIndex = Math.floor(Math.random() * originalGymData.length);
+          const randomGymObject = originalGymData[randomIndex];
+          gymDataArray.push(randomGymObject)
+        }
+        console.log("New",gymDataArray);
+        setGymData(gymDataArray);
       });
   }
 
@@ -106,10 +115,11 @@ function ShowGym(props) {
           </View>
         </View>
         <Text style={head}>Searched Results</Text>
+        {console.log("Hi",gymData)}
         {gymData.forEach((gym)=>{console.log(gym?.name)})}
         <View>
           {gymData.map((gym) => (
-            <><Text style={head} key={gym.id} onPress={() => navigation.navigate('GP', { location: gym.location, fee: gym.fee , name: gym.name})}>
+            <><Text style={head} key={gym.id} onPress={() => navigation.navigate('GP', { location: gym.location, fee: gym.fee , name: gym.name , maletime: gym.maletime,femaletime: gym.femaletime})}>
               {gym.name}
             </Text><View style={mid} key={gym.id} >
                 <Image 

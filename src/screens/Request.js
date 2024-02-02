@@ -50,7 +50,7 @@ const Request = ({navigation}) => {
           marginRight={'auto'}
           marginLeft={'auto'}
           paddingLeft={50}
-/>
+        />
       </View>
 
       <View style={opt2}>
