@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable keyword-spacing */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
@@ -24,7 +25,7 @@ import {
   TextInput,
   ScrollView
 } from 'react-native';
-import SelectGender from '../components/SelectGender';
+import Octicons from 'react-native-vector-icons/Octicons'
 import { useNavigation } from '@react-navigation/native';
 function RegisterPage({ props }) {
   const [username, setusername] = useState('');
@@ -36,6 +37,10 @@ function RegisterPage({ props }) {
   const [password, setPassword] = useState('');
   const [passwordVerify, setPasswordVerify] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [gender, setGender]= useState('');
+  const [verifyGender, setGenderVerify]= useState('');
+  const [age, setage]= useState('');
+  const [ageVerify, setAgeVerify]= useState('');
 
   const navigation = useNavigation();
   function handelSubmit() {
@@ -47,19 +52,19 @@ function RegisterPage({ props }) {
     };
     if (nameVerify && emailVerify && passwordVerify && mobileVerify) {
       axios
-        .post('http://192.168.2.6:5001/register', userData)
+        .post('http://10.8.186.255:5001/register', userData)
         .then(res => {
           console.log(res.data);
-          if (res.data.status == 'ok') {
+          if (res.data.status === 'ok') {
             Alert.alert('Registered Successfull!!');
-            navigation.navigate('Log');
+           
           } else {
             Alert.alert(JSON.stringify(res.data));
            
           }
         })
         .catch(e => console.log(e));
-        navigation.navigate('Log');
+       
     } else {
       Alert.alert('Fill mandatory details');
     }
@@ -74,7 +79,15 @@ function RegisterPage({ props }) {
       setUserNameVerify(true);
     }
   }
+  function handleGender(e) {
+    const gendVar = e.nativeEvent.text;
+    setGender(gendVar);
+    setGenderVerify(false);
 
+    if (gendVar.length > 1) {
+      setGenderVerify(true);
+    }
+  }
   function handleEmail(e) {
     const emailVar = e.nativeEvent.text;
     setemail(emailVar);
@@ -105,11 +118,12 @@ function RegisterPage({ props }) {
   }
 
   return (
+    <ScrollView>
     <SafeAreaView
       contentContainerStyle={{ flexGrow: 1 }}
       showsVerticalScrollIndicator={false}
       keyboardShouldPresistTaps={true}>
-      <ScrollView>
+      
         <ImageBackground
           source={require('../../assets/forth-screen.jpeg')}
           style={styles.imageLayout}>
@@ -192,7 +206,39 @@ function RegisterPage({ props }) {
                 Phone number with 6-9 and remaing 9 digit with 0-9
               </Text>
             )}
+            {/* <SelectGender /> */}
 
+           
+
+            <TouchableOpacity style={styles.btn1}>
+              <FontAwesome
+                name="user"
+                color="black"
+                style={styles.smallIcon}
+              />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Gender"
+                placeholderTextColor="gray"
+                value={gender}
+                onChange={e => handleGender(e)}
+              />
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.btn1}>
+              <Octicons
+                name="number"
+                color="black"
+                style={styles.smallIcon}
+              />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Age"
+                placeholderTextColor="gray"
+                value={age}
+                onChange={e => handleGender(e)}
+              />
+              </TouchableOpacity>
             <TouchableOpacity style={styles.btn1}>
               <MaterialCommunityIcons
                 name="email"
@@ -267,29 +313,30 @@ function RegisterPage({ props }) {
                 Uppercase, Lowercase, Number and 6 or more characters.
               </Text>
             )}
-            {/* <SelectGender /> */}
+            
 
-            <TouchableOpacity
+              <TouchableOpacity
               style={styles.btn4}
               onPress={() => handelSubmit()}>
               <Text style={styles.btnText}> Register </Text>
             </TouchableOpacity>
           </View>
         </ImageBackground>
-      </ScrollView>
+
     </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   imageLayout: {
-    height: 780,
+    height: 900,
     width: 450,
     backgroundColor: '#000000c0'
   },
   imageLayout1: {
     marginTop: 0,
-    height: 190,
+    height: 195,
     width: 'auto',
     alignSelf: 'center',
     marginRight: 60

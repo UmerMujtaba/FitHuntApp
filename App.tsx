@@ -105,6 +105,9 @@ import DmblHipThrstVid from './src/screens/DmblHipThrstVid';
 import RegisterPage from './src/screens/Registeration';
 import RegisterGym from './src/screens/RegisterGym';
 import UnderConstructio from './src/screens/UnderConstructio';
+import Add_Trainer from './src/screens/Add_Trainer';
+import FeedBack from './src/screens/Feedback';
+import Show_Trainer from './src/screens/Show_Trainer';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -114,7 +117,7 @@ const App = () => {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Selection">
+      <Stack.Navigator initialRouteName="MN">
         <Stack.Screen
           name="Selection"
           component={Selection}
@@ -620,6 +623,21 @@ const App = () => {
         <Stack.Screen
           name="UCC"
           component={UnderConstructio}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="Add-Trainer"
+          component={Add_Trainer}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Feed"
+          component={FeedBack}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Show-Trainer"
+          component={Show_Trainer}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

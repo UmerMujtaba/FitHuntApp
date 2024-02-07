@@ -35,15 +35,18 @@ const Login = ({ navigation }) => {
       password,
     };
 
-    axios.post('http://192.168.2.6:5001/login-user', userData).then(res => {
+    axios.post('http://10.8.186.255:5001/login-user', userData).then(res => {
       console.log(res.data);
       if (res.data.status == 'ok') {
         Alert.alert('Logged In Successfull');
         console.log("Token Data Login:", res.data.data)
         AsyncStorage.setItem('token', res.data.data);
         AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
-        navigation.navigate('RegGym');
+        navigation.navigate('FG');
         //FG for user, RegGym for Owner
+      }
+      else{
+        Alert.alert('Incorrect Credentials')
       }
     });
   }

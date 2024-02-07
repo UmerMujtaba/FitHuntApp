@@ -6,25 +6,17 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Menu_Angle_Right from '../components/Menu_Angle_Right';
 import {
   SafeAreaView,
   View,
   Text,
   StyleSheet,
-  ImageBackground,
+  ImageBackground
 } from 'react-native';
 
-
-const Menu = ({navigation}) => {
-  const {
-    container,
-    imageLayout,
-    nav,
-    overlay,
-    txt1,
-    opt1,
-    optText
-  } = styles;
+const Menu = ({ navigation }) => {
+  const { container, imageLayout, nav, overlay, txt1, opt1, optText } = styles;
   return (
     <SafeAreaView style={container}>
       <ImageBackground
@@ -32,17 +24,16 @@ const Menu = ({navigation}) => {
         style={imageLayout}>
         <View style={overlay}>
           <View style={nav}>
-          <Icon
-            name={'angle-left'}
-            size={30}
-            color={'black'}
-            marginTop={14}
-            marginLeft={15}
-            marginRight={15}
-            onPress={() => navigation.goBack()}
-          />
+            <Icon
+              name={'angle-left'}
+              size={30}
+              color={'black'}
+              marginTop={14}
+              marginLeft={15}
+              marginRight={15}
+              onPress={() => navigation.goBack()}
+            />
             <Text style={txt1}>Fit Hunt</Text>
-
             <Icon
               name={'bars'}
               size={30}
@@ -53,60 +44,41 @@ const Menu = ({navigation}) => {
               onPress={() => navigation.navigate('MN')} //for us
             />
           </View>
-
           <View style={opt1}>
-            <Icon
-              name={'angle-right'}
-              size={30}
-              color={'black'}
-              marginLeft={25}
-              marginTop={2}
-              onPress={() => navigation.navigate('plan')}
-            />
-            <Text style={optText} onPress={() => navigation.navigate('plan')}>Personalized Diet Plan</Text>
+            <Menu_Angle_Right />
+            <Text style={optText} onPress={() => navigation.navigate('plan')}>
+              Personalized Diet Plan
+            </Text>
           </View>
           <View style={opt1}>
-            <Icon
-              name={'angle-right'}
-              size={30}
-              color={'black'}
-              marginLeft={25}
-              marginTop={2}
-              
-            />
-            <Text style={optText} onPress={() => navigation.navigate('UCC')}>Workout Tracking</Text>
+            <Menu_Angle_Right />
+            <Text style={optText} onPress={() => navigation.navigate('UCC')}>
+              Workout Tracking
+            </Text>
           </View>
           <View style={opt1}>
-            <Icon
-              name={'angle-right'}
-              size={30}
-              color={'black'}
-              marginLeft={25}
-              marginTop={2}
-            />
-            <Text style={optText} onPress={() => navigation.navigate('UCC')}>Personal Interaction Tracking</Text>
+            <Menu_Angle_Right />
+            <Text style={optText} onPress={() => navigation.navigate('Show-Trainer')}>
+              Personal Interaction Tracking
+            </Text>
           </View>
           <View style={opt1}>
-            <Icon
-              name={'angle-right'}
-              size={30}
-              color={'black'}
-              marginLeft={25}
-              marginTop={2}
-              onPress={() => navigation.navigate('NUT')}
-            />
-            <Text style={optText} onPress={() => navigation.navigate('NUT')}>Nutrition</Text>
+            <Menu_Angle_Right />
+            <Text style={optText} onPress={() => navigation.navigate('NUT')}>
+              Nutrition
+            </Text>
           </View>
           <View style={opt1}>
-            <Icon
-              name={'angle-right'}
-              size={30}
-              color={'black'}
-              marginLeft={25}
-              marginTop={2}
-              onPress={() => navigation.navigate('CW')}
-            />
-            <Text style={optText} onPress={() => navigation.navigate('CW')}>Customized Workout Plan</Text>
+            <Menu_Angle_Right />
+            <Text style={optText} onPress={() => navigation.navigate('CW')}>
+              Customized Workout Plan
+            </Text>
+          </View>
+          <View style={opt1}>
+            <Menu_Angle_Right />
+            <Text style={optText} onPress={() => navigation.navigate('Feed')}>
+              Feedback
+            </Text>
           </View>
         </View>
       </ImageBackground>
@@ -144,7 +116,7 @@ const styles = StyleSheet.create({
     width: 394
   },
   optText: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
     color: 'black',
     marginLeft: 10
