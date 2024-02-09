@@ -22,7 +22,7 @@ import {
 } from 'react-native';
 
 const Add_Component = () => {
-  const {  txt2, main } = styles;
+  const {  txt2, main,container } = styles;
   const [TrainerUserName, setTrainerUserName] = useState('');
   const [nameVerify, setTrainerUserNameVerify] = useState(false);
   const [TrainerMobile, setTrainerMobile] = useState('');
@@ -83,7 +83,7 @@ const Add_Component = () => {
     }
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView style={container}>
       <View style={main}>
         <Text style={txt2}>Name:</Text>
         <TouchableOpacity style={styles.btn1}>
@@ -230,6 +230,11 @@ const Add_Component = () => {
 export default Add_Component;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    height: 25
+  }
+  ,
 main: {
     flexDirection: 'row', // Make components inline horizontally
     justifyContent: 'center', // Horizontally center the children

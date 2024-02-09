@@ -21,7 +21,7 @@ import {
   Alert,
   TextInput,
   ScrollView,
-  Image,
+  Image
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -39,8 +39,8 @@ function RegisterGym({ props }) {
   const [oiage, setImage] = useState(null);
   const [gymmaleTiming, setMaleTiming] = useState('');
   const [gymfemaleTiming, setFemaleTiming] = useState('');
-    const [gymmaleVerify, setgymmaleVerify] = useState(false);
-    const [gymfemaleVerify, setgymfemaleVerify] = useState(false);
+  const [gymmaleVerify, setgymmaleVerify] = useState(false);
+  const [gymfemaleVerify, setgymfemaleVerify] = useState(false);
   const navigation = useNavigation();
   // const uploadImage = async () => {
   //   const formData = new FormData();
@@ -49,7 +49,7 @@ function RegisterGym({ props }) {
   //     type: image.type,
   //     name: image.fileName,
   //   });
-  
+
   //   try {
   //     const response = await fetch('http://192.162.2.6:3000/upload', {
   //       method: 'POST',
@@ -58,7 +58,7 @@ function RegisterGym({ props }) {
   //         'Content-Type': 'multipart/form-data',
   //       },
   //     });
-  
+
   //     const data = await response.json();
   //     console.log('Image uploaded. File path:', data.filePath);
   //   } catch (error) {
@@ -70,11 +70,11 @@ function RegisterGym({ props }) {
   //   console.log(result);
   // };
 
-// const onInputChange = (e) ={
+  // const onInputChange = (e) ={
 
-//   console.log(e.target.files[0]);
-//   setImage(e.target.files[0]);
-// }
+  //   console.log(e.target.files[0]);
+  //   setImage(e.target.files[0]);
+  // }
 
   function handleSubmit() {
     const GymData = {
@@ -83,16 +83,21 @@ function RegisterGym({ props }) {
       mobile: gymmobile,
       location: gymlocation,
       maletime: gymmaleTiming,
-      femaletime: gymfemaleTiming,
+      femaletime: gymfemaleTiming
     };
-    if (gymnameVerify && gymmobileVerify && gymfeeVerify && gymmaleVerify && gymfemaleVerify  ) {
+    if (
+      gymnameVerify &&
+      gymmobileVerify &&
+      gymfeeVerify &&
+      gymmaleVerify &&
+      gymfemaleVerify
+    ) {
       axios
-        .post('http://192.168.2.6:5003/gymregister', GymData)
+        .post('http://192.168.2.5:5001/gymregister', GymData)
         .then(res => {
           console.log(res.data);
 
           if (res.data.status == 'ok') {
-            
             Alert.alert('Registered Successfully!!');
             AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
             navigation.navigate('FG');
@@ -101,8 +106,7 @@ function RegisterGym({ props }) {
           }
         })
         .catch(e => console.log(e));
-    } 
-    else {
+    } else {
       Alert.alert('Fill mandatory details');
     }
   }
@@ -154,7 +158,6 @@ function RegisterGym({ props }) {
       setgymfeeVerify(true);
     }
   }
-
 
   function handlemaletime(e) {
     const malVar = e.nativeEvent.text;
@@ -319,26 +322,26 @@ function RegisterGym({ props }) {
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.inputContainer}>
-  <Iconicons name="time" color="black" style={styles.smallIcon} />
-  <TextInput
-    style={styles.input}
-    placeholder="For Male 00:00 am to 00:00 pm"
-    placeholderTextColor="gray"
-    value={gymmaleTiming}
-    onChange={e => handlemaletime(e)}
-  />
-</TouchableOpacity>
+              <Iconicons name="time" color="black" style={styles.smallIcon} />
+              <TextInput
+                style={styles.input}
+                placeholder="For Male 00:00 am to 00:00 pm"
+                placeholderTextColor="gray"
+                value={gymmaleTiming}
+                onChange={e => handlemaletime(e)}
+              />
+            </TouchableOpacity>
 
-<TouchableOpacity style={styles.inputContainer}>
-  <Iconicons name="time" color="black" style={styles.smallIcon} />
-  <TextInput
-    style={styles.input}
-    placeholder=" For Female (00:00 am to 00:00 pm)"
-    placeholderTextColor="gray"
-    value={gymfemaleTiming}
-    onChange={e => handlefemaletime(e)}
-  />
-</TouchableOpacity>
+            <TouchableOpacity style={styles.inputContainer}>
+              <Iconicons name="time" color="black" style={styles.smallIcon} />
+              <TextInput
+                style={styles.input}
+                placeholder=" For Female (00:00 am to 00:00 pm)"
+                placeholderTextColor="gray"
+                value={gymfemaleTiming}
+                onChange={e => handlefemaletime(e)}
+              />
+            </TouchableOpacity>
 
             {/* <TouchableOpacity style={styles.inputContainer}>
               <FontAwesome

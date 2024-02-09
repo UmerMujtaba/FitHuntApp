@@ -46,7 +46,7 @@ const Menu = ({ navigation }) => {
           </View>
           <View style={opt1}>
             <Menu_Angle_Right />
-            <Text style={optText} onPress={() => navigation.navigate('plan')}>
+            <Text style={optText} onPress={() => navigation.navigate('NUT')}>
               Personalized Diet Plan
             </Text>
           </View>
@@ -64,7 +64,7 @@ const Menu = ({ navigation }) => {
           </View>
           <View style={opt1}>
             <Menu_Angle_Right />
-            <Text style={optText} onPress={() => navigation.navigate('NUT')}>
+            <Text style={optText} onPress={() => navigation.navigate('BMI-Cal')}>
               Nutrition
             </Text>
           </View>

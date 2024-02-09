@@ -6,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 import Icon from 'react-native-vector-icons/FontAwesome'
 import React, { useState } from 'react'
+import axios from 'axios'
 import {
   SafeAreaView,
   View,
@@ -17,6 +18,15 @@ import {
   ImageBackground,
   TextInput
 } from 'react-native';
+
+async function postImage({image,description}) {
+  const formData = new FormData();
+  formData.append("image", image)
+  formData.append("description", description)
+
+  const result = await axios.post('/images',formData, {headers: {'Content-Type': 'multipart/form-data'}})
+  return result.data
+}
 
 const AboutMe = ({navigation}) => {
   const {
@@ -40,6 +50,22 @@ const AboutMe = ({navigation}) => {
   const[useremail,setuseremail] = useState('');
   const[userage,setuserage] = useState('');
   const[usermobile,setusermobile] = useState('');
+  const [file, setFile] = useState()
+  const [description, setDescription] = useState("")
+  const [images, setImages] = useState([])
+
+  const submit = async event => {
+    event.preventDefault()
+    const result = await postImage({image: file, description})
+    setImages([result.image, ...images])
+  }
+
+  const fileSelected = event => {
+    const file = event.target.files[0]
+    setFile(file)
+  }
+
+
   return (
         <SafeAreaView style={container}>
           <View style={nav}>
@@ -59,6 +85,9 @@ const AboutMe = ({navigation}) => {
         <Icon name={'user'} size={90} color={'black'}/>
        </View>
        
+
+
+
        <Text style={maintxt}>Change Profile Picture</Text>
        <View style={choose}>
        <View style={mid}>

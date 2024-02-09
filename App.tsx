@@ -108,6 +108,9 @@ import UnderConstructio from './src/screens/UnderConstructio';
 import Add_Trainer from './src/screens/Add_Trainer';
 import FeedBack from './src/screens/Feedback';
 import Show_Trainer from './src/screens/Show_Trainer';
+import BMI_Calculator from './src/screens/BMICalculator';
+import ButtonBMI from './src/components/BMI_component';
+// import NNN from './src/screens/n';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -638,6 +641,22 @@ const App = () => {
         <Stack.Screen
           name="Show-Trainer"
           component={Show_Trainer}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="BMI-Cal"
+          component={BMI_Calculator}
+          options={{ headerShown: false }}
+        />
+         {/* <Stack.Screen
+          name="n"
+          component={NNN}
+          options={{ headerShown: false }}
+        /> */}
+
+         <Stack.Screen
+          name="BB"
+          component={ButtonBMI}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

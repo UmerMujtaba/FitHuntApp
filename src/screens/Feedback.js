@@ -4,9 +4,10 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable comma-dangle */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import { React, useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DropdownComponent3 from '../components/DropDown3';
+import CheckBox from '@react-native-community/checkbox';
 import {
   SafeAreaView,
   View,
@@ -14,11 +15,14 @@ import {
   StyleSheet,
   TextInput,
   ScrollView,
-  TouchableOpacity,
-  CheckBox
+  TouchableOpacity
 } from 'react-native';
 
 const FeedBack = ({ navigation }) => {
+  const [toggleCheckBox, setToggleCheckBox] = useState(false);
+  const [yesChecked, setYesChecked] = useState(false);
+  const [partiallyChecked, setPartiallyChecked] = useState(false);
+  const [noChecked, setNoChecked] = useState(false);
   const { container, box, nav, hdng, hdng2, btn2, btn1, icon } = styles;
   return (
     <SafeAreaView style={container}>
@@ -34,37 +38,54 @@ const FeedBack = ({ navigation }) => {
           <Text style={hdng}>Feedback</Text>
         </View>
         <Text style={hdng2}>Did you achieve your goal? *</Text>
-        <TouchableOpacity style={styles.checkboxContainer} onPress={() => handleOptionSelection('Yes')}>
-        <CheckBox value={selectedOption === 'Yes'} onValueChange={() => handleOptionSelection('Yes')} />
-        <Text style={styles.checkboxLabel}>Yes</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.checkboxContainer} onPress={() => handleOptionSelection('Partially')}>
-        <CheckBox value={selectedOption === 'Partially'} onValueChange={() => handleOptionSelection('Partially')} />
-        <Text style={styles.checkboxLabel}>Partially</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.checkboxContainer}
+          onPress={() => setYesChecked(!yesChecked)}>
+          <CheckBox
+            disabled={false}
+            value={yesChecked}
+            onValueChange={setYesChecked}
+          />
+          <Text style={styles.checkboxLabel}>Yes</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.checkboxContainer} onPress={() => handleOptionSelection('No')}>
-        <CheckBox value={selectedOption === 'No'} onValueChange={() => handleOptionSelection('No')} />
-        <Text style={styles.checkboxLabel}>No</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.checkboxContainer}
+          onPress={() => setYesChecked(!partiallyChecked)}>
+          <CheckBox
+            disabled={false}
+            value={partiallyChecked}
+            onValueChange={setPartiallyChecked}
+          />
+          <Text style={styles.checkboxLabel}>Partially</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.checkboxContainer}
+          onPress={() => setYesChecked(!noChecked)}>
+          <CheckBox
+            disabled={false}
+            value={noChecked}
+            onValueChange={setNoChecked}
+          />
+          <Text style={styles.checkboxLabel}>No</Text>
+        </TouchableOpacity>
         <Text style={hdng2}>What was the reason for your visit?</Text>
         <DropdownComponent3 />
+
         <Text style={hdng2}>
           Please describe why you couldn't achieve your goal!
         </Text>
-        <TouchableOpacity style={[btn1,btn2]}>
-          <TextInput
-            style={styles.btnText1}
-            placeholderTextColor="gray"
-          />
+
+        <TouchableOpacity style={[btn1, btn2]}>
+          <TextInput style={styles.btnText1} />
         </TouchableOpacity>
-        <TouchableOpacity
-              style={styles.btn4}
-            >
-                  {/* onPress={() => handleSubmit()} in above >*/ }
-              <Text style={styles.btnText}> Submit </Text>
-            </TouchableOpacity>
+        <TouchableOpacity style={styles.btn4}>
+          {/* onPress={() => handleSubmit()} in above >*/}
+
+          <Text style={styles.btnText}> Submit </Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );
@@ -74,7 +95,7 @@ export default FeedBack;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: '#1F1717'
   },
   nav: {
     height: 50,
@@ -95,7 +116,7 @@ const styles = StyleSheet.create({
   hdng2: {
     fontSize: 18,
     marginTop: 40,
-    color: 'black',
+    color: 'white',
     textAlign: 'left',
     marginLeft: 15
   },
@@ -107,7 +128,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 1,
     height: 55,
     flexDirection: 'row',
     marginTop: 10
@@ -134,7 +155,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'center',
     alignSelf: 'center',
-    borderColor: 'black',
+    borderColor: 'white',
     marginVertical: 10,
     width: '40%',
     marginTop: 20
@@ -148,10 +169,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
+    borderColor: 'white',
+    borderWidth: 1,
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: 45
   },
   checkboxLabel: {
     marginLeft: 8,
     fontSize: 16,
-    color: 'black',
-  },
+    color: 'white'
+  }
 });

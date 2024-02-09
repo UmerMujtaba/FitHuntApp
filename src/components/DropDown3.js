@@ -52,7 +52,7 @@ const DropdownComponent3 = ({onSelect}) => {
         setValue(item.value);
       }}
       renderLeftIcon={() => (
-        <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
+        <AntDesign style={styles.icon} color="white" name="Safety" size={20} />
       )}
       renderItem={renderItem} // Pass the custom render function
     />
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   selectedTextStyle: {
     fontSize: 16,
-    color: 'black'
+    color: 'white'
   },
   iconStyle: {
     width: 20,

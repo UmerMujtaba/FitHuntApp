@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/self-closing-comp */
+ 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -12,14 +12,12 @@ import {
   View,
   Button,
   Image,
-  ScrollView
+  ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
-;
-function ShowGym(props) {
 
- 
+function ShowGym(props) {
   const {
     container,
     mid,
@@ -32,27 +30,22 @@ function ShowGym(props) {
     head,
     txt,
     img2,
-    btnText
+    btnText,
   } = styles;
-
   const navigation = useNavigation();
-
-
-  console.log("Props", props);
+  console.log('Props', props);
   console.log(props);
   const [gymData, setGymData] = useState([]);
   const [userData, setUserData] = useState('');
 
   async function getData() {
     const token = await AsyncStorage.getItem('token');
-    console.log("User Token",token);
+    console.log('User Token',token);
     axios
-      .post('http://192.168.2.6:5001/userdata', { token: token })
+      .post('http://192.168.2.5:5001/userdata', { token: token })
       .then(res => {
         console.log(res.data);
         setUserData(res.data.data);
-
-        
       });
   }
   useEffect(() => {
@@ -61,20 +54,18 @@ function ShowGym(props) {
 
   async function getGymData() {
     const token = await AsyncStorage.getItem('token');
-    console.log("token:", token);
-    axios
-      .post('http://192.168.2.6:5003/gymdata', { token: token })
+    console.log('Gym Token:', token);
+    axios.post('http://192.168.2.5:5001/gymdata', { token: token })
       .then(res => {
-        
-        let originalGymData = JSON.parse(res.data.data)
-        console.log("Response Gym Data:", originalGymData.length);
-        let gymDataArray = []
+        let originalGymData = JSON.parse(res.data.data);
+        console.log('Response Gym Data:', originalGymData.length);
+        let gymDataArray = [];
         for (let i = 0; i < 5; i++){
           const randomIndex = Math.floor(Math.random() * originalGymData.length);
           const randomGymObject = originalGymData[randomIndex];
-          gymDataArray.push(randomGymObject)
+          gymDataArray.push(randomGymObject);
         }
-        console.log("New",gymDataArray);
+        console.log('New',gymDataArray);
         setGymData(gymDataArray);
       });
   }
@@ -115,8 +106,8 @@ function ShowGym(props) {
           </View>
         </View>
         <Text style={head}>Searched Results</Text>
-        {console.log("Hi",gymData)}
-        {gymData.forEach((gym)=>{console.log(gym?.name)})}
+        {console.log('Hi',gymData)}
+        {gymData.forEach((gym)=>{console.log(gym?.name);})}
         <View>
           {gymData.map((gym) => (
             <><Text style={head} key={gym.id} onPress={() => navigation.navigate('GP', { location: gym.location, fee: gym.fee , name: gym.name , maletime: gym.maletime,femaletime: gym.femaletime})}>
@@ -136,58 +127,58 @@ function ShowGym(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1F1717'
+    backgroundColor: '#1F1717',
   },
   nav: {
     height: 50,
     width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   nav2: {
     height: 80,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   img: {
     marginTop: 10,
     marginLeft: 10,
     height: 60,
-    width: 60
+    width: 60,
   },
   hdng1: {
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   hdng: {
     marginTop: 18,
     marginLeft: 15,
     fontSize: 18,
-    color: 'white'
+    color: 'white',
   },
   hdng3: {
-    marginTop: 0
+    marginTop: 0,
   },
   head: {
     marginTop: 18,
     marginLeft: 15,
     fontSize: 18,
-    color: 'white'
+    color: 'white',
   },
   mid: {
     flexDirection: 'column',
     backgroundColor: 'white',
     height: 200,
     margin: 15,
-    borderRadius: 15
+    borderRadius: 15,
   },
   txt: {
     marginTop: 10,
-    fontSize: 22
+    fontSize: 22,
   },
   img2: {
     height: 200,
-    width: "auto",
-    borderRadius: 15
-  }
+    width: 'auto',
+    borderRadius: 15,
+  },
 });
 export default ShowGym;

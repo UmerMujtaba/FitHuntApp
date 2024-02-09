@@ -48,11 +48,13 @@ function RegisterPage({ props }) {
       name: username,
       email: email,
       mobile: mobile,
+      gender: gender,
+      age:age,
       password: password,
     };
-    if (nameVerify && emailVerify && passwordVerify && mobileVerify) {
+    if (nameVerify && emailVerify && passwordVerify && mobileVerify && verifyGender && ageVerify) {
       axios
-        .post('http://10.8.186.255:5001/register', userData)
+        .post('http://192.168.2.5:5001/register', userData)
         .then(res => {
           console.log(res.data);
           if (res.data.status === 'ok') {
@@ -60,7 +62,7 @@ function RegisterPage({ props }) {
            
           } else {
             Alert.alert(JSON.stringify(res.data));
-           
+            navigation.navigate("Log")
           }
         })
         .catch(e => console.log(e));
@@ -105,6 +107,16 @@ function RegisterPage({ props }) {
     if (/^\d{11}$/.test(mobileVar)) {
       setmobile(mobileVar);
       setMobileVerify(true);
+    }
+  }
+
+  function handleAge(e) {
+    const ageVar = e.nativeEvent.text;
+    setage(ageVar);
+    setAgeVerify(false);
+    if (/^\d{2}$/.test(ageVar)) {
+      setage(ageVar);
+      setAgeVerify(true);
     }
   }
   function handlePassword(e) {
@@ -223,8 +235,30 @@ function RegisterPage({ props }) {
                 value={gender}
                 onChange={e => handleGender(e)}
               />
-              </TouchableOpacity>
+             {gender.length < 1 ? null : verifyGender ? (
+                <Feather
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
+                />
+              ) : (
+                <Error name="error" color="red" size={20} />
+              )}
+            </TouchableOpacity>
+            {gender.length < 1 ? null : verifyGender ? null : (
+              <Text
+                style={{
+                  marginLeft: 30,
+                  color: 'red'
+                }}>
+               Gender sholud be more then 1 characters.
+              </Text>
+            )}
 
+                
               <TouchableOpacity style={styles.btn1}>
               <Octicons
                 name="number"
@@ -236,9 +270,35 @@ function RegisterPage({ props }) {
                 placeholder=" Enter Age"
                 placeholderTextColor="gray"
                 value={age}
-                onChange={e => handleGender(e)}
+                onChange={e => handleAge(e)}
               />
-              </TouchableOpacity>
+             {age.length < 1 ? null : ageVerify ? (
+                <Feather
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
+                />
+              ) : (
+                <Error name="error" color="red" size={20} />
+              )}
+            </TouchableOpacity>
+            {age.length < 1 ? null : ageVerify ? null : (
+              <Text
+                style={{
+                  marginLeft: 30,
+                  color: 'red'
+                }}>
+                Age sholud be more then 1 characters.
+              </Text>
+            )}
+
+
+
+
+
             <TouchableOpacity style={styles.btn1}>
               <MaterialCommunityIcons
                 name="email"
