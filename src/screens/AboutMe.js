@@ -28,6 +28,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 //   return result.data
 // }
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 const AboutMe = ({ navigation }) => {
   const {
     container,
@@ -51,20 +52,46 @@ const AboutMe = ({ navigation }) => {
   const [useremail, setuseremail] = useState('');
   const [userage, setuserage] = useState('');
   const [usermobile, setusermobile] = useState('');
-  const [file, setFile] = useState();
-  const [description, setDescription] = useState('');
   const [images, setImages] = useState([]);
 
-  // const submit = async event => {
-  //   event.preventDefault();
-  //   const result = await postImage({ image: file, description });
-  //   setImages([result.image, ...images]);
-  // };
+  // Import axios in your React Native component
 
-  // const fileSelected = event => {
-  //   const file = event.target.files[0];
-  //   setFile(file);
-  // };
+
+// Define a function to update user data
+async function updateUser(id, name, email, age, mobile) {
+  try {
+    const response = await axios.post('http://192.168.2.5:5001/update-user', {
+      id: id,
+      name: name,
+      email: email,
+      age: age,
+      mobile: mobile
+    });
+
+    console.log(response.data); // Log the response
+    return response.data; // Return the response data
+  } catch (error) {
+    console.error(error.response.data); // Log any errors
+    throw error; // Throw the error for handling elsewhere
+  }
+}
+
+function handleSave() {
+  
+  updateUser('user_id_here', username, useremail, userage, usermobile)
+    .then(data => {
+      
+      console.log(data); // Log the response data if the update is successful
+   
+      Alert.alert('Profile updated successfully');
+    })
+    .catch(error => {
+      // Handle errors
+      console.error(error); // Log any errors that occur during the update process
+    
+      Alert.alert('Error updating profile. Please try again.');
+    });
+}
 
 function signOut() {
   console.log("Hi signout")
@@ -85,7 +112,7 @@ function signOut() {
           onPress={() => navigation.goBack()}
         />
         <Text style={imgtxt}>Profile</Text>
-        <Text style={[imgtxt, imgtxt2]}>Save</Text>
+        <Text style={[imgtxt, imgtxt2]} onPress={handleSave}>Save</Text>
       </View>
 
       <View style={img}>

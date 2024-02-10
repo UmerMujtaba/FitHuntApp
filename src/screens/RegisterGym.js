@@ -43,39 +43,6 @@ function RegisterGym({ props }) {
   const [gymmaleVerify, setgymmaleVerify] = useState(false);
   const [gymfemaleVerify, setgymfemaleVerify] = useState(false);
   const navigation = useNavigation();
-  // const uploadImage = async () => {
-  //   const formData = new FormData();
-  //   formData.append('image', {
-  //     uri: image.uri,
-  //     type: image.type,
-  //     name: image.fileName,
-  //   });
-
-  //   try {
-  //     const response = await fetch('http://192.162.2.6:3000/upload', {
-  //       method: 'POST',
-  //       body: formData,
-  //       headers: {
-  //         'Content-Type': 'multipart/form-data',
-  //       },
-  //     });
-
-  //     const data = await response.json();
-  //     console.log('Image uploaded. File path:', data.filePath);
-  //   } catch (error) {
-  //     console.error('Error uploading image:', error);
-  //   }
-  // };
-  // const onPickImageFromCamera = async () => {
-  //   const result = await launchCamera();
-  //   console.log(result);
-  // };
-
-  // const onInputChange = (e) ={
-
-  //   console.log(e.target.files[0]);
-  //   setImage(e.target.files[0]);
-  // }
   const createFormData = (photo, body={}) => {
     const data = new FormData();
   
@@ -348,15 +315,15 @@ function RegisterGym({ props }) {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.inputContainer}>
+            <TouchableOpacity style={styles.inputContainer2} onPress={e => handleImagePicker(e)}>
               <FontAwesome
                 name="camera"
                 size={25}
-                color="black"
-                style={styles.icon}
+                color="gray"
+                style={styles.icon2}
                 onPress={e => handleImagePicker(e)}
                 ></FontAwesome>
-
+              <Text style={styles.cntnr2txt} onPress={e => handleImagePicker(e)}>Click here</Text>
 
               {selectedImage && (
                 <Image
@@ -414,11 +381,29 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginRight: 20,
     marginLeft: 20,
-    marginBottom: 30,
+    marginBottom: 20,
     borderColor: 'black',
     borderWidth: 2,
     width: '85%',
     flexDirection: 'row'
+  },
+  inputContainer2: {
+    // backgroundColor: 'lightgray',
+    borderRadius: 5,
+    fontWeight: 'bold',
+    marginRight: 20,
+    marginLeft: 20,
+    marginBottom: 10,
+    borderColor: 'black',
+    borderWidth: 2,
+    width: '46%',
+    flexDirection: 'row',
+    height: 47
+  },
+  cntnr2txt:{
+  textAlign: 'center',
+  alignSelf:'center',
+  color: 'white'
   },
   input: {
     height: 37,
@@ -457,10 +442,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10
   },
+  icon2: {
+  padding: 5,
+  marginTop: 3,
+    marginLeft: 10
+  },
   image: {
-    width: 50,
-    height: 50,
-    borderRadius: 25
+    width: 40,
+    height: 40,
+    marginLeft: 10,
+    borderWidth: 2,
+    borderColor: 'black',
+    alignSelf: 'center'
+
   }
 });
 

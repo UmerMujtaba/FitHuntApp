@@ -133,7 +133,7 @@ useEffect(()=> {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="RegGym">
+      <Stack.Navigator initialRouteName="MN">
         <Stack.Screen
           name="Selection"
           component={Selection}

@@ -112,7 +112,8 @@ function ShowGym(props) {
           {gymData.map((gym) => (
             <><Text style={head} key={gym.id} onPress={() => navigation.navigate('GP', { location: gym.location, fee: gym.fee , name: gym.name , maletime: gym.maletime,femaletime: gym.femaletime})}>
               {gym.name}
-            </Text><View style={mid} key={gym.id} >
+            </Text>
+            <View style={mid} key={gym.id} >
                 <Image 
                   source={{ uri: gym.image_url }}
                   style={img2} />
