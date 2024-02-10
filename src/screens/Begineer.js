@@ -40,7 +40,7 @@ const Beginner = ({ navigation }) => {
           color={'white'}
           marginTop={12}
           marginLeft={15}
-          marginRight={15}
+          marginRight={'auto'}
           onPress={() => navigation.goBack()}
         />
         <Text style={txt1}>Beginner</Text>
@@ -98,7 +98,7 @@ const Beginner = ({ navigation }) => {
               />
             </View>
             <View style={mid5txt2}>
-              <Text style={mid5txt3}>Plate Loaded Incline Chest Press</Text>
+              <Text style={mid5txt3}>Plate Incline Chest Press</Text>
             </View>
           </View>
 
@@ -334,7 +334,7 @@ const Beginner = ({ navigation }) => {
             </View>
             <View style={mid5txt2}>
               <Text style={mid5txt3}>
-                Seated Dumbbell Overhead Triceps Extension
+                Seated Overhead  Extension
               </Text>
             </View>
           </View>
@@ -348,7 +348,7 @@ const Beginner = ({ navigation }) => {
             </View>
             <View style={mid5txt2}>
               <Text style={mid5txt3}>
-                Standing Cable Triceps Pushdown Straight Rope
+                Standing Cable Triceps Pushdown Straight 
               </Text>
             </View>
           </View>
@@ -393,9 +393,9 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: 'white',
     textAlign: 'center',
+    alignSelf:'center',
     fontWeight: 'bold',
-    marginTop: 12,
-    marginLeft: 110
+    marginRight: 'auto',
   },
   nav: {
     height: 50,
@@ -419,7 +419,9 @@ const styles = StyleSheet.create({
   },
   mid5: {
     flexDirection: 'row',
-    margin: 15
+    margin: 15,
+     borderWidth: 2,
+    borderColor: 'white'
   },
   mid5txt: {
     // backgroundColor: 'red',
@@ -430,13 +432,13 @@ const styles = StyleSheet.create({
   },
   mid5txt2: {
     backgroundColor: 'lightgrey',
-    width: 235,
+    width: '60.5%',
     height: 120
     // borderWidth: 2,
     // borderColor: 'white',
   },
   mid5txt3: {
-    fontSize: 20,
+    fontSize: 18,
     marginLeft: 5,
     color: 'black',
     fontWeight: 'bold'

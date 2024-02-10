@@ -17,6 +17,7 @@ const AbsScreen = ({navigation }) => {
 
   const { container, box, nav, heading, boxTxt, image, heading2,icon } = styles;
   return (
+    
     <SafeAreaView style={container}>
       <ScrollView>
         <View style={nav}>
@@ -171,7 +172,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 20,
+    marginRight: 10,
     marginTop: 28
   },
 });

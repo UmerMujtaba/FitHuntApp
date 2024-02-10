@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 20,
+    marginRight: 7,
     marginTop: 28
   },
 });

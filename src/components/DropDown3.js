@@ -1,16 +1,20 @@
-/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const data = [
-  { label: '1000 to 3000', value: '1' },
-  { label: '3000 to 6000', value: '2' },
-  { label: '6000 to 9000', value: '3' }
+  { label: 'For Finding Gym', value: '1' },
+  { label: 'For Exercise Details', value: '2' },
+  { label: 'For BMI Calculation', value: '3' },
+  { label: 'For Workout Plan', value: '4' },
+  { label: 'For Navigation', value: '5' },
+  { label: 'For Training Templates', value: '6' },
+  { label: 'For Training Interaction', value: '7' }
 ];
 
-const DropdownComponent = () => {
+const DropdownComponent3 = ({onSelect}) => {
   const [value, setValue] = useState(null);
 
   // Custom render function for dropdown items
@@ -18,11 +22,15 @@ const DropdownComponent = () => {
     return (
       <View style={styles.dropdownItem}>
         <Text style={isSelected ? styles.selectedItemText : styles.itemText}>
-          {console.log(item.label)}
           {item.label}
         </Text>
       </View>
     );
+  };
+
+  const handleValueChange = (item) => {
+    setValue(item.value);
+    onSelect && onSelect(item.value); // Call the onSelect callback
   };
 
   return (
@@ -37,17 +45,19 @@ const DropdownComponent = () => {
       maxHeight={250}
       labelField="label"
       valueField="value"
-      placeholder="Price in Rs."
+      placeholder="Please give your reason"
       searchPlaceholder="Search..."
       value={value}
       onChange={item => {
         setValue(item.value);
       }}
       renderLeftIcon={() => (
-        <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
+        <AntDesign style={styles.icon} color="white" name="Safety" size={20} />
       )}
       renderItem={renderItem} // Pass the custom render function
     />
+   
+   
   );
 };
 
@@ -56,8 +66,9 @@ const styles = StyleSheet.create({
     margin: 16,
     height: 20,
     borderBottomColor: 'gray',
-    borderBottomWidth: 0.5,
-    color: 'black'
+    borderBottomWidth: 1,
+    color: 'black',
+    
   },
   icon: {
     marginRight: 5
@@ -68,7 +79,7 @@ const styles = StyleSheet.create({
   },
   selectedTextStyle: {
     fontSize: 16,
-    color: 'black'
+    color: 'white'
   },
   iconStyle: {
     width: 20,
@@ -95,4 +106,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default DropdownComponent;
+export default DropdownComponent3;

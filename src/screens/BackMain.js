@@ -42,7 +42,8 @@ const BackMain = ({navigation}) => {
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={150}
+            marginLeft={'auto'}
+            marginRight={50}
             marginTop={30}
             onPress={() => navigation.navigate('Lts')}
           />
@@ -56,7 +57,8 @@ const BackMain = ({navigation}) => {
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={140}
+            marginLeft={'auto'}
+            marginRight={50}  
             marginTop={30}
             onPress={() => navigation.navigate('Trps')}
           />
@@ -70,7 +72,8 @@ const BackMain = ({navigation}) => {
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={80}
+            marginLeft={'auto'}
+            marginRight={50}
             marginTop={30}
             onPress={() => navigation.navigate('LB')}
           />
@@ -84,7 +87,8 @@ const BackMain = ({navigation}) => {
             name={'angle-right'}
             size={50}
             color={'black'}
-            marginLeft={130}
+            marginLeft={'auto'}
+            marginRight={50}
             marginTop={30}
             onPress={() => navigation.navigate('Glts')}
           />

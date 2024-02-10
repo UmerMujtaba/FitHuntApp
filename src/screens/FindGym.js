@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import DropdownComponent from '../components/DropDown1';
 import DropdownComponent2 from '../components/DropDown2';
+import TabCmpnont from '../components/TabComponet';
 const FindGym = ({navigation}) => {
   const {
     backgrndImg,
@@ -51,11 +52,14 @@ const FindGym = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('SP')}>
+          <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('SP',{ location: 'value1', priceRange: 'value2' })}>
                 <Text style={styles.btnText}> Find </Text>
             </TouchableOpacity>
         </View>
+       
+        
       </ImageBackground>
+      
     </SafeAreaView>
   );
 };
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   backgrndImg: {
-    height: 795,
+    height: '100%',
     width: 400
   },
   overlay: {
@@ -105,13 +109,14 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     borderColor: 'black',
     borderWidth: 2,
-    width: 320
+    width: 320,
   },
   btnText1: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
-    paddingLeft: 10
+    paddingLeft: 10,
+  
   },
   btn4: {
     backgroundColor: '#176B87',

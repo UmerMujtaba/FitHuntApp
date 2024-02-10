@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable keyword-spacing */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-trailing-spaces */
@@ -24,9 +25,9 @@ import {
   TextInput,
   ScrollView
 } from 'react-native';
-import SelectGender from '../components/SelectGender';
-import {useNavigation} from '@react-navigation/native';
-function RegisterPage ({props}) {
+import Octicons from 'react-native-vector-icons/Octicons'
+import { useNavigation } from '@react-navigation/native';
+function RegisterPage({ props }) {
   const [username, setusername] = useState('');
   const [nameVerify, setUserNameVerify] = useState(false);
   const [mobile, setmobile] = useState('');
@@ -36,29 +37,37 @@ function RegisterPage ({props}) {
   const [password, setPassword] = useState('');
   const [passwordVerify, setPasswordVerify] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [gender, setGender]= useState('');
+  const [verifyGender, setGenderVerify]= useState('');
+  const [age, setage]= useState('');
+  const [ageVerify, setAgeVerify]= useState('');
 
-
-  const navigation = useNavigation()
-  function handleSubmit() {
+  const navigation = useNavigation();
+  function handelSubmit() {
     const userData = {
       name: username,
       email: email,
-      password: password
+      mobile: mobile,
+      gender: gender,
+      age:age,
+      password: password,
     };
-    if (nameVerify && emailVerify && passwordVerify && mobileVerify) {
+    if (nameVerify && emailVerify && passwordVerify && mobileVerify && verifyGender && ageVerify) {
       axios
-        .post('http://192.168.2.4:5001/register', userData)
+        .post('http://192.168.2.5:5001/register', userData)
         .then(res => {
           console.log(res.data);
-
-          if (res.data.status == 'ok') {
+          if (res.data.status === 'ok') {
             Alert.alert('Registered Successfull!!');
-            navigation.navigate('Log')
+            navigation.navigate("Log")
+           
           } else {
             Alert.alert(JSON.stringify(res.data));
+            navigation.navigate("Log")
           }
         })
         .catch(e => console.log(e));
+       
     } else {
       Alert.alert('Fill mandatory details');
     }
@@ -73,7 +82,15 @@ function RegisterPage ({props}) {
       setUserNameVerify(true);
     }
   }
+  function handleGender(e) {
+    const gendVar = e.nativeEvent.text;
+    setGender(gendVar);
+    setGenderVerify(false);
 
+    if (gendVar.length > 1) {
+      setGenderVerify(true);
+    }
+  }
   function handleEmail(e) {
     const emailVar = e.nativeEvent.text;
     setemail(emailVar);
@@ -93,6 +110,16 @@ function RegisterPage ({props}) {
       setMobileVerify(true);
     }
   }
+
+  function handleAge(e) {
+    const ageVar = e.nativeEvent.text;
+    setage(ageVar);
+    setAgeVerify(false);
+    if (/^\d{2}$/.test(ageVar)) {
+      setage(ageVar);
+      setAgeVerify(true);
+    }
+  }
   function handlePassword(e) {
     const passwordVar = e.nativeEvent.text;
     setPassword(passwordVar);
@@ -104,181 +131,273 @@ function RegisterPage ({props}) {
   }
 
   return (
+    <ScrollView>
+    <SafeAreaView
+      contentContainerStyle={{ flexGrow: 1 }}
+      showsVerticalScrollIndicator={false}
+      keyboardShouldPresistTaps={true}>
+      
+        <ImageBackground
+          source={require('../../assets/forth-screen.jpeg')}
+          style={styles.imageLayout}>
+          <View style={styles.overlay}>
+            <Image
+              source={require('../../assets/new-logo.jpg')}
+              style={styles.logo}></Image>
 
-    <SafeAreaView>
-      <ScrollView>
-      <ImageBackground
-        source={require('../../assets/forth-screen.jpeg')}
-        style={styles.imageLayout}>
-        <View style={styles.overlay}>
-        <Image
-            source={require('../../assets/new-logo.jpg')}
-            style={styles.logo}></Image>
+            <Text style={styles.txt1}>Create an account</Text>
 
-          <Text style={styles.txt1}>Create an account</Text>
-
-          <TouchableOpacity style={styles.btn1}>
-            <FontAwesome name="user-o" color="black" style={styles.smallIcon} />
-            <TextInput
-              style={styles.btnText1}
-              placeholder=" Enter Username"
-              placeholderTextColor="gray"
-              value={username}
-              onChange={e => handleName(e)}
-            />
-            {username.length < 1 ? null : nameVerify ? (
-              <Feather
-                name="check-circle"
-                color="green"
-                size={20}
-                marginLeft={110}
-                marginTop={15}
+            <TouchableOpacity style={styles.btn1}>
+              <FontAwesome
+                name="user-o"
+                color="black"
+                style={styles.smallIcon}
               />
-            ) : (
-              <Error name="error" color="red" size={20} />
-            )}
-          </TouchableOpacity>
-          {username.length < 1 ? null : nameVerify ? null : (
-            <Text
-              style={{
-                marginLeft: 30,
-                color: 'red'
-              }}>
-              Name sholud be more then 1 characters.
-            </Text>
-          )}
-
-          <TouchableOpacity style={styles.btn1}>
-            <FontAwesome name="mobile" color="black" style={styles.smallIcon} />
-            <TextInput
-              style={styles.btnText1}
-              placeholder=" Enter Mobile"
-              placeholderTextColor="gray"
-              value={mobile}
-              onChange={e => handleMobile(e)}
-              maxLength={13}
-            />
-            {mobile.length < 1 ? null : mobileVerify ? (
-              <Feather
-                name="check-circle"
-                color="green"
-                size={20}
-                marginLeft={140}
-                marginTop={15}
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Username"
+                placeholderTextColor="gray"
+                value={username}
+                onChange={e => handleName(e)}
               />
-            ) : (
-              <Error name="error" color="red" size={20} />
-            )}
-          </TouchableOpacity>
-          {mobile.length < 1 ? null : mobileVerify ? null : (
-            <Text
-              style={{
-                marginLeft: 30,
-                color: 'red'
-              }}>
-              Phone number with 6-9 and remaing 9 digit with 0-9
-            </Text>
-          )}
-
-          <TouchableOpacity style={styles.btn1}>
-            <MaterialCommunityIcons
-              name="email"
-              color="black"
-              style={styles.smallIcon}
-            />
-            <TextInput
-              style={styles.btnText1}
-              placeholder=" Enter Email"
-              placeholderTextColor="gray"
-              value={email}
-              onChange={e => handleEmail(e)}
-            />
-            {email.length < 1 ? null : emailVerify ? (
-              <Feather
-                name="check-circle"
-                color="green"
-                size={20}
-                marginLeft={'auto'}
-                marginRight={10}
-                marginTop={15}
-              />
-            ) : (
-              <Error name="error" color="red" size={20} />
-            )}
-          </TouchableOpacity>
-          {email.length < 1 ? null : emailVerify ? null : (
-            <Text
-              style={{
-                marginLeft: 35,
-                color: 'red'
-              }}>
-              Enter Proper Email Address
-            </Text>
-          )}
-          <TouchableOpacity style={styles.btn3}>
-            <FontAwesome name="lock" color="black" style={styles.smallIcon} />
-            <TextInput
-              style={styles.btnText1}
-              placeholder=" Enter Password"
-              placeholderTextColor="gray"
-              secureTextEntry={showPassword}
-              value={password}
-              onChange={e => handlePassword(e)}
-            />
-         
-
-          <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-              {password.length < 1 ? null : !showPassword ? (
+              {username.length < 1 ? null : nameVerify ? (
                 <Feather
-                  name="eye-off"
-                  style={{ marginLeft: 115, marginTop: 15}}
-                  color={passwordVerify ? 'green' : 'red'}
-                  size={23}
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
                 />
               ) : (
-                <Feather
-                  name="eye"
-                  style={{marginLeft:90, marginTop: 15}}
-                  color={passwordVerify ? 'green' : 'red'}
-                  size={23}
-                />
+                <Error name="error" color="red" size={20} />
               )}
             </TouchableOpacity>
-         
-          
-           </TouchableOpacity>
-           {password.length < 1 ? null : passwordVerify ? null : (
-            <Text
-            style={{
-              marginLeft: 25,
-              color: 'red',
-              fontSize: 14
-             
-              }}>
-              Uppercase, Lowercase, Number and 6 or more characters.
-            </Text>
-          )}
-          {/* <SelectGender /> */}
+            {username.length < 1 ? null : nameVerify ? null : (
+              <Text
+                style={{
+                  marginLeft: 30,
+                  color: 'red'
+                }}>
+                Name sholud be more then 1 characters.
+              </Text>
+            )}
 
-          <TouchableOpacity style={styles.btn4} onPress={() => handleSubmit()}>
-            <Text style={styles.btnText}> Register </Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-      </ScrollView>
+            <TouchableOpacity style={styles.btn1}>
+              <FontAwesome
+                name="mobile"
+                color="black"
+                style={styles.smallIcon}
+              />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Mobile"
+                placeholderTextColor="gray"
+                value={mobile}
+                onChange={e => handleMobile(e)}
+                maxLength={13}
+              />
+              {mobile.length < 1 ? null : mobileVerify ? (
+                <Feather
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
+                />
+              ) : (
+                <Error name="error" color="red" size={20} />
+              )}
+            </TouchableOpacity>
+            {mobile.length < 1 ? null : mobileVerify ? null : (
+              <Text
+                style={{
+                  marginLeft: 30,
+                  color: 'red'
+                }}>
+                Phone number with 6-9 and remaing 9 digit with 0-9
+              </Text>
+            )}
+            {/* <SelectGender /> */}
+
+           
+
+            <TouchableOpacity style={styles.btn1}>
+              <FontAwesome
+                name="user"
+                color="black"
+                style={styles.smallIcon}
+              />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Gender"
+                placeholderTextColor="gray"
+                value={gender}
+                onChange={e => handleGender(e)}
+              />
+             {gender.length < 1 ? null : verifyGender ? (
+                <Feather
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
+                />
+              ) : (
+                <Error name="error" color="red" size={20} />
+              )}
+            </TouchableOpacity>
+            {gender.length < 1 ? null : verifyGender ? null : (
+              <Text
+                style={{
+                  marginLeft: 30,
+                  color: 'red'
+                }}>
+               Gender sholud be more then 1 characters.
+              </Text>
+            )}
+
+                
+              <TouchableOpacity style={styles.btn1}>
+              <Octicons
+                name="number"
+                color="black"
+                style={styles.smallIcon}
+              />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Age"
+                placeholderTextColor="gray"
+                value={age}
+                onChange={e => handleAge(e)}
+              />
+             {age.length < 1 ? null : ageVerify ? (
+                <Feather
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
+                />
+              ) : (
+                <Error name="error" color="red" size={20} />
+              )}
+            </TouchableOpacity>
+            {age.length < 1 ? null : ageVerify ? null : (
+              <Text
+                style={{
+                  marginLeft: 30,
+                  color: 'red'
+                }}>
+                Age sholud be more then 1 characters.
+              </Text>
+            )}
+
+
+
+
+
+            <TouchableOpacity style={styles.btn1}>
+              <MaterialCommunityIcons
+                name="email"
+                color="black"
+                style={styles.smallIcon}
+              />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Email"
+                placeholderTextColor="gray"
+                value={email}
+                onChange={e => handleEmail(e)}
+              />
+              {email.length < 1 ? null : emailVerify ? (
+                <Feather
+                  name="check-circle"
+                  color="green"
+                  size={20}
+                  marginLeft={'auto'}
+                  marginRight={10}
+                  marginTop={15}
+                />
+              ) : (
+                <Error name="error" color="red" size={20} />
+              )}
+            </TouchableOpacity>
+            {email.length < 1 ? null : emailVerify ? null : (
+              <Text
+                style={{
+                  marginLeft: 35,
+                  color: 'red'
+                }}>
+                Enter Proper Email Address
+              </Text>
+            )}
+            <TouchableOpacity style={styles.btn3}>
+              <FontAwesome name="lock" color="black" style={styles.smallIcon} />
+              <TextInput
+                style={styles.btnText1}
+                placeholder=" Enter Password"
+                placeholderTextColor="gray"
+                secureTextEntry={showPassword}
+                value={password}
+                onChange={e => handlePassword(e)}
+              />
+
+              <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                {password.length < 1 ? null : !showPassword ? (
+                  <Feather
+                    name="eye-off"
+                    style={{ marginLeft: 95, marginTop: 15 }}
+                    color={passwordVerify ? 'green' : 'red'}
+                    size={23}
+                  />
+                ) : (
+                  <Feather
+                    name="eye"
+                    style={{ marginLeft: 70, marginTop: 15 }}
+                    color={passwordVerify ? 'green' : 'red'}
+                    size={23}
+                  />
+                )}
+              </TouchableOpacity>
+            </TouchableOpacity>
+            {password.length < 1 ? null : passwordVerify ? null : (
+              <Text
+                style={{
+                  marginLeft: 25,
+                  color: 'red',
+                  fontSize: 14
+                }}>
+                Uppercase, Lowercase, Number and 6 or more characters.
+              </Text>
+            )}
+            
+
+              <TouchableOpacity
+              style={styles.btn4}
+              onPress={() => handelSubmit()}>
+              <Text style={styles.btnText}> Register </Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
+
     </SafeAreaView>
+    </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   imageLayout: {
-    height: 780,
+    height: 900,
     width: 450,
     backgroundColor: '#000000c0'
   },
   imageLayout1: {
     marginTop: 0,
-    height: 190,
+    height: 195,
     width: 'auto',
     alignSelf: 'center',
     marginRight: 60
@@ -304,12 +423,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 15,
     fontWeight: 'bold',
-    marginRight: 90,
+    marginRight: 70,
     marginLeft: 30,
     marginBottom: 30,
     borderColor: 'black',
     borderWidth: 2,
-    width: 320,
+    width: 300,
     height: 55,
     flexDirection: 'row'
   },
@@ -322,7 +441,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     borderColor: 'black',
     borderWidth: 2,
-    width: 320,
+    width: 300,
     height: 55,
     flexDirection: 'row'
   },
@@ -335,18 +454,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: 'black',
     borderWidth: 2,
-    marginRight: 90,
-    marginLeft: 40,
+    width: 160,
     marginBottom: 55,
-    marginTop:10
+    marginTop: 10,
+    marginRight: 'auto',
+    marginLeft: 105
   },
   btnText1: {
     height: 37,
     paddingLeft: 10,
     marginTop: 10,
     fontSize: 16,
-   
-    color: 'black',
+
+    color: 'black'
   },
   btnText: {
     color: 'white',

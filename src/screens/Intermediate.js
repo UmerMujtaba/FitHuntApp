@@ -433,21 +433,21 @@ const styles = StyleSheet.create({
   },
   mid5: {
     flexDirection: 'row',
-    margin: 15
+    margin: 15,
+    borderWidth: 1,
+    borderColor: 'white',
   },
   mid5txt: {
     // backgroundColor: 'red',
     width: 130,
-    height: 120
-    // borderWidth: 2,
-    // borderColor: 'white'
+    height: 120,
+  
   },
   mid5txt2: {
     backgroundColor: 'lightgrey',
-    width: 235,
-    height: 120
-    // borderWidth: 2,
-    // borderColor: 'white',
+    width: '60.5%',
+    height: 120,
+    
   },
   mid5txt3: {
     fontSize: 20,

@@ -42,7 +42,9 @@ const Exercise = ({navigation}) => {
           size={25}
           color={'white'}
           marginTop={30}
-          marginLeft={185}
+          marginRight={'auto'}
+          marginLeft={'auto'}
+          paddingLeft={150}
           onPress={() => navigation.navigate('MN')}
         />
       </View>
@@ -202,7 +204,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 40
+    marginRight: 50
   },
  
 });

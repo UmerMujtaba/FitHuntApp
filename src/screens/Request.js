@@ -47,7 +47,9 @@ const Request = ({navigation}) => {
           size={20}
           color={'white'}
           marginTop={18}
-          marginLeft={125}
+          marginRight={'auto'}
+          marginLeft={'auto'}
+          paddingLeft={50}
         />
       </View>
 
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
     marginTop: 5,
-    marginLeft: 140
+    marginLeft: 130
   },
   img: {
     marginTop: 15,

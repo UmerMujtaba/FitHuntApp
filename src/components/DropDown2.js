@@ -1,7 +1,9 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+
 const data = [
   { label: 'Allama Iqbal Town', value: '1' },
   { label: 'Johar Town', value: '2' },
@@ -12,8 +14,24 @@ const data = [
   { label: 'Gulberg', value: '7' }
 ];
 
-const DropdownComponent2 = () => {
+const DropdownComponent2 = ({onSelect}) => {
   const [value, setValue] = useState(null);
+
+  // Custom render function for dropdown items
+  const renderItem = (item, index, isSelected) => {
+    return (
+      <View style={styles.dropdownItem}>
+        <Text style={isSelected ? styles.selectedItemText : styles.itemText}>
+          {item.label}
+        </Text>
+      </View>
+    );
+  };
+
+  const handleValueChange = (item) => {
+    setValue(item.value);
+    onSelect && onSelect(item.value); // Call the onSelect callback
+  };
 
   return (
     <Dropdown
@@ -33,14 +51,16 @@ const DropdownComponent2 = () => {
       onChange={item => {
         setValue(item.value);
       }}
+      
       renderLeftIcon={() => (
         <AntDesign style={styles.icon} color="black" name="Safety" size={20} />
       )}
+      renderItem={renderItem} // Pass the custom render function
     />
+   
+   
   );
 };
-
-export default DropdownComponent2;
 
 const styles = StyleSheet.create({
   dropdown: {
@@ -67,6 +87,23 @@ const styles = StyleSheet.create({
   },
   inputSearchStyle: {
     height: 40,
-    fontSize: 16
+    fontSize: 16,
+    color: 'black'
+  },
+  dropdownItem: {
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgray'
+  },
+  itemText: {
+    fontSize: 16,
+    color: 'black'
+  },
+  selectedItemText: {
+    fontSize: 16,
+    color: 'blue', // Customize the color for selected item
+    fontWeight: 'bold' // Add any other styles for selected item
   }
 });
+
+export default DropdownComponent2;

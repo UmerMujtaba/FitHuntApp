@@ -47,16 +47,20 @@ const Social = ({navigation}) => {
           size={20}
           color={'white'}
           marginTop={18}
-          marginLeft={125}
+          marginRight={'auto'}
+          marginLeft={'auto'}
+          paddingLeft={50}
         />
       </View>
 
       <View style={opt2}>
         <View >
-          <Text style={hdng1} onPress={() => navigation.navigate('RE')}> All</Text>
+          <Text style={hdng1} onPress={() => navigation.navigate('UCC')}> All</Text>
+          {/* onPress={() => navigation.navigate('NUT')} */}
         </View>
         <View >
-          <Text style={hdng3} onPress={() => navigation.navigate('RE')}>Requests</Text>
+          <Text style={hdng3} onPress={() => navigation.navigate('UCC')}>Requests</Text>
+          {/* onPress={() => navigation.navigate('NUT')} */}
         </View>
       </View>
 
@@ -68,7 +72,8 @@ const Social = ({navigation}) => {
 
       <View style={mid}>
       <TouchableOpacity style={btn2} > 
-        <Text style={btnText} onPress={() => navigation.navigate('AF')}>Add Friends</Text>
+        <Text style={btnText}onPress={() => navigation.navigate('UCC')}>Add Friends</Text>
+        {/* onPress={() => navigation.navigate('AF')} */}
       </TouchableOpacity>
       </View>
     </SafeAreaView>

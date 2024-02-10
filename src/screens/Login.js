@@ -5,7 +5,8 @@
 import axios from 'axios';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   SafeAreaView,
   Text,
@@ -25,25 +26,46 @@ const Login = ({ navigation }) => {
   const [passwordVerify, setPasswordVerify] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+
+  //fun() for getting email,password from userdata to login
   function handleSubmit() {
     console.log(email, password);
     const userData = {
       email: email,
       password,
     };
-    axios
-      .post('http://192.168.2.4:5001/login-user', userData)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.status === 'ok') {
-          Alert.alert('Login Successfull!!');
-          navigation.navigate('FG'); // RegGym (gym registration should be added to gym owner via authorization and authentication)
-        } else {
-          Alert.alert('Incorrect data!!');
-        }
-      });
-  }
 
+    axios.post('http://192.168.2.5:5001/login-user', userData).then(res => {
+      console.log(res.data);
+      if (res.data.status == 'ok') {
+        Alert.alert('Logged In Successfull');
+        console.log("Token Data Login:", res.data.data)
+        AsyncStorage.setItem('token', res.data.data);
+        AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
+        navigation.navigate('FG');
+        //FG for user, RegGym for Owner
+      }
+      else if(res.data.status != 'ok'){
+        Alert.alert('Incorrect Credentials')
+      }
+      else{
+        Alert.alert('Enter Credentials')
+      }
+    });
+  }
+  async function getData() {
+    const data = await AsyncStorage.getItem('isLoggedIn');
+    
+    console.log(data, 'at app.jsx');
+  
+  }
+  useEffect(()=>{
+    getData();
+    console.log("Hii");
+  },[])
+
+
+   
   return (
     <ScrollView>
       <SafeAreaView keyboardShouldPresistTaps={'always'}>
@@ -94,11 +116,11 @@ const Login = ({ navigation }) => {
                   <Feather
                     name="eye"
                     style={{
-                      marginLeft: 39,
-                      marginTop: 15,
-                    }}
-                    color={passwordVerify ? 'green' : 'red'}
-                    size={18}
+                      marginLeft: 39, marginTop: 15, }}
+                      color={passwordVerify ? 'green' : 'red'}
+                      size={18}
+                   
+                   
                   />
                 )}
               </TouchableOpacity>

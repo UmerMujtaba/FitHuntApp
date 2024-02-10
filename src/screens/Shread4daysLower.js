@@ -17,7 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const Shread4daysLower = ({navigation}) => {
+const Shread4daysLower = ({ navigation }) => {
   const {
     container,
     mid,
@@ -47,15 +47,15 @@ const Shread4daysLower = ({navigation}) => {
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
-      <Icon
-            name={'angle-left'}
-            size={30}
-            color={'black'}
-            marginTop={10}
-            marginLeft={15}
-            marginRight={15}
-            onPress={() => navigation.goBack()}
-          />
+        <Icon
+          name={'angle-left'}
+          size={30}
+          color={'black'}
+          marginTop={10}
+          marginLeft={15}
+          marginRight={15}
+          onPress={() => navigation.goBack()}
+        />
       </View>
 
       <Text style={heading}>Upper, Lower Body, Pull, Bro Split</Text>
@@ -90,7 +90,9 @@ const Shread4daysLower = ({navigation}) => {
           <View style={info2}>
             <View style={info}>
               <View style={imgg}>
-                <Image source={require('../../assets/block/4days/shrdlwr/barbellglutebridge.png')}/>
+                <Image
+                  source={require('../../assets/block/4days/shrdlwr/barbellglutebridge.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Barbell Glute Bridge</Text>
@@ -105,7 +107,9 @@ const Shread4daysLower = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/4days/shrdlwr/declinebarbellbenchpress.png')}/>
+                <Image
+                  source={require('../../assets/block/4days/shrdlwr/declinebarbellbenchpress.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Decline Barbell Bench</Text>
@@ -120,7 +124,9 @@ const Shread4daysLower = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/4days/shrdlwr/EZbarpreachercurl.png')}/>
+                <Image
+                  source={require('../../assets/block/4days/shrdlwr/EZbarpreachercurl.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>EZ Bar Preacher Curl</Text>
@@ -135,7 +141,9 @@ const Shread4daysLower = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/4days/shrdlwr/situps,weighted.png')}/>
+                <Image
+                  source={require('../../assets/block/4days/shrdlwr/situps,weighted.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Situps, Weighted</Text>
@@ -150,7 +158,9 @@ const Shread4daysLower = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/4days/shrdlwr/standingdumbellshrugs.png')}/>
+                <Image
+                  source={require('../../assets/block/4days/shrdlwr/standingdumbellshrugs.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Standing Dumbbell Shrugs</Text>
@@ -162,8 +172,6 @@ const Shread4daysLower = ({navigation}) => {
                 </TouchableOpacity>
               </View>
             </View>
-
-
           </View>
         </View>
       </ScrollView>
@@ -191,21 +199,21 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     marginTop: 20,
-    marginLeft: 5
+    marginLeft: 10
   },
   heading2: {
     fontSize: 18,
     color: 'white',
     fontWeight: 'bold',
     marginTop: 15,
-    marginLeft: 5
+    marginLeft: 10
   },
   heading3: {
     fontSize: 14,
     color: 'white',
     fontWeight: 'normal',
     marginTop: 10,
-    marginLeft: 5
+    marginLeft: 10
   },
   btn: {
     flexDirection: 'row'
@@ -221,7 +229,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     marginRight: 10,
     marginTop: 10,
-    marginLeft: 5
+    marginLeft: 10
   },
   btnText: {
     color: 'white',
@@ -229,9 +237,9 @@ const styles = StyleSheet.create({
     fontWeight: 'normal'
   },
   mid: {
-    margin: 10,
     backgroundColor: '#1F1717',
-    height: 515
+    height: 515,
+    width: '100%'
   },
   hdng2: {
     color: 'white',
@@ -242,17 +250,18 @@ const styles = StyleSheet.create({
   },
   info: {
     flexDirection: 'row',
-    marginTop: 5
+    marginTop: 5,
+    width: '100%'
   },
   info2: {
     flexDirection: 'column',
-    
+    width: '100%'
   },
   insideInfo: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginRight: 55,
-    marginLeft: 20
+    marginRight: 35,
+    marginLeft: 25
   },
   txt3: {
     fontSize: 20,
@@ -276,35 +285,44 @@ const styles = StyleSheet.create({
   muscle: {
     backgroundColor: 'orange',
     height: 80,
-    width: 82
+    width: '20%',
+    marginRight: 85
   },
   txt6: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 5,
-    
+    marginLeft: 5
   },
   txt7: {
     marginLeft: 5,
     fontSize: 14,
     marginTop: 5,
-    color: 'orange',
-    
+    color: 'orange'
   },
   btn4: {
     backgroundColor: 'skyblue',
     borderRadius: 90,
     padding: 4,
     alignItems: 'center',
-    marginRight: 15,
-    marginLeft: 20,
-    marginTop: 25
+    width: '80%',
+    marginTop: 25,
+    alignContent: 'center',
+    alignSelf: 'center'
   },
 
   btnTxt2: {
-    fontSize: 12,
+    fontSize: 10,
     color: 'black',
     fontWeight: 'bold'
+  },
+  btn5: {
+    backgroundColor: 'skyblue',
+    borderRadius: 90,
+    padding: 4,
+    alignItems: 'center',
+    width: '85%',
+    marginTop: 25,
+    alignSelf: 'center'
   }
 });
 export default Shread4daysLower;

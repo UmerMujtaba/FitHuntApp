@@ -17,7 +17,7 @@ import {
   ScrollView
 } from 'react-native';
 
-const GetInShape2days = ({navigation}) => {
+const GetInShape2days = ({ navigation }) => {
   const {
     container,
     mid,
@@ -45,15 +45,15 @@ const GetInShape2days = ({navigation}) => {
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
-      <Icon
-            name={'angle-left'}
-            size={30}
-            color={'black'}
-            marginTop={10}
-            marginLeft={15}
-            marginRight={15}
-            onPress={() => navigation.goBack()}
-          />
+        <Icon
+          name={'angle-left'}
+          size={30}
+          color={'black'}
+          marginTop={10}
+          marginLeft={15}
+          marginRight={15}
+          onPress={() => navigation.goBack()}
+        />
       </View>
 
       <Text style={heading}>Full Body Split</Text>
@@ -85,10 +85,13 @@ const GetInShape2days = ({navigation}) => {
               <Text style={txt4}>65-75 min</Text>
             </View>
           </View>
+
           <View style={info2}>
             <View style={info}>
               <View style={imgg}>
-                <Image source={require('../../assets/block/2days/gis/crunhes1.png')}/>
+                <Image
+                  source={require('../../assets/block/2days/gis/crunhes1.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Crunches</Text>
@@ -103,7 +106,9 @@ const GetInShape2days = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/2days/gis/brblbnchprs.png')}/>
+                <Image
+                  source={require('../../assets/block/2days/gis/brblbnchprs.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Inlcine Barbell Bench Press</Text>
@@ -118,7 +123,9 @@ const GetInShape2days = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/2days/gis/dmbloverheadprs.png')}/>
+                <Image
+                  source={require('../../assets/block/2days/gis/dmbloverheadprs.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Dumbbell Overhead Press</Text>
@@ -133,7 +140,9 @@ const GetInShape2days = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/2days/gis/dmblsklcrshrs.png')}/>
+                <Image
+                  source={require('../../assets/block/2days/gis/dmblsklcrshrs.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Dumbbell Skull Crushers</Text>
@@ -148,7 +157,9 @@ const GetInShape2days = ({navigation}) => {
 
             <View style={info}>
               <View style={imgg}>
-              <Image source={require('../../assets/block/2days/gis/latpuldwn.png')}/>
+                <Image
+                  source={require('../../assets/block/2days/gis/latpuldwn.png')}
+                />
               </View>
               <View style={txt5}>
                 <Text style={txt6}>Lat Pull Down</Text>
@@ -160,8 +171,6 @@ const GetInShape2days = ({navigation}) => {
                 </TouchableOpacity>
               </View>
             </View>
-
-
           </View>
         </View>
       </ScrollView>
@@ -189,21 +198,21 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     marginTop: 20,
-    marginLeft: 5
+    marginLeft: 10
   },
   heading2: {
     fontSize: 18,
     color: 'white',
     fontWeight: 'bold',
     marginTop: 15,
-    marginLeft: 5
+    marginLeft: 10
   },
   heading3: {
     fontSize: 14,
     color: 'white',
     fontWeight: 'normal',
     marginTop: 10,
-    marginLeft: 5
+    marginLeft: 10
   },
   btn: {
     flexDirection: 'row'
@@ -219,7 +228,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     marginRight: 10,
     marginTop: 10,
-    marginLeft: 5
+    marginLeft: 10
   },
   btnText: {
     color: 'white',
@@ -227,9 +236,10 @@ const styles = StyleSheet.create({
     fontWeight: 'normal'
   },
   mid: {
-    margin: 10,
+    
     backgroundColor: '#1F1717',
-    height: 515
+    height: 515,
+    width: '100%'
   },
   hdng2: {
     color: 'white',
@@ -240,17 +250,18 @@ const styles = StyleSheet.create({
   },
   info: {
     flexDirection: 'row',
-    marginTop: 5
+    marginTop: 5,
+    width: '100%'
   },
   info2: {
     flexDirection: 'column',
-    
+    width:'100%'
   },
   insideInfo: {
     flexDirection: 'column',
     alignItems: 'center',
-    marginRight: 55,
-    marginLeft: 20
+    marginRight: 35,
+    marginLeft: 25
   },
   txt3: {
     fontSize: 20,
@@ -274,33 +285,33 @@ const styles = StyleSheet.create({
   muscle: {
     backgroundColor: 'orange',
     height: 80,
-    width: 82
+    width: '20%',
+    marginRight: 85
   },
   txt6: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginLeft: 5,
-    
+    marginLeft: 5
   },
   txt7: {
     marginLeft: 5,
     fontSize: 14,
     marginTop: 5,
-    color: 'orange',
-    
+    color: 'orange'
   },
   btn4: {
     backgroundColor: 'skyblue',
     borderRadius: 90,
     padding: 4,
     alignItems: 'center',
-    marginRight: 15,
-    marginLeft: 20,
-    marginTop: 25
+   width: '80%',
+    marginTop: 25,
+    alignContent: 'center',
+    alignSelf: 'center'
   },
 
   btnTxt2: {
-    fontSize: 12,
+    fontSize: 10,
     color: 'black',
     fontWeight: 'bold'
   },
@@ -309,9 +320,9 @@ const styles = StyleSheet.create({
     borderRadius: 90,
     padding: 4,
     alignItems: 'center',
-    marginRight: 5,
-    marginLeft: 5,
-    marginTop: 25
+ width:'85%',
+    marginTop: 25,
+    alignSelf: 'center'
   }
 });
 export default GetInShape2days;

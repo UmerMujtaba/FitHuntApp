@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 20,
+    marginRight:2,
     marginTop: 28
   },
 });

@@ -23,7 +23,8 @@ const Account1 = ({navigation}) => {
     mainHeading,
     btn1,
     btnText,
-    btn2
+    btn2,
+    bars
   } = styles
   return (
     <SafeAreaView style={container}>
@@ -35,7 +36,7 @@ const Account1 = ({navigation}) => {
         YOUR SELF {'\n'}
         BETTER
       </Text>
-
+      
       <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Reg')}>
         <Text style={btnText}>Create Account</Text> 
       </TouchableOpacity>
@@ -44,11 +45,8 @@ const Account1 = ({navigation}) => {
         <Text style={btnText}>Sign In</Text>
       </TouchableOpacity>
       
-      {/* <Button style = {styles.btn}
-        title="Gym Owner"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      /> */}
+     
+      
     </SafeAreaView>
   );
 };
@@ -117,6 +115,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
+  bars:{
+    width: '200%',
+    backgroundColor: 'red',
+    opacity: 0.5,
+    alignContent: 'center',
+    alignSelf: 'center',
+    transform: [{ rotate: '130deg' }],
+    margin: 20,
+    zIndex:-1
+  }
 });
 
 export default Account1;

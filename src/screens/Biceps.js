@@ -68,7 +68,7 @@ const Biceps = ({navigation}) => {
             source={require('../../assets/bicep/StraightBarCurl.png')}
             style={image}
           />
-          <Text style={boxTxt}>Straight Bar Barbel Curl</Text>
+          <Text style={boxTxt}>Barbel Curl</Text>
           <Icon
             name={'angle-right'}
             size={50}
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 20,
+    marginRight: 45,
     marginTop: 28
   },
 });

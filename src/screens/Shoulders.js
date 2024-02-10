@@ -30,13 +30,13 @@ const Shoulders = ({navigation}) => {
           />
           <Text style={heading}>Shoulders</Text>
         </View>
-        <Text style={heading2}>Smith Machine</Text>
+        <Text style={heading2}>Smith Machine Overhead</Text>
         <View style={box}>
         <Image
             source={require('../../assets/shoulder/SmithMachineOverheadPress,Seated.png')}
             style={image}
           />
-          <Text style={boxTxt}>Seated Overhead Press</Text>
+          <Text style={boxTxt}>Seated Press</Text>
           <Icon
             name={'angle-right'}
             size={50}
@@ -46,13 +46,13 @@ const Shoulders = ({navigation}) => {
           />
         </View>
         
-        <Text style={heading2}>Dumbbell</Text>
+        <Text style={heading2}>Dumbbell Press</Text>
         <View style={box}>
         <Image
             source={require('../../assets/shoulder/SeatedDumbbellOverheadPress.png')}
             style={image}
           />
-          <Text style={boxTxt}>Seated Overhead Press</Text>
+          <Text style={boxTxt}>Seated Overhead </Text>
           <Icon
             name={'angle-right'}
             size={50}
@@ -66,7 +66,7 @@ const Shoulders = ({navigation}) => {
             source={require('../../assets/shoulder/StandingDumbbellOverheadPress.png')}
             style={image}
           />
-          <Text style={boxTxt}>Standing Overhead Press</Text>
+          <Text style={boxTxt}>Standing Overhead </Text>
           <Icon
             name={'angle-right'}
             size={50}
@@ -75,13 +75,13 @@ const Shoulders = ({navigation}) => {
             onPress={() => navigation.navigate('DSTNDOHPVid')}
           />
         </View>
-        <Text style={heading2}>Barbell</Text>
+        <Text style={heading2}>Barbell Press</Text>
         <View style={box}>
         <Image
             source={require('../../assets/shoulder/SeatedBarbellOverheadPress2.png')}
             style={image}
           />
-          <Text style={boxTxt}>Seated Overhead Press</Text>
+          <Text style={boxTxt}>Seated Overhead </Text>
           <Icon
             name={'angle-right'}
             size={50}
@@ -95,7 +95,7 @@ const Shoulders = ({navigation}) => {
             source={require('../../assets/shoulder/StandingBarbellOverheadPress.png')}
             style={image}
           />
-          <Text style={boxTxt}>Standing Overhead Press</Text>
+          <Text style={boxTxt}>Standing Overhead </Text>
           <Icon
             name={'angle-right'}
             size={50}
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 20,
+    marginRight: 10,
     marginTop: 28
   },
 });

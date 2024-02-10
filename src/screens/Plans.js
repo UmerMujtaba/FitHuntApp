@@ -117,26 +117,34 @@ const styles = StyleSheet.create({
     color: 'black',
     // backgroundColor: '#B6BBC4',
     textAlign: 'center',
-    width: 380,
+    
     height: 45,
     fontWeight: 'bold',
     textAlignVertical: 'center',
-    marginLeft: 7,
-    marginRight: 5
+   
    
   },
   midtxt2: {
     marginTop: 25,
     fontSize: 18,
     opacity: 0.6,
-    
+    width: '80%',
+    height: 65,
+    marginLeft: 'auto',
+    marginRight: 60
   },
   midtxt3:{
-    marginTop: 105,
+    marginTop: 75,
      backgroundColor: '#7D7C7C',
+     marginLeft: 'auto',
+    marginRight: 60,
+    width: '94%',
   },
   midtxt4:{ 
     backgroundColor: '#7D7C7C',
+    marginLeft: 'auto',
+    marginRight: 60,
+    width: '94%',
   }, 
   img:{
     height: 620,

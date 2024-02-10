@@ -92,7 +92,7 @@ const LossWeight = ({ navigation }) => {
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>2 Slice Brown Bread </Text>
+                <Text style={midtxt5}>2 Brown Bread </Text>
               </View>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
@@ -141,7 +141,7 @@ const LossWeight = ({ navigation }) => {
             <View style={midtxt3}>
               <View style={midtxt4}>
                 <Text style={dot}>.</Text>
-                <Text style={midtxt5}>Banana with 2 dates</Text>
+                <Text style={midtxt5}>Banana & 2dates</Text>
               </View>
 
               <View style={midtxt4}>
@@ -260,16 +260,16 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   hdng6: {
-    marginLeft: 175
+    marginLeft: 145
   },
   hdng7: {
-    marginLeft: 205
+    marginLeft: 184
   },
   hdng4: {
-    marginLeft: 115
+    marginLeft: 80
   },
   hdng8: {
-    marginLeft: 205
+    marginLeft: 185
   },
   mid: {
     flexDirection: 'column'
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
   },
   midtxt5: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 16,
     marginLeft: 2,
     marginTop: 20
   },

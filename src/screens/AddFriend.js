@@ -8,8 +8,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { PermissionsAndroid } from 'react-native';
-import Contacts from 'react-native-contacts'; // Import the Contacts library
+// import { PermissionsAndroid } from 'react-native';
+// import Contacts from 'react-native-contacts'; // Import the Contacts library
 
 import {
   SafeAreaView,
@@ -23,41 +23,41 @@ import {
 
 const AddFirend = ({ navigation }) => {
   const { container, nav, hdng, opt2, opt3, icn, hdng1, hdng3 } = styles;
-  const [contacts, setContacts] = useState([]);
+  // const [contacts, setContacts] = useState([]);
 
-  useEffect(() => {
-    requestContactsPermission();
-  }, []);
+  // useEffect(() => {
+  //   requestContactsPermission();
+  // }, []);
 
-  const requestContactsPermission = async () => {
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
-        {
-          title: 'Contacts Permission',
-          message: 'FitHunt needs access to your contacts.'
-        }
-      );
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        loadContacts();
-      } else {
-        console.log('Contacts permission denied');
-      }
-    } catch (err) {
-      console.warn(err);
-    }
-  };
+  // const requestContactsPermission = async () => {
+  //   try {
+  //     const granted = await PermissionsAndroid.request(
+  //       PermissionsAndroid.PERMISSIONS.READ_CONTACTS,
+  //       {
+  //         title: 'Contacts Permission',
+  //         message: 'FitHunt needs access to your contacts.'
+  //       }
+  //     );
+  //     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+  //       loadContacts();
+  //     } else {
+  //       console.log('Contacts permission denied');
+  //     }
+  //   } catch (err) {
+  //     console.warn(err);
+  //   }
+  // };
 
-  const loadContacts = () => {
-    Contacts.getAll((err, contacts) => {
-      if (err === 'denied') {
-        console.log('Permission to access contacts was denied');
-      } else {
-        console.log(contacts);
-        setContacts(contacts);
-      }
-    });
-  };
+  // const loadContacts = () => {
+  //   Contacts.getAll((err, contacts) => {
+  //     if (err === 'denied') {
+  //       console.log('Permission to access contacts was denied');
+  //     } else {
+  //       console.log(contacts);
+  //       setContacts(contacts);
+  //     }
+  //   });
+  // };
 
   return (
     <SafeAreaView style={container}>
@@ -95,11 +95,11 @@ const AddFirend = ({ navigation }) => {
           </View>
 
           {/* Display contacts */}
-          {contacts.map((contact) => (
+          {/* {contacts.map((contact) => (
             <View key={contact.recordID}>
               <Text>{`${contact.givenName} ${contact.familyName}`}</Text>
             </View>
-          ))}
+          ))} */}
         </View>
       </ScrollView>
     </SafeAreaView>
