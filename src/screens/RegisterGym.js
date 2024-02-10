@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import * as ImagePicker from 'react-native-image-picker';
+import { launchImageLibrary } from 'react-native-image-picker'
 import Error from 'react-native-vector-icons/MaterialIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Iconicons from 'react-native-vector-icons/Ionicons';
@@ -36,7 +36,8 @@ function RegisterGym({ props }) {
   const [gymfeeVerify, setgymfeeVerify] = useState(false);
   const [gymlocation, setgymlocation] = useState('');
   const [gymlocationVerify, setgymLocationVerify] = useState(false);
-  const [oiage, setImage] = useState(null);
+  const [image, setImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   const [gymmaleTiming, setMaleTiming] = useState('');
   const [gymfemaleTiming, setFemaleTiming] = useState('');
   const [gymmaleVerify, setgymmaleVerify] = useState(false);
@@ -75,28 +76,40 @@ function RegisterGym({ props }) {
   //   console.log(e.target.files[0]);
   //   setImage(e.target.files[0]);
   // }
-
+  const createFormData = (photo, body={}) => {
+    const data = new FormData();
+  
+    data.append('photo', {
+      name: photo.fileName,
+      type: photo.type,
+      uri: photo.uri,
+    });
+    Object.keys(body).forEach((key) => {
+      data.append(key, body[key]);
+    });
+    return data;
+  };
+  
   function handleSubmit() {
-    const GymData = {
-      name: gymname,
-      fee: gymfee,
-      mobile: gymmobile,
-      location: gymlocation,
-      maletime: gymmaleTiming,
-      femaletime: gymfemaleTiming
-    };
     if (
       gymnameVerify &&
       gymmobileVerify &&
       gymfeeVerify &&
       gymmaleVerify &&
-      gymfemaleVerify
+      gymfemaleVerify &&
+      selectedImage
     ) {
       axios
-        .post('http://192.168.2.5:5001/gymregister', GymData)
+        .post('http://192.168.2.5:5001/gymregister',createFormData(selectedImage,{
+          name: gymname,
+          fee: gymfee,
+          mobile: gymmobile,
+          location: gymlocation,
+          maletime: gymmaleTiming,
+          femaletime: gymfemaleTiming,
+        } ))
         .then(res => {
           console.log(res.data);
-
           if (res.data.status == 'ok') {
             Alert.alert('Registered Successfully!!');
             AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
@@ -176,24 +189,16 @@ function RegisterGym({ props }) {
     }
   }
   const handleImagePicker = () => {
-    const options = {
-      title: 'Select Image',
-      storageOptions: {
-        skipBackup: true,
-        path: 'images'
+    launchImageLibrary({ noData: true },response => {
+      if (response.didCancel) {
+        console.log('User cancelled image picker', response);
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response);
+      } else {
+        console.log("Image set:", response)
+        setSelectedImage(response.assets[0]);
       }
-    };
-
-    // ImagePicker.launchImageLibrary(options, response => {
-    //   if (response.didCancel) {
-    //     console.log('User cancelled image picker');
-    //   } else if (response.error) {
-    //     console.log('ImagePicker Error: ', response.error);
-    //   } else {
-    //     // Set the selected image
-    //     setSelectedImage({ uri: response.uri });
-    //   }
-    // });
+    });
   };
   return (
     <ScrollView>
@@ -343,37 +348,23 @@ function RegisterGym({ props }) {
               />
             </TouchableOpacity>
 
-            {/* <TouchableOpacity style={styles.inputContainer}>
+            <TouchableOpacity style={styles.inputContainer}>
               <FontAwesome
                 name="camera"
                 size={25}
                 color="black"
-                style={styles.icon}></FontAwesome>
+                style={styles.icon}
+                onPress={e => handleImagePicker(e)}
+                ></FontAwesome>
 
-              <TextInput
-                style={styles.input}
-                placeholder=" Click to add picture"
-                placeholderTextColor="gray"
-                value={selectedImage}
-                onChange={e => handleImagePicker(e)}
-              />
 
-              {selectedImage ? (
+              {selectedImage && (
                 <Image
                   source={{ uri: selectedImage.uri }}
                   style={styles.image}
                 />
-              ) : (
-                <FontAwesome
-                  name="plus"
-                  size={25}
-                  color="black"
-                  style={styles.icon}
-                  marginRight={'auto'}
-                  marginLeft={10}
-                />
               )}
-            </TouchableOpacity> */}
+            </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.btn4}

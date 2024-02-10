@@ -59,6 +59,7 @@ function RegisterPage({ props }) {
           console.log(res.data);
           if (res.data.status === 'ok') {
             Alert.alert('Registered Successfull!!');
+            navigation.navigate("Log")
            
           } else {
             Alert.alert(JSON.stringify(res.data));

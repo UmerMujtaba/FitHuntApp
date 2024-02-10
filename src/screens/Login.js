@@ -45,8 +45,11 @@ const Login = ({ navigation }) => {
         navigation.navigate('FG');
         //FG for user, RegGym for Owner
       }
-      else{
+      else if(res.data.status != 'ok'){
         Alert.alert('Incorrect Credentials')
+      }
+      else{
+        Alert.alert('Enter Credentials')
       }
     });
   }

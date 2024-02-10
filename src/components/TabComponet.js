@@ -10,6 +10,9 @@ import Exercise from '../screens/Exercise';
 import Menu from '../screens/Menu';
 import Social from '../screens/Social';
 import AboutMe from '../screens/AboutMe';
+import FindGym from '../screens/FindGym';
+import ShowGym from '../screens/ShowGym';
+import GymPage from '../screens/GymPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +20,6 @@ const TabCmpnont = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           let imageSource;
@@ -42,32 +44,28 @@ const TabCmpnont = () => {
             case 'Social':
               iconName = 'group';
               break;
-              case 'Menu':
-                imageSource = require('../../assets/dots.png');
-                return (
-                  <Image
-                    source={imageSource}
-                    style={{ width: size, height: size }}
-                  />
-                );
             case 'ME':
               iconName = 'user';
               break;
-            default:
-              break;
+            case 'Menu':
+              imageSource = require('../../assets/dots.png');
+              return (
+                <Image
+                  source={imageSource}
+                  style={{ width: size, height: size }}
+                />
+              );
           }
 
           return <Icon name={iconName} size={size} color={color} />;
         },
       })}
-      
       >
-          <Tab.Screen name="Menu" component={Menu} />
-      <Tab.Screen name="Training" component={Template} />
-      <Tab.Screen name="Exercise" component={Exercise} />
-      <Tab.Screen name="Social" component={Social} />
-    
-      <Tab.Screen name="ME" component={AboutMe} />
+      <Tab.Screen name="Menu" component={Menu}  options={{ headerShown: false }}/>
+      <Tab.Screen name="Training" component={Template} options={{ headerShown: false }}/>
+      <Tab.Screen name="Exercise" component={Exercise} options={{ headerShown: false }}/>
+      <Tab.Screen name="Social" component={Social} options={{ headerShown: false }}/>
+      <Tab.Screen name="ME" component={AboutMe} options={{ headerShown: false }}/>
     </Tab.Navigator>
   );
 };

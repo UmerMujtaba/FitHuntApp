@@ -48,8 +48,8 @@ const GymPage = ({navigation, route}) => {
           size={25}
           color={'white'}
           marginTop={15}
-          marginLeft={155}
-          marginRight={'auto'}
+          marginRight={20}
+          marginLeft={'auto'}
           onPress={() => navigation.navigate('MN')}
         />
       </View>
@@ -115,13 +115,13 @@ const styles = StyleSheet.create({
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'
   },
   navTxt: {
-    fontSize: 15,
+    fontSize: 18,
     color: 'white',
     marginTop: 16,
     marginLeft: 5,
@@ -142,7 +142,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'grey',
    width: '100%',
     opacity: 0.5,
-    height: 40
+    height: 40,
+    fontWeight:'bold'
   },
   midtxt2:{
     marginLeft: 0,

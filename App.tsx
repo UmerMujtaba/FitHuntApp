@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable prettier/prettier */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TabCmpnont from './src/components/TabComponet';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Account1 from './src/screens/Account1';
 import Selection from './src/screens/Selection';
@@ -110,17 +112,28 @@ import FeedBack from './src/screens/Feedback';
 import Show_Trainer from './src/screens/Show_Trainer';
 import BMI_Calculator from './src/screens/BMICalculator';
 import ButtonBMI from './src/components/BMI_component';
+import GymHomePage from './src/screens/Gym_Home';
 // import NNN from './src/screens/n';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  async function getData() {
+    const data = await AsyncStorage.getItem('isLoggedIn');
+    console.log(data, 'at app.jsx');
+    setIsLoggedIn(true);
+  }
+useEffect(()=> {
+  getData();
+})
   return (
     // <NavigationContainer>
     //  <TabCmpnont/>
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MN">
+      <Stack.Navigator initialRouteName="RegGym">
         <Stack.Screen
           name="Selection"
           component={Selection}
@@ -141,7 +154,7 @@ const App = () => {
           component={RegisterPage}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="RegGym"
           component={RegisterGym}
           options={{ headerShown: false }}
@@ -160,7 +173,6 @@ const App = () => {
           name="GP"
           component={GymPage}
           options={{ headerShown: false }}
-
         />
         <Stack.Screen
           name="MN"
@@ -242,7 +254,7 @@ const App = () => {
           component={Request}
           options={{ headerShown: false }}
         />
-         {/* <Stack.Screen
+        {/* <Stack.Screen
           name="Cont"
           component={Contact}
           options={{ headerShown: false }}
@@ -628,7 +640,7 @@ const App = () => {
           component={UnderConstructio}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Add-Trainer"
           component={Add_Trainer}
           options={{ headerShown: false }}
@@ -648,15 +660,20 @@ const App = () => {
           component={BMI_Calculator}
           options={{ headerShown: false }}
         />
-         {/* <Stack.Screen
+        {/* <Stack.Screen
           name="n"
           component={NNN}
           options={{ headerShown: false }}
         /> */}
 
-         <Stack.Screen
+        <Stack.Screen
           name="BB"
           component={ButtonBMI}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="GHP"
+          component={GymHomePage}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

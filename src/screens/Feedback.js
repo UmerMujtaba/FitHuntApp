@@ -141,7 +141,9 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   btn2: {
-    height: 125
+    height: 125,
+    border:2,
+    borderColor:'gray'
   },
   smallIcon: {
     fontSize: 28,

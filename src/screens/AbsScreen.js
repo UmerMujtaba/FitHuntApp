@@ -17,6 +17,7 @@ const AbsScreen = ({navigation }) => {
 
   const { container, box, nav, heading, boxTxt, image, heading2,icon } = styles;
   return (
+    
     <SafeAreaView style={container}>
       <ScrollView>
         <View style={nav}>

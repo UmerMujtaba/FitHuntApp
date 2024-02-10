@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
     color: 'black',
-   
+    
   },
   icon: {
     marginRight: 5

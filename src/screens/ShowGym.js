@@ -58,7 +58,7 @@ function ShowGym(props) {
     axios.post('http://192.168.2.5:5001/gymdata', { token: token })
       .then(res => {
         let originalGymData = JSON.parse(res.data.data);
-        console.log('Response Gym Data:', originalGymData.length);
+        console.log('Response Gym Data:', originalGymData);
         let gymDataArray = [];
         for (let i = 0; i < 5; i++){
           const randomIndex = Math.floor(Math.random() * originalGymData.length);
@@ -114,7 +114,7 @@ function ShowGym(props) {
               {gym.name}
             </Text><View style={mid} key={gym.id} >
                 <Image 
-                  source={require('../../assets/show/shapes1.png')}
+                  source={{ uri: gym.image_url }}
                   style={img2} />
               </View></>
           ))}

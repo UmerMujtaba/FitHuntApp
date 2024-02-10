@@ -7,6 +7,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Menu_Angle_Right from '../components/Menu_Angle_Right';
+import TabCmpnont from '../components/TabComponet';
 import {
   SafeAreaView,
   View,
@@ -92,8 +93,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'skyblue'
   },
   imageLayout: {
-    height: 700,
-    width: 400
+    height: '100%',
+    width: '100%'
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,

@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import DropdownComponent from '../components/DropDown1';
 import DropdownComponent2 from '../components/DropDown2';
+import TabCmpnont from '../components/TabComponet';
 const FindGym = ({navigation}) => {
   const {
     backgrndImg,
@@ -55,7 +56,10 @@ const FindGym = ({navigation}) => {
                 <Text style={styles.btnText}> Find </Text>
             </TouchableOpacity>
         </View>
+       
+        
       </ImageBackground>
+      
     </SafeAreaView>
   );
 };
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   backgrndImg: {
-    height: 795,
+    height: '100%',
     width: 400
   },
   overlay: {

@@ -7,7 +7,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 const data = [
   { label: '1000 to 3000', value: '1' },
   { label: '3000 to 6000', value: '2' },
-  { label: '6000 to 1000', value: '3' }
+  { label: '6000 to 9000', value: '3' }
 ];
 
 const DropdownComponent = () => {
