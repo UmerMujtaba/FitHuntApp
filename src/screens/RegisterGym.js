@@ -225,6 +225,7 @@ function RegisterGym({ props }) {
                 value={gymfee}
                 onChange={e => handleFee(e)}
                 maxLength={5}
+                keyboardType="numeric"
               />
               {gymfee.length < 1 ? null : gymfeeVerify ? (
                 <Feather
@@ -257,6 +258,7 @@ function RegisterGym({ props }) {
                 value={gymmobile}
                 onChange={e => handleMobile(e)}
                 maxLength={11}
+                keyboardType="numeric"
               />
               {gymmobile.length < 1 ? null : gymmobileVerify ? (
                 <Feather

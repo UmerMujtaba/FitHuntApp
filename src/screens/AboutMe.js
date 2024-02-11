@@ -16,7 +16,8 @@ import {
   TouchableOpacity,
   ScrollView,
   ImageBackground,
-  TextInput
+  TextInput,
+  Alert
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // async function postImage({image,description}) {
@@ -56,49 +57,46 @@ const AboutMe = ({ navigation }) => {
 
   // Import axios in your React Native component
 
+  // Define a function to update user data
+  async function updateUser(name, age, mobile) {
+    const token = await AsyncStorage.getItem('token');
+    try {
+      const response = await axios.post('http://192.168.2.5:5001/update-user', {
+        token: token,
+        name: name,
+        age: age,
+        mobile: mobile
+      });
 
-// Define a function to update user data
-async function updateUser(id, name, email, age, mobile) {
-  try {
-    const response = await axios.post('http://192.168.2.5:5001/update-user', {
-      id: id,
-      name: name,
-      email: email,
-      age: age,
-      mobile: mobile
-    });
-
-    console.log(response.data); // Log the response
-    return response.data; // Return the response data
-  } catch (error) {
-    console.error(error.response.data); // Log any errors
-    throw error; // Throw the error for handling elsewhere
+      console.log(response.data); // Log the response
+      return response.data; // Return the response data
+    } catch (error) {
+      console.error(error.response.data); // Log any errors
+      throw error; // Throw the error for handling elsewhere
+    }
   }
-}
 
-function handleSave() {
-  
-  updateUser('user_id_here', username, useremail, userage, usermobile)
-    .then(data => {
-      
-      console.log(data); // Log the response data if the update is successful
-   
-      Alert.alert('Profile updated successfully');
-    })
-    .catch(error => {
-      // Handle errors
-      console.error(error); // Log any errors that occur during the update process
-    
-      Alert.alert('Error updating profile. Please try again.');
-    });
-}
+  function handleSave() {
+    updateUser(username, userage, usermobile)
+      .then(data => {
+        console.log(data); // Log the response data if the update is successful
 
-function signOut() {
-  console.log("Hi signout")
-  AsyncStorage.setItem('isLoggedIn','');
-  AsyncStorage.removeItem('token');
-  navigation.navigate("Log")
-}
+        Alert.alert('Profile updated successfully');
+      })
+      .catch(error => {
+        // Handle errors
+        console.error(error); // Log any errors that occur during the update process
+
+        Alert.alert('Error updating profile. Please try again.');
+      });
+  }
+
+  function signOut() {
+    console.log('Hi Sign Out');
+    AsyncStorage.setItem('isLoggedIn', '');
+    AsyncStorage.removeItem('token');
+    navigation.navigate('Log');
+  }
 
   return (
     <SafeAreaView style={container}>
@@ -112,7 +110,9 @@ function signOut() {
           onPress={() => navigation.goBack()}
         />
         <Text style={imgtxt}>Profile</Text>
-        <Text style={[imgtxt, imgtxt2]} onPress={handleSave}>Save</Text>
+        <Text style={[imgtxt, imgtxt2]} onPress={handleSave}>
+          Save
+        </Text>
       </View>
 
       <View style={img}>
@@ -138,22 +138,6 @@ function signOut() {
           </TouchableOpacity>
         </View>
 
-        <View style={mid}>
-          <View>
-            <Text style={maintxt2}>Email</Text>
-          </View>
-
-          <TouchableOpacity style={btn1}>
-            <TextInput
-              style={btnText1}
-              placeholder=" Enter your email" //there should be dropdown
-              placeholderTextColor="gray"
-              value={useremail}
-              onChangeText={text => setuseremail(text)}
-            />
-            {/* <Icon name={'user'} size={30} color='white' /> */}
-          </TouchableOpacity>
-        </View>
 
         <View style={mid}>
           <View>
@@ -189,9 +173,9 @@ function signOut() {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{alignItems: 'center'}}>
+      <View style={{ alignItems: 'center' }}>
         <View style={obese}>
-          <TouchableOpacity style={btn4} onPress={()=>signOut()}>
+          <TouchableOpacity style={btn4} onPress={() => signOut()}>
             <MaterialCommunityIcons
               name="logout"
               color="black"
