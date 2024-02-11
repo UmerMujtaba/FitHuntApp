@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -65,7 +65,7 @@ const Show_Trainer = props => {
             marginLeft={15}
             onPress={() => navigation.goBack()}
           />
-          <Text style={hdng}>Trainers</Text>
+          <Text style={hdng}>Trainer</Text>
         </View>
         <Text style={hdng2}>Trainer Details</Text>
         <View style={col}>
@@ -122,6 +122,7 @@ const Show_Trainer = props => {
           </View> */}
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

@@ -16,7 +16,7 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const Biceps = ({navigation}) => {
   const { container, box, nav, heading, boxTxt,image,heading2,icon } = styles;
   return (
@@ -135,6 +135,7 @@ const Biceps = ({navigation}) => {
           />
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
   },
   nav: {
     height: 60,
-    width: 400,
+    width: '100%',
     marginTop: 0,
     flexDirection: 'row'
   },
@@ -155,7 +156,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignSelf: 'center',
     color: 'white',
-    marginLeft: 140
+    marginLeft:'auto',
+    marginRight:'auto'
   },
   box: {
     backgroundColor: '#176B87',

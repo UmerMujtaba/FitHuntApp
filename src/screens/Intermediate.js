@@ -15,9 +15,8 @@ import {
   Image,
   ScrollView
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import ButtomTab from '../components/Bottom_Tab'
 const Intermediate = ({ navigation }) => {
   const {
     container,
@@ -40,7 +39,7 @@ const Intermediate = ({ navigation }) => {
           color={'white'}
           marginTop={12}
           marginLeft={15}
-          marginRight={15}
+         
           onPress={() => navigation.goBack()}
         />
         <Text style={txt1}>Intermediate</Text>
@@ -394,6 +393,7 @@ const Intermediate = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -407,13 +407,14 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: 'white',
     textAlign: 'center',
+    alignSelf:'center',
     fontWeight: 'bold',
-    marginTop: 12,
-    marginLeft: 110
+    marginRight: 'auto',
+    marginLeft: 'auto'
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'

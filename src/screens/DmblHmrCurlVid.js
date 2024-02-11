@@ -11,13 +11,11 @@ import {
   View,
   Text,
   StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
+
 } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const DmblHmrCurlVid = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -56,6 +54,7 @@ const DmblHmrCurlVid = ({ navigation }) => {
 
         </Text>
       </View>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

@@ -6,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -15,8 +16,7 @@ import {
   Image,
   ScrollView
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 const Beginner = ({ navigation }) => {
   const {
@@ -40,7 +40,6 @@ const Beginner = ({ navigation }) => {
           color={'white'}
           marginTop={12}
           marginLeft={15}
-          marginRight={'auto'}
           onPress={() => navigation.goBack()}
         />
         <Text style={txt1}>Beginner</Text>
@@ -380,6 +379,7 @@ const Beginner = ({ navigation }) => {
           </View>
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -396,10 +396,11 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     fontWeight: 'bold',
     marginRight: 'auto',
+    marginLeft: 'auto'
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'

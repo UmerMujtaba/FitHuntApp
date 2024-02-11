@@ -16,7 +16,7 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const Traps = ({navigation}) => {
   const { container, box, nav, heading, boxTxt,heading2,image,icon } = styles;
   return (
@@ -80,6 +80,7 @@ const Traps = ({navigation}) => {
         </View>
     
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

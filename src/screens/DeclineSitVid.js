@@ -6,18 +6,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const DeclineSitVid = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -48,12 +40,13 @@ const DeclineSitVid = ({ navigation }) => {
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
         <Text style={txt}>
-        Set the bench at the lowest angle possible.
-        Lie on the bench with your arms crossed behind your head.
-        Flex your torso, starting from the head, shoulder blades, mid back and finally the lower back.
-        Raise your torso until your chest touches your knees.
+          Set the bench at the lowest angle possible. Lie on the bench with your
+          arms crossed behind your head. Flex your torso, starting from the
+          head, shoulder blades, mid back and finally the lower back. Raise your
+          torso until your chest touches your knees.
         </Text>
       </View>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };

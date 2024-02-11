@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
- 
+import ButtomTab from '../components/Bottom_Tab'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -93,7 +93,7 @@ function ShowGym(props) {
             color={'white'}
             marginTop={15}
             marginLeft={290}
-            onPress={() => navigation.navigate('MN')}
+            onPress={() => navigation.navigate('MN1')}
           />
         </View>
 
@@ -121,6 +121,7 @@ function ShowGym(props) {
           ))}
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 }

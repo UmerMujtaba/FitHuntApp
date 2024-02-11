@@ -15,7 +15,7 @@ import {
   TouchableOpacity,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const Nutrition = ({navigation}) => {
   const {
     container,
@@ -40,7 +40,7 @@ const Nutrition = ({navigation}) => {
           size={30}
           color={'white'}
           marginTop={12}
-          marginLeft={15}
+          marginLeft={10}
           onPress={() => navigation.goBack()}
         />
         <Text style={hdng}>Nutrition Plan</Text>
@@ -63,7 +63,7 @@ const Nutrition = ({navigation}) => {
               style={img} onPress={() => navigation.navigate('OV2')}
             />
 
-            <Text style={midtxt1} onPress={() => navigation.navigate('OV2')}>Jumpstart Your Health</Text>
+            <Text style={midtxt1} onPress={() => navigation.navigate('C')}>Jumpstart Your Health</Text>
             <Text style={midtxt2}>14 Days . Daily</Text>
           </View>
 
@@ -140,6 +140,8 @@ const Nutrition = ({navigation}) => {
         </View>
         </View>
       </ScrollView>
+
+ <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -152,7 +154,7 @@ const styles = StyleSheet.create({
  
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'
@@ -162,7 +164,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     marginTop: 15,
-    marginLeft: 20
+    textAlign:'center',
+    marginLeft:'auto',
+    marginRight:'auto'
   },
   hdng1: {
     fontSize: 20,

@@ -12,7 +12,7 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const AbsScreen = ({navigation }) => {
 
   const { container, box, nav, heading, boxTxt, image, heading2,icon } = styles;
@@ -124,6 +124,7 @@ const AbsScreen = ({navigation }) => {
           />
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

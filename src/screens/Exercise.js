@@ -6,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -16,13 +17,11 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const Exercise = ({navigation}) => {
  
-  const { container, nav, txt1, exercise1, txt2,image,icon } = styles;
+  const { container, nav, txt1, exercise1, txt2,image,icon,chk } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
@@ -50,6 +49,7 @@ const Exercise = ({navigation}) => {
       </View>
       <ScrollView>
         {/* ABSS SECTION */}
+        <View style={chk}>
         <View style={exercise1}>
           <Image
             source={require('../../assets/abs.png')}
@@ -163,15 +163,20 @@ const Exercise = ({navigation}) => {
            style={[icon]}
           />
         </View>
+        </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+  flex: 1,
     backgroundColor: '#1F1717'
+  },
+  chk:{
+    height: 'auto'
   },
   nav: {
     flexDirection: 'row'
@@ -185,7 +190,7 @@ const styles = StyleSheet.create({
   exercise1: {
     backgroundColor: '#176B87',
     height: 92,
-    width: 394,
+    width: '100%',
     marginTop: 15,
     flexDirection: 'row',
     alignItems: 'center' // Center items vertically
@@ -204,7 +209,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginLeft: 'auto',
-    marginRight: 50
+    marginRight: 20
   },
  
 });

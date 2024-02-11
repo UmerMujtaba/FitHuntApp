@@ -22,7 +22,7 @@ import {
   TouchableOpacity,
   Alert
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const BMI_Calculator = ({ navigation }) => {
   const {
     container,
@@ -244,6 +244,7 @@ const BMI_Calculator = ({ navigation }) => {
           </View>
         )} */}
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -281,14 +282,13 @@ const styles = StyleSheet.create({
   convert:{
   
     height: 180,
-    width: 300,
-    marginLeft: 25,
+    width: '100%',
     marginTop: 10
   },
   trainer1: {
     height: 320,
     width: 'auto',
-    marginTop: 15,
+    marginTop: 5,
     marginBottom: 5
     // borderWidth: 2,
     // borderColor: 'white'
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
     height: 45,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 30
+    marginTop: 20
   },
   txt2: {
     fontSize: 15,
@@ -324,7 +324,8 @@ const styles = StyleSheet.create({
   btnText1: {
     height: 35,
     fontSize: 12,
-    color: 'black'
+    color: 'black',
+    width: '78%'
   },
   smallIcon: {
     fontSize: 12,
@@ -352,7 +353,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   result: {
-    margin: 5
+    // margin: 5
   },
   resulttxt: {
     fontSize: 26,

@@ -6,18 +6,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const DmblStdCurlVid = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -48,14 +40,14 @@ const DmblStdCurlVid = ({ navigation }) => {
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
         <Text style={txt}>
-        Sit with your back pressed against the pads.
-        At the starting position, hold the dumbbells at your sides with your arms straight using an underhand grip.
-        Perform the curl by bending your elbows and raising the dumbbells until they are in front of your neck.
-        Return to starting position in a slow and controlled manner.
-        Avoid using momentum.
-
+          Sit with your back pressed against the pads. At the starting position,
+          hold the dumbbells at your sides with your arms straight using an
+          underhand grip. Perform the curl by bending your elbows and raising
+          the dumbbells until they are in front of your neck. Return to starting
+          position in a slow and controlled manner. Avoid using momentum.
         </Text>
       </View>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };

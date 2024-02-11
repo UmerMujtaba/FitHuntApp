@@ -22,18 +22,19 @@ const HeightConverter = () => {
   };
   return (
     <SafeAreaView>
-      <View style={styles.foot} />
-      <TouchableOpacity style={styles.btn1}>
-        <Octicons name="number" color="black" style={styles.smallIcon} />
-        <TextInput
-          style={styles.btnText1}
-          placeholder=" Enter foot"
-          placeholderTextColor="gray"
-          value={feet}
-          onChange={e => setfeet(e.nativeEvent.text)} // Extract value from event object
-          keyboardType="numeric"
-        />
-      </TouchableOpacity>
+      <View style={styles.foot}>
+        <TouchableOpacity style={styles.btn1}>
+          <Octicons name="number" color="black" style={styles.smallIcon} />
+          <TextInput
+            style={styles.btnText1}
+            placeholder=" Enter foot"
+            placeholderTextColor="gray"
+            value={feet}
+            onChange={e => setfeet(e.nativeEvent.text)} // Extract value from event object
+            keyboardType="numeric"
+          />
+        </TouchableOpacity>
+      </View>
       <View style={styles.inches}>
         <TouchableOpacity style={styles.btn1}>
           <Octicons name="number" color="black" style={styles.smallIcon} />
@@ -47,19 +48,31 @@ const HeightConverter = () => {
           />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.btn4} onPress={() => getHeight()}>
-        <Text style={styles.btnText} onPress={() => getHeight()}>
-          Submit
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.chk}>
+        <TouchableOpacity style={styles.btn4} onPress={() => getHeight()}>
+          <Text style={styles.btnText} onPress={() => getHeight()}>
+            Submit
+          </Text>
+        </TouchableOpacity>
 
-      <Text style={styles.result}>{centimeters} cm</Text>
+        <Text style={styles.result}>{centimeters} cm</Text>
+      </View>
     </SafeAreaView>
   );
 };
 export default HeightConverter;
 
 const styles = StyleSheet.create({
+  foot: {
+    width: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+  inches: {
+    width: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
   btn1: {
     backgroundColor: 'white',
     borderRadius: 10,
@@ -71,12 +84,19 @@ const styles = StyleSheet.create({
     width: '78%', // Adjust width as needed
     height: 40,
     flexDirection: 'row',
-    marginLeft: 40
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   btnText1: {
     height: 35,
     fontSize: 12,
-    color: 'black'
+    color: 'black',
+    width: '78%',
+  },
+ 
+  smallIcon: {
+    fontSize: 12,
+    margin: 10
   },
   btn4: {
     backgroundColor: '#176B87',
@@ -86,22 +106,25 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
     borderColor: 'black',
-    marginVertical: 10,
-    marginLeft: 'auto',
-    marginRight: 'auto'
+    marginVertical: 10
   },
   btnText: {
     color: 'white',
     fontSize: 12
   },
-  smallIcon: {
-    fontSize: 12,
-    margin: 10
+  chk: {
+    
+    width: '20%',
+    marginRight: 'auto',
+    marginLeft:'auto',
+    alignContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center'
   },
   result: {
     fontSize: 18,
     color: 'white',
-    textAlign: 'center'
+    
   },
   resulttxt: {}
 });

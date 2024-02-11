@@ -16,7 +16,7 @@ import {
   TouchableOpacity,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const Plans = ({ navigation }) => {
   const {
     container,
@@ -41,7 +41,7 @@ const Plans = ({ navigation }) => {
           size={30}
           color={'white'}
           marginTop={12}
-          marginLeft={15}
+          marginLeft={10}
           onPress={() => navigation.goBack()}
         />
         <Text style={hdng}>Meal Plan</Text>
@@ -66,7 +66,7 @@ const Plans = ({ navigation }) => {
         </ImageBackground>
         
       </View>
-      
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'
@@ -88,7 +88,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     marginTop: 15,
-    marginLeft: 20
+    textAlign: 'center',
+    alignContent:'center',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
     width: '94%',
   }, 
   img:{
-    height: 620,
+    height: 670,
     width: 393,
     position: 'absolute',
   }

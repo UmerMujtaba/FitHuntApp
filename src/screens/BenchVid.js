@@ -16,8 +16,8 @@ import {
   ScrollView
 } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const BenchVid = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -48,11 +48,13 @@ const BenchVid = ({ navigation }) => {
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
         <Text style={txt}>
-        Lie with your glutes and shoulders in contact with the bench, feet flat on the ground.
-        Squeeze your shoulder blades together.
-        Lower the dumbbells with control until contact is made with the side of your chest, then extend your elbows until they are locked.
+          Lie with your glutes and shoulders in contact with the bench, feet
+          flat on the ground. Squeeze your shoulder blades together. Lower the
+          dumbbells with control until contact is made with the side of your
+          chest, then extend your elbows until they are locked.
         </Text>
       </View>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };

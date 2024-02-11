@@ -6,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -42,7 +43,7 @@ const CustomWorkout = ({ navigation }) => {
           color={'white'}
           marginTop={14}
           marginLeft={15}
-          marginRight={15}
+         
           onPress={() => navigation.goBack()}
         />
         <Text style={txt1}>Categories</Text>
@@ -111,6 +112,7 @@ const CustomWorkout = ({ navigation }) => {
           />
         </View>
       </View>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -126,11 +128,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 12,
-    marginLeft: 110
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'

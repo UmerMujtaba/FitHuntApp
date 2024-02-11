@@ -56,13 +56,14 @@ const Add_Trainer = ({ navigation }) => {
             Alert.alert('Registered Successfully!!');
             AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
             navigation.navigate('FG');
+            
           } else {
             Alert.alert(JSON.stringify(res.data));
             navigation.navigate('FG');
           }
         })
         .catch(e => console.log(e));
-        
+       
     }
     else {
       Alert.alert('Fill mandatory details');
@@ -188,6 +189,7 @@ const Add_Trainer = ({ navigation }) => {
                 placeholderTextColor="gray"
                 value={TrainerAge}
                 onChange={e => handleTrainerAge(e)}
+                keyboardType='numeric'
               />
               {TrainerAge.length < 1 ? null : TrainerAgeVerify ? (
                 <Feather
@@ -248,6 +250,8 @@ const Add_Trainer = ({ navigation }) => {
                 placeholderTextColor="gray"
                 value={TrainerMobile}
                 onChange={e => handleTrainerMobile(e)}
+                keyboardType='numeric'
+                maxLength={11}
               />
               {TrainerMobile.length < 1 ? null : TrainerMobileVerify ? (
                 <Feather
@@ -257,7 +261,7 @@ const Add_Trainer = ({ navigation }) => {
                   marginLeft={'auto'}
                   marginRight={10}
                   marginTop={8}
-                  maxLength={11}
+                  
                 />
               ) : (
                 <Error name="error" color="red" size={20} />
@@ -279,6 +283,9 @@ const Add_Trainer = ({ navigation }) => {
                 placeholderTextColor="gray"
                 value={Trainerfee}
                 onChange={e => handleFee(e)}
+                maxLength={4}
+                keyboardType='numeric'
+              
               />
               {Trainerfee.length < 1 ? null : TrainerFeeVerify ? (
                 <Feather

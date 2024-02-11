@@ -29,7 +29,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 //   return result.data
 // }
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import ButtomTab from '../components/Bottom_Tab'
 const AboutMe = ({ navigation }) => {
   const {
     container,
@@ -185,6 +185,7 @@ const AboutMe = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -216,9 +217,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: 'black',
     borderWidth: 5,
-    marginRight: 80,
+
     marginTop: 10,
-    marginLeft: 140,
+   marginLeft: 'auto',
+  marginRight: 'auto',
     width: 120, // Set the width
     height: 120,
     padding: 5
@@ -228,7 +230,8 @@ const styles = StyleSheet.create({
     color: '#39A7FF',
     alignSelf: 'center',
     fontWeight: 'normal',
-    marginLeft: 25,
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginTop: 10
   },
   maintxt2: {
@@ -275,7 +278,9 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 40,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginLeft: 'auto',
+  marginRight: 'auto',
   },
   btnText: {
     color: 'black',

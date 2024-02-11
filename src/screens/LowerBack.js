@@ -13,7 +13,7 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const LowerBack = ({navigation}) => {
   const { container, box, nav, heading, boxTxt, heading2, image,icon } = styles;
   return (
@@ -74,6 +74,7 @@ const LowerBack = ({navigation}) => {
           />
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

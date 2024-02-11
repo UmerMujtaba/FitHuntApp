@@ -18,7 +18,7 @@ import Chest from './src/screens/Chest';
 import ForeArm from './src/screens/ForeArm';
 import Shoulders from './src/screens/Shoulders';
 import AbsScreen from './src/screens/AbsScreen';
-// import Exercise from './src/screens/Exercise';
+import Exercise from './src/screens/Exercise';
 import Triceps from './src/screens/Triceps';
 import Lats from './src/screens/Lats';
 import Traps from './src/screens/Traps';
@@ -113,6 +113,9 @@ import Show_Trainer from './src/screens/Show_Trainer';
 import BMI_Calculator from './src/screens/BMICalculator';
 import ButtonBMI from './src/components/BMI_component';
 import GymHomePage from './src/screens/Gym_Home';
+import Chkkk from './src/screens/chk';
+import ButtomTab from './src/components/Bottom_Tab';
+import Social from './src/screens/Social';
 // import NNN from './src/screens/n';
 const Stack = createNativeStackNavigator();
 
@@ -124,16 +127,16 @@ const App = () => {
     console.log(data, 'at app.jsx');
     setIsLoggedIn(true);
   }
-useEffect(()=> {
-  getData();
-})
+  useEffect(() => {
+    getData();
+  });
   return (
     // <NavigationContainer>
     //  <TabCmpnont/>
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MN">
+      <Stack.Navigator initialRouteName="FG">
         <Stack.Screen
           name="Selection"
           component={Selection}
@@ -175,8 +178,8 @@ useEffect(()=> {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="MN"
-          component={TabCmpnont}
+          name="Exer"
+          component={Exercise}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -651,6 +654,11 @@ useEffect(()=> {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="SCL"
+          component={Social}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Show-Trainer"
           component={Show_Trainer}
           options={{ headerShown: false }}
@@ -665,6 +673,11 @@ useEffect(()=> {
           component={NNN}
           options={{ headerShown: false }}
         /> */}
+        <Stack.Screen
+          name="BtmTab"
+          component={ButtomTab}
+          options={{ headerShown: false }}
+        />
 
         <Stack.Screen
           name="BB"
@@ -674,6 +687,11 @@ useEffect(()=> {
         <Stack.Screen
           name="GHP"
           component={GymHomePage}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="C"
+          component={Chkkk}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

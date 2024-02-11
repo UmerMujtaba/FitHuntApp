@@ -16,6 +16,7 @@ import {
   ScrollView
 } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
+import ButtomTab from '../components/Bottom_Tab';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const HipThrstMchnVid = ({ navigation }) => {
@@ -55,6 +56,7 @@ const HipThrstMchnVid = ({ navigation }) => {
           </Text>
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

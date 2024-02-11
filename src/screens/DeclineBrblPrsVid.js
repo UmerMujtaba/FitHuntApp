@@ -16,6 +16,7 @@ import {
   ScrollView
 } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
+import ButtomTab from '../components/Bottom_Tab';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const DeclineBrblPrsVid = ({ navigation }) => {
@@ -54,7 +55,7 @@ const DeclineBrblPrsVid = ({ navigation }) => {
         Lower the bar with control until contact is made with your upper chest, then extend your elbows until they are locked.
 
         </Text>
-      </View>
+      </View><ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

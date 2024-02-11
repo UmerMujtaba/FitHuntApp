@@ -453,7 +453,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginLeft: 10,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: 'black',
     alignSelf: 'center'
 

@@ -13,6 +13,7 @@ import {
   ScrollView
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ButtomTab from '../components/Bottom_Tab'
 // import GoogleMaps from 'react-native-maps'
 const GymPage = ({navigation, route}) => {
   const {
@@ -50,7 +51,7 @@ const GymPage = ({navigation, route}) => {
           marginTop={15}
           marginRight={20}
           marginLeft={'auto'}
-          onPress={() => navigation.navigate('MN')}
+          onPress={() => navigation.navigate('MN1')}
         />
       </View>
 
@@ -104,6 +105,7 @@ const GymPage = ({navigation, route}) => {
             </View>
         </View>
       </View>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

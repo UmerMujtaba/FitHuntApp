@@ -6,6 +6,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -192,6 +193,7 @@ const Template = ({navigation}) => {
           </View>
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

@@ -195,7 +195,8 @@ function RegisterPage({ props }) {
                 placeholderTextColor="gray"
                 value={mobile}
                 onChange={e => handleMobile(e)}
-                maxLength={13}
+                maxLength={11}
+                keyboardType='numeric'
               />
               {mobile.length < 1 ? null : mobileVerify ? (
                 <Feather
@@ -205,6 +206,7 @@ function RegisterPage({ props }) {
                   marginLeft={'auto'}
                   marginRight={10}
                   marginTop={15}
+                 
                 />
               ) : (
                 <Error name="error" color="red" size={20} />
@@ -235,6 +237,7 @@ function RegisterPage({ props }) {
                 placeholderTextColor="gray"
                 value={gender}
                 onChange={e => handleGender(e)}
+                
               />
              {gender.length < 1 ? null : verifyGender ? (
                 <Feather
@@ -272,6 +275,7 @@ function RegisterPage({ props }) {
                 placeholderTextColor="gray"
                 value={age}
                 onChange={e => handleAge(e)}
+                keyboardType='numeric'
               />
              {age.length < 1 ? null : ageVerify ? (
                 <Feather
@@ -295,10 +299,6 @@ function RegisterPage({ props }) {
                 Age sholud be more then 1 characters.
               </Text>
             )}
-
-
-
-
 
             <TouchableOpacity style={styles.btn1}>
               <MaterialCommunityIcons
@@ -392,7 +392,7 @@ function RegisterPage({ props }) {
 const styles = StyleSheet.create({
   imageLayout: {
     height: 900,
-    width: 450,
+    width: 'auto',
     backgroundColor: '#000000c0'
   },
   imageLayout1: {
@@ -400,11 +400,12 @@ const styles = StyleSheet.create({
     height: 195,
     width: 'auto',
     alignSelf: 'center',
-    marginRight: 60
+    
   },
   logo: {
     width: 250,
-    marginLeft: 70,
+    marginLeft:'auto',
+    marginRight:'auto',
     height: 210
   },
   overlay: {

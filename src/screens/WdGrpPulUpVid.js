@@ -6,18 +6,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, ScrollView } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const WdGrpPulUpVid = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -56,6 +48,7 @@ const WdGrpPulUpVid = ({ navigation }) => {
           </Text>
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };

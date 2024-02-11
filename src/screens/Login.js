@@ -42,7 +42,7 @@ const Login = ({ navigation }) => {
         console.log("Token Data Login:", res.data.data)
         AsyncStorage.setItem('token', res.data.data);
         AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
-        navigation.navigate('FG');
+        navigation.navigate('Add-Trainer');
         //FG for user, RegGym for Owner
       }
       else if(res.data.status != 'ok'){

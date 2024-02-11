@@ -10,15 +10,14 @@ import Exercise from '../screens/Exercise';
 import Menu from '../screens/Menu';
 import Social from '../screens/Social';
 import AboutMe from '../screens/AboutMe';
-import FindGym from '../screens/FindGym';
-import ShowGym from '../screens/ShowGym';
-import GymPage from '../screens/GymPage';
 
 const Tab = createBottomTabNavigator();
 
 const TabCmpnont = () => {
   return (
+    
     <Tab.Navigator
+     independent={true}
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
@@ -67,6 +66,7 @@ const TabCmpnont = () => {
       <Tab.Screen name="Social" component={Social} options={{ headerShown: false }}/>
       <Tab.Screen name="ME" component={AboutMe} options={{ headerShown: false }}/>
     </Tab.Navigator>
+   
   );
 };
 // tabBarOptions={{  to be written above line 64

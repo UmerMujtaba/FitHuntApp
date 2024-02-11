@@ -6,18 +6,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const DeclineFlyVid = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -48,16 +40,16 @@ const DeclineFlyVid = ({ navigation }) => {
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
         <Text style={txt}>
-        Set the bench at a -15 to -30 degree angle.
-        Begin with your arms extended over your chest and the dumbbells together, feet flat on the floor or step.
-        Squeeze your shoulder blades together.
-        With control, begin lowering the dumbbells to your sides, keeping your elbows almost straight.
-        Descend until a stretch is felt throughout the pec, then slowly raise the dumbbells to the top position.
-        Avoid bending your elbows during the rep.
-
-
+          Set the bench at a -15 to -30 degree angle. Begin with your arms
+          extended over your chest and the dumbbells together, feet flat on the
+          floor or step. Squeeze your shoulder blades together. With control,
+          begin lowering the dumbbells to your sides, keeping your elbows almost
+          straight. Descend until a stretch is felt throughout the pec, then
+          slowly raise the dumbbells to the top position. Avoid bending your
+          elbows during the rep.
         </Text>
       </View>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };

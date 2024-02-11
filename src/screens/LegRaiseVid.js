@@ -16,8 +16,8 @@ import {
   ScrollView
 } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const LegRaiseVid = ({ navigation }) => {
   const {
     container,
@@ -61,6 +61,7 @@ const LegRaiseVid = ({ navigation }) => {
         Lower your legs back to the starting position in a slow and controlled manner.
         </Text>
       </View>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

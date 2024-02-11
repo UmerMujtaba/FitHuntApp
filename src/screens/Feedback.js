@@ -8,6 +8,7 @@ import { React, useState } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import DropdownComponent3 from '../components/DropDown3';
 import CheckBox from '@react-native-community/checkbox';
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -19,7 +20,6 @@ import {
 } from 'react-native';
 
 const FeedBack = ({ navigation }) => {
-  const [toggleCheckBox, setToggleCheckBox] = useState(false);
   const [yesChecked, setYesChecked] = useState(false);
   const [partiallyChecked, setPartiallyChecked] = useState(false);
   const [noChecked, setNoChecked] = useState(false);
@@ -87,6 +87,7 @@ const FeedBack = ({ navigation }) => {
           <Text style={styles.btnText}> Submit </Text>
         </TouchableOpacity>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -152,14 +153,14 @@ const styles = StyleSheet.create({
   btn4: {
     backgroundColor: '#176B87',
     borderRadius: 5,
-    padding: 20,
+    padding: 15,
     fontSize: 25,
     fontWeight: 'bold',
     alignItems: 'center',
     alignSelf: 'center',
     borderColor: 'white',
     marginVertical: 10,
-    width: '40%',
+    width: '30%',
     marginTop: 20
   },
   btnText: {

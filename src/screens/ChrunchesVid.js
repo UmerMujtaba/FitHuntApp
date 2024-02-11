@@ -6,28 +6,12 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+
 const ChrunchesVid = ({ navigation }) => {
-  const {
-    container,
-    nav,
-    txt1,
-    Vid,
-    ins,
-    heading,
-    txt
-  } = styles;
+  const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
     <SafeAreaView style={container}>
       <View style={nav}>
@@ -55,11 +39,14 @@ const ChrunchesVid = ({ navigation }) => {
       </View>
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
-      <Text style={txt}>
-        Lie on the ground with your arms crossed behind your head.
-        Flex your torso, starting from the head, shoulder blades and finally your mid back Raise your torso until your upper back is fully detached from the ground.
-      </Text>
+        <Text style={txt}>
+          Lie on the ground with your arms crossed behind your head. Flex your
+          torso, starting from the head, shoulder blades and finally your mid
+          back Raise your torso until your upper back is fully detached from the
+          ground.
+        </Text>
       </View>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -85,7 +72,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   Vid: {
-   
     height: 250,
     marginTop: 20
   },
@@ -103,7 +89,7 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     margin: 10
   },
-  txt:{
+  txt: {
     fontSize: 20,
     color: 'black',
     alignSelf: 'center',

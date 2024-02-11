@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import DropdownComponent from '../components/DropDown1';
 import DropdownComponent2 from '../components/DropDown2';
-import TabCmpnont from '../components/TabComponet';
+import ButtomTab from '../components/Bottom_Tab'
 const FindGym = ({navigation}) => {
   const {
     backgrndImg,
@@ -57,9 +57,9 @@ const FindGym = ({navigation}) => {
             </TouchableOpacity>
         </View>
        
-        
+     
       </ImageBackground>
-      
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   backgrndImg: {
     height: '100%',
-    width: 400
+    width: '100%'
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: 250,
-    marginLeft: 70,
+    marginRight: 'auto',
+    marginLeft: 'auto',
     height: 210
   },
   main: {
@@ -104,12 +105,12 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     fontSize: 25,
     fontWeight: 'bold',
-    marginRight: 90,
-    marginLeft: 40,
+    marginRight: 'auto',
+    marginLeft: 'auto',
     marginBottom: 30,
     borderColor: 'black',
     borderWidth: 2,
-    width: 320,
+    width: '85%',
   },
   btnText1: {
     height: 40,
@@ -125,16 +126,17 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: 'bold',
     alignItems: 'center',
-    borderColor: 'black',
-    borderWidth: 2,
-    marginRight: 40,
-    marginLeft: 40,
+    width: '40%',
+    borderWidth: 1,
+    marginRight: 'auto',
+    marginLeft: 'auto',
     marginBottom: 55
   },
   btnText: {
     color: 'white',
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+  
   },
   
 });

@@ -6,18 +6,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  Image,
-  ScrollView
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ButtomTab from '../components/Bottom_Tab';
+import ButtomTab from '../components/Bottom_Tab';
 const EZbarVid2 = ({ navigation }) => {
   const { container, nav, txt1, Vid, ins, heading, txt } = styles;
   return (
@@ -48,15 +40,16 @@ const EZbarVid2 = ({ navigation }) => {
       <Text style={heading}>Instructions :</Text>
       <View style={ins}>
         <Text style={txt}>
-        Sit on the bench with the pad pressed firmly against your arm, chest and armpit.
-        Grip the bar at shoulder width with an underhand grip.
-        At the starting position, hold the bar with your arms straight.
-        In a controlled manner, perform the curl by bending your elbows until it is fully bent and the bar is close to your neck.
-        Return to the starting position in a controlled manner.
-        Control the descent and avoid using momentum.
-
+          Sit on the bench with the pad pressed firmly against your arm, chest
+          and armpit. Grip the bar at shoulder width with an underhand grip. At
+          the starting position, hold the bar with your arms straight. In a
+          controlled manner, perform the curl by bending your elbows until it is
+          fully bent and the bar is close to your neck. Return to the starting
+          position in a controlled manner. Control the descent and avoid using
+          momentum.
         </Text>
       </View>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };

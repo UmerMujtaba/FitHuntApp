@@ -14,6 +14,7 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
+import ButtomTab from '../components/Bottom_Tab'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 const BackMain = ({navigation}) => {
@@ -95,6 +96,7 @@ const BackMain = ({navigation}) => {
         </View>
       
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

@@ -7,7 +7,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Menu_Angle_Right from '../components/Menu_Angle_Right';
-import TabCmpnont from '../components/TabComponet';
+import ButtomTab from '../components/Bottom_Tab'
 import {
   SafeAreaView,
   View,
@@ -42,7 +42,7 @@ const Menu = ({ navigation }) => {
               marginTop={15}
               marginLeft={180}
               marginRight={'auto'}
-              onPress={() => navigation.navigate('MN')} //for us
+              onPress={() => navigation.navigate('MN1')} //for us
             />
           </View>
           <View style={opt1}>
@@ -83,6 +83,7 @@ const Menu = ({ navigation }) => {
           </View>
         </View>
       </ImageBackground>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };

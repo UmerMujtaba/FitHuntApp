@@ -13,7 +13,7 @@ import {
   imgs,
   ScrollView
 } from 'react-native';
-
+import ButtomTab from '../components/Bottom_Tab'
 const Glutes = ({navigation}) => {
   const { container, box, nav, heading, boxTxt, heading2, image,icon } = styles;
   return (
@@ -103,6 +103,7 @@ const Glutes = ({navigation}) => {
           />
         </View>
       </ScrollView>
+      <ButtomTab navigation={navigation}/>
     </SafeAreaView>
   );
 };
