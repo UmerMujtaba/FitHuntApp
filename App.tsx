@@ -136,7 +136,7 @@ const App = () => {
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="FG">
+      <Stack.Navigator initialRouteName="Selection">
         <Stack.Screen
           name="Selection"
           component={Selection}
