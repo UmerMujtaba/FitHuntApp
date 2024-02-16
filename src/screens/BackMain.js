@@ -41,8 +41,8 @@ const BackMain = ({navigation}) => {
           <Text style={txt2}>Lats</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             marginLeft={'auto'}
             marginRight={50}
             marginTop={30}
@@ -56,8 +56,8 @@ const BackMain = ({navigation}) => {
           <Text style={txt2}>Traps</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             marginLeft={'auto'}
             marginRight={50}  
             marginTop={30}
@@ -71,8 +71,8 @@ const BackMain = ({navigation}) => {
           <Text style={txt2}>Lower Back</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             marginLeft={'auto'}
             marginRight={50}
             marginTop={30}
@@ -84,10 +84,10 @@ const BackMain = ({navigation}) => {
             source={require('../../assets/back/glutes.png')}
             style={img}/>
           <Text style={txt2}>Glutes</Text>
-          <Icon
+          <Icon 
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             marginLeft={'auto'}
             marginRight={50}
             marginTop={30}

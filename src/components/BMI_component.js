@@ -10,9 +10,11 @@ import {
   TouchableOpacity,
   Alert
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const ButtonBMI = ({ navigation }) => {
+const ButtonBMI = () => {
   const { container, obese, btn4, btnText } = styles;
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={obese}>

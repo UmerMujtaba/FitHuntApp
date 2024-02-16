@@ -66,7 +66,7 @@ const DaysGain = ({ navigation }) => {
           <Text style={namee}>/ Monday</Text>
           <Icon
             name={'angle-right'}
-            size={50}
+            size={40}
             color={'black'}
             style={icon}
             onPress={() => navigation.navigate('WG')}
@@ -84,7 +84,7 @@ const DaysGain = ({ navigation }) => {
         <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
           <Icon
             name={'angle-right'}
-            size={50}
+            size={40}
             color={'black'}
             style={icon}
           />
@@ -112,7 +112,7 @@ const DaysGain = ({ navigation }) => {
             <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
               <Icon
                 name={'angle-right'}
-                size={50}
+                size={40}
                 color={'black'}
                 style={icon}
                 
@@ -132,7 +132,7 @@ const DaysGain = ({ navigation }) => {
             <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
               <Icon
                 name={'angle-right'}
-                size={50}
+                size={40}
                 color={'black'}
                 style={icon}
                 
@@ -152,7 +152,7 @@ const DaysGain = ({ navigation }) => {
             <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
               <Icon
                 name={'angle-right'}
-                size={50}
+                size={40}
                 color={'black'}
                 style={icon}
                 
@@ -194,14 +194,17 @@ const styles = StyleSheet.create({
   },
   mid2: {
     flexDirection: 'row',
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: 'black',
-    borderRadius: 20,
-    margin: 25,
-    padding: 20,
+    borderRadius: 12,
+    marginTop: 25,
+    marginRight: 'auto',
+    marginBottom: '10',
+    padding: 15,
     alignItems: 'center',
-   
-    backgroundColor: '#7D7C7C'
+    width: '80%',
+    backgroundColor: '#7D7C7C',
+    marginLeft: 'auto'
   },
   namee: {
     fontSize: 20,
@@ -210,7 +213,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginLeft: 5,
     // backgroundColor: 'red',
-    textAlignVertical: 'center'
+    textAlign: 'center'
   },
   day: {
     // backgroundColor: 'blue',
@@ -218,7 +221,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'black',
     marginTop: 5,
-    marginRight: 5
+    marginRight: 5,
+    textAlign: 'center'
   },
   icon: {
     marginLeft: 'auto'

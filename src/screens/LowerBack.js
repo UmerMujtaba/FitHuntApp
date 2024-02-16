@@ -39,8 +39,8 @@ const LowerBack = ({navigation}) => {
           <Text style={boxTxt}>Floor Back Extension </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('FBExtnsnVid')}
           />
@@ -53,8 +53,8 @@ const LowerBack = ({navigation}) => {
           <Text style={boxTxt}>Superman</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SprManVid')}
           />
@@ -67,8 +67,8 @@ const LowerBack = ({navigation}) => {
           <Text style={boxTxt}>Deadlift</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DedLiftVid')}
           />

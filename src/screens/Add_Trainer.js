@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     marginVertical: 10,
     width: '40%'
   },
@@ -385,6 +385,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold'
+   
   },
   main: {
     flexDirection: 'row', // Make components inline horizontally
@@ -404,18 +405,19 @@ const styles = StyleSheet.create({
   },
   btn1: {
     backgroundColor: 'white',
-    borderRadius: 15,
+    borderRadius: 12,
     fontWeight: 'bold',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: '78%', // Adjust width as needed
-    height: 40,
+    height: 36,
     flexDirection: 'row'
   },
   btnText1: {
     height: 35,
     fontSize: 12,
-    color: 'black'
+    color: 'black',
+    width: '80%'
   },
   smallIcon: {
     fontSize: 12,

@@ -39,8 +39,8 @@ const Shoulders = ({navigation}) => {
           <Text style={boxTxt}>Seated Press</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SMSOHPVid')}
           />
@@ -55,8 +55,8 @@ const Shoulders = ({navigation}) => {
           <Text style={boxTxt}>Seated Overhead </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DSOHPVid')}
           />
@@ -69,8 +69,8 @@ const Shoulders = ({navigation}) => {
           <Text style={boxTxt}>Standing Overhead </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DSTNDOHPVid')}
           />
@@ -84,8 +84,8 @@ const Shoulders = ({navigation}) => {
           <Text style={boxTxt}>Seated Overhead </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BSTDOHPVid')}
           />
@@ -98,8 +98,8 @@ const Shoulders = ({navigation}) => {
           <Text style={boxTxt}>Standing Overhead </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BSTNDOPVid')}
           />
@@ -112,8 +112,8 @@ const Shoulders = ({navigation}) => {
           <Text style={boxTxt}>Barbell Upright Row</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BUpRRVid')}
           />
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 'auto',
     marginRight: 10,
-    marginTop: 28
+    alignSelf: 'center'
   },
 });
 

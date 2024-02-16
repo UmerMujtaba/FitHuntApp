@@ -39,8 +39,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}> Bench Press</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BVid')}
           />
@@ -53,8 +53,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Decline Fly</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DFVid')}
           />
@@ -67,8 +67,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Incline Bench Press</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('IVid')}
           />
@@ -84,8 +84,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Barbell Bench Press</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BBPVid')}
           />
@@ -98,8 +98,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Incline Barbell</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BIBPVid2')}
           />
@@ -112,8 +112,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Decline Barbell </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DBPVid')}
           />
@@ -129,8 +129,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Bench Press</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SMBPVid')}
           />
@@ -143,8 +143,8 @@ const Chest = ({navigation}) => {
           <Text style={boxTxt}>Incline Bench Press</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SMIPVid')}
           />
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 'auto',
     marginRight: 45,
-    marginTop: 28
+    alignSelf: 'center'
   },
 });
 

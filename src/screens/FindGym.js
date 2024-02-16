@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginBottom: 30,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: '85%',
   },
   btnText1: {
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'center',
     width: '40%',
-    borderWidth: 1,
+    borderWidth: 0.5,
     marginRight: 'auto',
     marginLeft: 'auto',
     marginBottom: 55

@@ -14,7 +14,7 @@ const Menu_Angle_Right = () => {
       color={'black'}
       marginLeft={25}
       marginTop={1}
-     
+      fontWeight={'bold'}
     />
   );
 };

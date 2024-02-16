@@ -158,8 +158,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   trn: {
+    borderBottomWidth: 2,
     borderColor: 'white',
-    borderWidth: 2,
     width: '90%',
     margin: 18
   },

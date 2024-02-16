@@ -75,11 +75,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 12,
-    marginLeft: 90
+   marginLeft: 'auto',
+   marginRight: 'auto'
+
   },
   nav: {
     height: 50,
-    width: 395,
+    width: '100%',
     backgroundColor: '#3e5287',
     opacity: 0.9,
     flexDirection: 'row'
@@ -94,21 +96,22 @@ const styles = StyleSheet.create({
     marginTop: 55,
     marginLeft: 10
   },
-  ins: {
-    backgroundColor: 'grey',
-    height: 305,
+ ins: {
+    backgroundColor: '#1F1717',
+    height: 'auto',
     marginTop: 10,
-    borderWidth: 1,
+    borderBottomWidth: 2,
     borderColor: 'white',
     margin: 10
   },
-  txt: {
-    fontSize: 20,
-    color: 'black',
+  txt:{
+    fontSize: 16,
+    color: 'white',
     alignSelf: 'center',
     textAlignVertical: 'center',
     padding: 20,
-    fontWeight: 'bold'
+    fontWeight: '400'
   }
+   
 });
 export default DmblHipThrstVid;

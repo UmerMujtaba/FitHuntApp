@@ -44,7 +44,7 @@ const Exercise = ({navigation}) => {
           marginRight={'auto'}
           marginLeft={'auto'}
           paddingLeft={150}
-          onPress={() => navigation.navigate('MN')}
+          onPress={() => navigation.navigate('MN1')}
         />
       </View>
       <ScrollView>
@@ -58,8 +58,8 @@ const Exercise = ({navigation}) => {
           <Text style={ txt2}>ABS </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={icon}
             onPress={() => navigation.navigate('AbsScreen')}
           />
@@ -73,8 +73,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Biceps</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('Bicp')}
           />
@@ -87,8 +87,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Back</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={icon}
             onPress={() => navigation.navigate('BM')}
           />
@@ -101,8 +101,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Chest</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={icon}
             onPress={() => navigation.navigate('Chst')}
           />
@@ -115,8 +115,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Forearm</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={icon}
             onPress={() => navigation.navigate('FM')}
           />
@@ -130,8 +130,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Triceps</Text>
           <Icon
            name={'angle-right'}
-           size={50}
-           color={'black'}
+           size={40}
+           color={'white'}
            style={[icon]}
            onPress={() => navigation.navigate('Tri')}
           />
@@ -144,8 +144,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Shoulders</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={icon}
             onPress={() => navigation.navigate('Shldr')}
           />
@@ -158,8 +158,8 @@ const Exercise = ({navigation}) => {
           <Text style={txt2}>Legs</Text>
           <Icon
            name={'angle-right'}
-           size={50}
-           color={'black'}
+           size={40}
+           color={'white'}
            style={[icon]}
           />
         </View>
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   exercise1: {
     backgroundColor: '#176B87',
-    height: 92,
+    height: 82,
     width: '100%',
     marginTop: 15,
     flexDirection: 'row',
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   txt2: {
     fontSize: 25,
     color: 'white',
-    fontWeight: 'bold',
+    fontWeight: '500',
     marginLeft: 10
   },
   icon: {

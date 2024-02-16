@@ -42,8 +42,8 @@ const AbsScreen = ({navigation }) => {
           <Text style={boxTxt}>Hanging Leg Raises</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('LRV')}
           />
@@ -58,8 +58,8 @@ const AbsScreen = ({navigation }) => {
           <Text style={boxTxt}>Crunches</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('ChrnchVid')}
           />
@@ -72,8 +72,8 @@ const AbsScreen = ({navigation }) => {
           <Text style={boxTxt}>Decline</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DChrnch')}
           />
@@ -88,8 +88,8 @@ const AbsScreen = ({navigation }) => {
           <Text style={boxTxt}>Sit ups</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SitVid')}
           />
@@ -102,8 +102,8 @@ const AbsScreen = ({navigation }) => {
           <Text style={boxTxt}>Weighted</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SitVid')}
           />
@@ -117,8 +117,8 @@ const AbsScreen = ({navigation }) => {
           <Text style={boxTxt}>Decline</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DSitVid')}
           />
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 'auto',
     marginRight: 10,
-    marginTop: 28
+   alignSelf: 'center'
   },
 });
 

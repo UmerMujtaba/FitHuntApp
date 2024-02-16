@@ -15,8 +15,8 @@ import {
   ImageBackground,
   TouchableOpacity,
   ScrollView
-} from 'react-native';
-import ButtomTab from '../components/Bottom_Tab'
+} from 'react-native'
+import ButtomTab from '../components/Bottom_Tab';
 const Plans = ({ navigation }) => {
   const {
     container,
@@ -53,20 +53,28 @@ const Plans = ({ navigation }) => {
           Meal plan, Start a plan, follow along, and reach your goals
         </Text>
       </View>
-    
+
       <View style={mid}>
-        <ImageBackground source={require('../../assets/breakfast.png')} style={img}>
-        
-        <View style={overlay}><Text style={[midtxt,midtxt4]}>Manage your eating habits</Text>
-        <Text style={[midtxt,midtxt2]}>Start the meal plan that will help you with your diet and also make your life healthy</Text>
-        <View style={btn}>
-        <Text style={[midtxt,midtxt3]}  onPress={() => navigation.navigate('Goal')}>Get Started</Text>
-        </View>
-        </View>
+        <ImageBackground
+          source={require('../../assets/breakfast.png')}
+          style={img}>
+          <View style={overlay}>
+            <Text style={[midtxt, midtxt4]}>Manage your eating habits</Text>
+            <Text style={[midtxt, midtxt2]}>
+              Start the meal plan that will help you with your diet and also
+              make your life healthy
+            </Text>
+            <View style={btn}>
+              <Text
+                style={[midtxt, midtxt3]}
+                onPress={() => navigation.navigate('Goal')}>
+                Get Started
+              </Text>
+            </View>
+          </View>
         </ImageBackground>
-        
       </View>
-      <ButtomTab navigation={navigation}/>
+      <ButtomTab navigation={navigation} />
     </SafeAreaView>
   );
 };
@@ -89,14 +97,13 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 15,
     textAlign: 'center',
-    alignContent:'center',
+    alignContent: 'center',
     marginLeft: 'auto',
     marginRight: 'auto'
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'hsla(0, 100%, 90%, 0.3);', // Adjust the last value (0.5) for opacity
- 
+    backgroundColor: 'hsla(0, 100%, 90%, 0.2);' // Adjust the last value (0.5) for opacity
   },
   hdng1: {
     fontSize: 20,
@@ -111,21 +118,20 @@ const styles = StyleSheet.create({
   },
   mid: {
     marginTop: 10,
-    height: 525,
+    height: 525
   },
 
   midtxt: {
     marginTop: 65,
     fontSize: 25,
     color: 'black',
+   
     // backgroundColor: '#B6BBC4',
     textAlign: 'center',
-    
+
     height: 45,
     fontWeight: 'bold',
-    textAlignVertical: 'center',
-   
-   
+    textAlignVertical: 'center'
   },
   midtxt2: {
     marginTop: 25,
@@ -136,23 +142,23 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 60
   },
-  midtxt3:{
+  midtxt3: {
     marginTop: 75,
-     backgroundColor: '#7D7C7C',
-     marginLeft: 'auto',
-    marginRight: 60,
-    width: '94%',
-  },
-  midtxt4:{ 
     backgroundColor: '#7D7C7C',
     marginLeft: 'auto',
     marginRight: 60,
-    width: '94%',
-  }, 
-  img:{
+    width: '94%'
+  },
+  midtxt4: {
+    backgroundColor: '#7D7C7C',
+    marginLeft: 'auto',
+    marginRight: 60,
+    width: '94%'
+  },
+  img: {
     height: 670,
     width: 393,
-    position: 'absolute',
+    position: 'absolute'
   }
 });
 export default Plans;

@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     fontSize: 18,
     color: 'white',
+    fontWeight: '400'
   },
   mid: {
     flexDirection: 'column',

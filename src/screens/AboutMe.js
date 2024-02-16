@@ -151,6 +151,7 @@ const AboutMe = ({ navigation }) => {
               placeholderTextColor="gray"
               value={userage}
               onChangeText={text => setuserage(text)}
+              keyboardType='numeric'
             />
             {/* <Icon name={'user'} size={30} color='white' /> */}
           </TouchableOpacity>
@@ -168,6 +169,8 @@ const AboutMe = ({ navigation }) => {
               placeholderTextColor="gray"
               value={usermobile}
               onChangeText={text => setusermobile(text)}
+              keyboardType='numeric'
+              maxLength={11}
             />
             {/* <Icon name={'user'} size={30} color='white' /> */}
           </TouchableOpacity>
@@ -273,7 +276,8 @@ const styles = StyleSheet.create({
   btn4: {
     backgroundColor: 'lightgray',
     padding: 10,
-    borderColor: 'black',
+    borderColor: 'grey',
+    borderWidth: 0.5,
     marginVertical: 10,
     width: '100%',
     marginTop: 40,

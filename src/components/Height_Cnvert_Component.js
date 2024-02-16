@@ -75,12 +75,12 @@ const styles = StyleSheet.create({
   },
   btn1: {
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 12,
     marginBottom: 5,
     marginTop: 5,
     fontWeight: 'bold',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: '78%', // Adjust width as needed
     height: 40,
     flexDirection: 'row',
@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
     fontSize: 12
   },
   chk: {
-    
     width: '20%',
     marginRight: 'auto',
     marginLeft:'auto',

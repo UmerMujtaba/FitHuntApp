@@ -278,12 +278,12 @@ const styles = StyleSheet.create({
     height: 200,
     flexDirection: 'row',
     margin: 10,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 10
   },
   midimg: {
-    height: 194,
+    height: 198,
     width: 195,
     marginRight: 10,
     //  marginTop: 3,

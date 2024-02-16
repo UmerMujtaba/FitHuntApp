@@ -80,12 +80,13 @@ function RegisterGym({ props }) {
           if (res.data.status == 'ok') {
             Alert.alert('Registered Successfully!!');
             AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
-            navigation.navigate('FG');
+            navigation.navigate('Add-Trainer');
           } else {
             Alert.alert(JSON.stringify(res.data));
           }
         })
         .catch(e => console.log(e));
+
     } else {
       Alert.alert('Fill mandatory details');
     }
@@ -379,13 +380,13 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: 12,
     fontWeight: 'bold',
-    marginRight: 20,
-    marginLeft: 20,
+   marginLeft:'auto',
+   marginRight: 'auto',
     marginBottom: 20,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: '85%',
     flexDirection: 'row'
   },
@@ -397,7 +398,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginBottom: 10,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: '46%',
     flexDirection: 'row',
     height: 47
@@ -427,7 +428,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'center',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     marginVertical: 10
   },
   btnText: {

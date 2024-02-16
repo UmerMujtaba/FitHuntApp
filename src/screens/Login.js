@@ -7,6 +7,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import React, { useState,useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import {
   SafeAreaView,
   Text,
@@ -42,7 +43,7 @@ const Login = ({ navigation }) => {
         console.log("Token Data Login:", res.data.data)
         AsyncStorage.setItem('token', res.data.data);
         AsyncStorage.setItem('isLoggedIn', JSON.stringify(true));
-        navigation.navigate('Add-Trainer');
+        navigation.navigate('RegGym');
         //FG for user, RegGym for Owner
       }
       else if(res.data.status != 'ok'){
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     width: '90%', // Use '80%' to limit the width
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     flexDirection: 'row',
   },
   btn2: {
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
     marginBottom: 80,
     width: '90%', // Use '80%' to limit the width
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     flexDirection: 'row',
   },
   btn3: {
@@ -191,7 +192,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'center',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     marginTop: 10,
     width: '50%'
   },
@@ -212,7 +213,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 120,
     marginTop: 25,
-    fontSize: 20,
+    fontSize: 16,
   },
   smallIcon: {
     fontSize: 25,

@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center', // Center the button horizontally
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: 130,
     marginTop: 35,
   },

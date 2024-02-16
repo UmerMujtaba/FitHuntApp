@@ -228,8 +228,8 @@ const BMI_Calculator = ({ navigation }) => {
           </View>
         )}
         {BMI >= 25 && BMI <= 29.9 && (
-          <View style={obese} >
-            <TouchableOpacity style={styles.btn4} onPress={() => navigation.navigate('plan')}>
+          <View style={obese} onPress={() => navigation.navigate('plan')}>
+            <TouchableOpacity style={styles.btn4} >
               <Text style={styles.btnText}>Click here</Text>
             </TouchableOpacity>
           </View>
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     fontWeight: 'bold',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: '78%', // Adjust width as needed
     height: 40,
     flexDirection: 'row'
@@ -341,7 +341,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignSelf: 'center',
     borderColor: 'black',
-    borderWidth: 1,
+    borderWidth: 0.5,
     marginVertical: 10,
     width: '40%',
     marginLeft: 'auto',

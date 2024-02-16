@@ -39,8 +39,8 @@ const Lats = ({navigation}) => {
           <Text style={boxTxt}>Overhand Grip </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('OHPulupVid')}
           />
@@ -53,8 +53,8 @@ const Lats = ({navigation}) => {
           <Text style={boxTxt}>Wide Grip</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('WGPulupVid')}
           />
@@ -67,8 +67,8 @@ const Lats = ({navigation}) => {
           <Text style={boxTxt}>Underhand Grip</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('UHGPVid')}
           />
@@ -81,8 +81,8 @@ const Lats = ({navigation}) => {
           <Text style={boxTxt}>Machine Overhand Grip</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('MSOHGVid')}
           />
@@ -96,8 +96,8 @@ const Lats = ({navigation}) => {
           <Text style={boxTxt}>Overhand Grip Lat</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('OGLatPulDwnVid')}
           />

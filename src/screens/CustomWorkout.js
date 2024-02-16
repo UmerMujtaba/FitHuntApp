@@ -55,7 +55,7 @@ const CustomWorkout = ({ navigation }) => {
             <TouchableOpacity style={{ marginLeft: 'auto' }}>
               <Icon
                 name={'angle-right'}
-                size={50}
+                size={40}
                 color={'black'}
                 style={icon}
                 onPress={() => navigation.navigate('Begin')}
@@ -71,7 +71,7 @@ const CustomWorkout = ({ navigation }) => {
             <TouchableOpacity style={{ marginLeft: 'auto' }}>
               <Icon
                 name={'angle-right'}
-                size={50}
+                size={40}
                 color={'black'}
                 style={icon}
                 onPress={() => navigation.navigate('Inter')}
@@ -100,7 +100,7 @@ const CustomWorkout = ({ navigation }) => {
             <TouchableOpacity style={{ marginLeft: 'auto' }} onPress={showPaymentModal}>
               <Icon
                 name={'angle-right'}
-                size={50}
+                size={40}
                 color={'black'}
                 style={icon}
               />
@@ -128,6 +128,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 12,
+   marginLeft: 'auto',
+   marginRight: 'auto'
     marginLeft: 'auto',
     marginRight: 'auto'
   },
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
   },
   mid2: {
     flexDirection: 'row',
-    borderWidth: 2,
+    borderWidth: 0.5,
     borderColor: 'black',
     borderRadius: 20,
     margin: 25,
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
     marginRight: 5
   },
   cont2: {
-    borderWidth: 2,
+   borderBottomWidth: 2,
     borderColor: 'grey',
     borderRadius: 10,
     margin: 10,

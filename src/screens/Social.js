@@ -149,8 +149,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 20,
     marginRight: 20,
-    borderColor: '#87C4FF',
-    borderWidth: 2
+    borderColor: 'grey',
+    borderWidth: 0.5
   },
   btnText: {
     color: 'black',

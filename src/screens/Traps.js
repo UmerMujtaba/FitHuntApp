@@ -42,8 +42,8 @@ const Traps = ({navigation}) => {
           <Text style={boxTxt}>Standing Shrugs </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BSShrgVid')}
           />
@@ -57,8 +57,8 @@ const Traps = ({navigation}) => {
           <Text style={boxTxt}>Shrugs</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DShrugVid')}
           />
@@ -72,8 +72,8 @@ const Traps = ({navigation}) => {
           <Text style={boxTxt}>Incline Prone Shrugs</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DIPShrugVid')}
           />

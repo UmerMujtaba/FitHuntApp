@@ -25,6 +25,7 @@ import {
   TextInput,
   ScrollView
 } from 'react-native';
+import { LinearTextGradient } from 'react-native-text-gradient';
 import Octicons from 'react-native-vector-icons/Octicons'
 import { useNavigation } from '@react-navigation/native';
 function RegisterPage({ props }) {
@@ -428,7 +429,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginBottom: 30,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: 300,
     height: 55,
     flexDirection: 'row'
@@ -441,7 +442,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginBottom: 25,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: 300,
     height: 55,
     flexDirection: 'row'
@@ -454,7 +455,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     alignItems: 'center',
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 0.5,
     width: 160,
     marginBottom: 55,
     marginTop: 10,
@@ -462,6 +463,7 @@ const styles = StyleSheet.create({
     marginLeft: 105
   },
   btnText1: {
+    width: 250,
     height: 37,
     paddingLeft: 10,
     marginTop: 10,

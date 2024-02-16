@@ -40,8 +40,8 @@ const Triceps = ({navigation}) => {
           <Text style={boxTxt}>Rope Pushdown</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('RPDVid')}
           />
@@ -54,8 +54,8 @@ const Triceps = ({navigation}) => {
           <Text style={boxTxt}>Single Arm Pushdown</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SAPDVid')}
           />
@@ -69,8 +69,8 @@ const Triceps = ({navigation}) => {
           <Text style={boxTxt}>On Head</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SCONHVid')}
           />
@@ -83,8 +83,8 @@ const Triceps = ({navigation}) => {
           <Text style={boxTxt}>Behind Head</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SKBHNDHVid')}
           />
@@ -99,8 +99,8 @@ const Triceps = ({navigation}) => {
           <Text style={boxTxt}>Staright Bar</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('EOHSBVid')}
           />
@@ -113,8 +113,8 @@ const Triceps = ({navigation}) => {
           <Text style={boxTxt}>Seated Dumbell</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('EOHSDVid')}
           />
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 'auto',
     marginRight: 10,
-    marginTop: 28
+    alignSelf: 'center'
   },
 });
 

@@ -436,7 +436,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 15,
     borderWidth: 1,
-    borderColor: 'white',
+    borderColor: 'grey',
   },
   mid5txt: {
     // backgroundColor: 'red',

@@ -38,8 +38,8 @@ const Glutes = ({navigation}) => {
           <Text style={boxTxt}>Hip Thrust Machine</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('HipTVid')}
           />
@@ -52,8 +52,8 @@ const Glutes = ({navigation}) => {
           <Text style={boxTxt}>Single Leg Hip Thrust</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SLegHTVid')}
           />
@@ -67,8 +67,8 @@ const Glutes = ({navigation}) => {
           <Text style={boxTxt}>Barbell Hip Thrust </Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BHTVid')}
           />
@@ -81,8 +81,8 @@ const Glutes = ({navigation}) => {
           <Text style={boxTxt}>Barbell Glute Bridge</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BGBrdgVid')}
           />
@@ -96,8 +96,8 @@ const Glutes = ({navigation}) => {
           <Text style={boxTxt}>Dumbell Hip Thrust</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DHTVid')}
           />

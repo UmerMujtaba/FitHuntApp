@@ -42,8 +42,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Narrow Grip Curl</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('EZVid')}
           />
@@ -56,8 +56,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Preacher Curl</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('EZVid2')}
           />
@@ -71,8 +71,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Barbel Curl</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BCVid')}
           />
@@ -86,8 +86,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Standing Curl</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DStndCVid')}
           />
@@ -100,8 +100,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Seated Curl</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DStdCVid')}
           />
@@ -114,8 +114,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Hammer Curl</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DHCVid')}
           />
@@ -128,8 +128,8 @@ const Biceps = ({navigation}) => {
           <Text style={boxTxt}>Incline Curl</Text> 
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('DICVid')}
           />

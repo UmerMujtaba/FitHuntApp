@@ -59,6 +59,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     marginTop: 12,
+   marginLeft: 'auto',
+   marginRight: 'auto'
     marginLeft: 55
   },
   nav: {

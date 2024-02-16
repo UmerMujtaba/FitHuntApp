@@ -222,11 +222,12 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: 'white',
     fontWeight: 'bold',
-    marginTop: 20
+    marginTop: 20,
+    marginLeft: 10
   },
   main1: {
     height: 200,
-    width: 395,
+    width: '100%',
     backgroundColor: '#607274',
     marginTop: 10,
     flexDirection: 'column',
@@ -249,22 +250,24 @@ const styles = StyleSheet.create({
   txt1: {
     fontSize: 16,
     color: 'white',
-    fontWeight: 'normal',
-    marginTop: 10,
-    fontStyle: 'italic',
-    width: 140
+    fontWeight: '600',
+    marginTop: 5,
+    width: 135,
+    marginLeft: 5
   },
   txt3: {
     fontSize: 22,
     color: '#B80000',
     fontWeight: 'bold',
     marginTop: 65,
+    marginLeft: 5
   },
   txt2: {
     fontSize: 22,
     color: '#004225',
     fontWeight: 'bold',
-    marginTop: 65
+    marginTop: 65,
+    marginLeft: 5
   }
 });
 export default Template;

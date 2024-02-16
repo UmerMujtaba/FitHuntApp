@@ -14,6 +14,7 @@ import {
   ImageBackground,
   TouchableOpacity
 } from 'react-native';
+import { LinearTextGradient } from 'react-native-text-gradient';
 
 const Selection = ({ navigation }) => {
   const {
@@ -31,27 +32,26 @@ const Selection = ({ navigation }) => {
       <ImageBackground
         source={require('../../assets/new-logo.jpg')}
         style={imageLayout}></ImageBackground>
-
-      <Text style={mainHeading}>
+      <LinearTextGradient style={mainHeading}
+        locations={[0, 1]}
+        colors={['red', 'blue']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}>
+        <Text >
         MAKE {'\n'}
         YOUR SELF {'\n'}
         BETTER
       </Text>
-
+      </LinearTextGradient>
+      
+     
       <Text style={headingtwo}>Sign in as</Text>
-
-      
-        <TouchableOpacity
-          style={btn1}
-          onPress={() => navigation.navigate('Acc')}>
-          <Text style={btnText}>Gym Owner</Text>
-        </TouchableOpacity>
-      
-
+      <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Acc')}>
+        <Text style={btnText}>Gym Owner</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={btn2} onPress={() => navigation.navigate('Acc')}>
         <Text style={btnText}>User</Text>
       </TouchableOpacity>
-
       {/* <Button style = {styles.btn}
         title="Gym Owner"
         color="#841584"
@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 10,
     marginBottom: 15,
-    marginLeft: 30
+    marginRight: 'auto',
+    marginLeft: 50
   },
   btn1: {
     backgroundColor: '#176B87',
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 40,
     borderColor: 'black',
-    borderWidth: 2
+    borderWidth: 0.5
   },
   btn2: {
     backgroundColor: '#176B87',
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
     marginRight: 40,
     marginBottom: 80,
     borderColor: 'black',
-    borderWidth: 2
+    borderWidth: 0.5
   },
   btnText: {
     color: 'white',

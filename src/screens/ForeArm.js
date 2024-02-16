@@ -39,8 +39,8 @@ const ForeArm = ({navigation}) => {
           <Text style={boxTxt}>Standing Wrist Curls</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('SWCVid')}
           />
@@ -54,8 +54,8 @@ const ForeArm = ({navigation}) => {
           <Text style={boxTxt}>Wrist Curls</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('PWCVid')}
           />
@@ -68,8 +68,8 @@ const ForeArm = ({navigation}) => {
           <Text style={boxTxt}>Reverse Wrist Curls</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('PWRCVid')}
           />
@@ -83,8 +83,8 @@ const ForeArm = ({navigation}) => {
           <Text style={boxTxt}>Behind Back Wrist Curls</Text>
           <Icon
             name={'angle-right'}
-            size={50}
-            color={'black'}
+            size={40}
+            color={'white'}
             style={ icon}
             onPress={() => navigation.navigate('BWCVid')}
           />
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 'auto',
     marginRight:2,
-    marginTop: 28
+    alignSelf: 'center'
   },
 });
 

@@ -15,7 +15,7 @@ import {
   Button,
   TouchableOpacity
 } from 'react-native';
-
+import { LinearTextGradient } from 'react-native-text-gradient';
 const Account1 = ({navigation}) => {
   const {
     container,
@@ -31,11 +31,17 @@ const Account1 = ({navigation}) => {
       <ImageBackground
         source={require('../../assets/new-logo.jpg')}
         style={imageLayout}></ImageBackground>
-      <Text style={mainHeading}>
+       <LinearTextGradient style={mainHeading}
+        locations={[0, 1]}
+        colors={['red', 'blue']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 0 }}>
+        <Text >
         MAKE {'\n'}
         YOUR SELF {'\n'}
         BETTER
       </Text>
+      </LinearTextGradient>
       
       <TouchableOpacity style={btn1} onPress={() => navigation.navigate('Reg')}>
         <Text style={btnText}>Create Account</Text> 
@@ -65,16 +71,16 @@ const styles = StyleSheet.create({
     
   },
   mainHeading: {
-    marginTop: 0,
+    
     alignSelf: 'center',
-    padding: 5,    
-    fontWeight: 'bold',
+    padding: 5,
+    fontWeight: 'normal',
     fontSize: 45,
-    marginLeft: 20,
+    marginBottom: 50,
     textAlign: 'center', // Set textAlign to center
     lineHeight: 60, // Adjust this value to control the line height
     color: 'black',
-    marginBottom: 20 
+    fontFamily: 'Poppins-Bold'
   },
   headingtwo: {
     color: 'black',
@@ -95,7 +101,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 40,
     borderColor: 'black',
-    borderWidth: 2
+    borderWidth: 0.5
   },
   btn2: {
     backgroundColor: '#176B87',
@@ -108,23 +114,23 @@ const styles = StyleSheet.create({
     marginRight: 40,
     marginBottom: 80,
     borderColor: 'black',
-    borderWidth: 2
+    borderWidth: 0.5
   },
   btnText: {
     color: 'white',
     fontSize: 18,
     fontWeight: 'bold',
   },
-  bars:{
-    width: '200%',
-    backgroundColor: 'red',
-    opacity: 0.5,
-    alignContent: 'center',
-    alignSelf: 'center',
-    transform: [{ rotate: '130deg' }],
-    margin: 20,
-    zIndex:-1
-  }
+  // bars:{
+  //   width: '200%',
+  //   backgroundColor: 'red',
+  //   opacity: 0.5,
+  //   alignContent: 'center',
+  //   alignSelf: 'center',
+  //   transform: [{ rotate: '130deg' }],
+  //   margin: 20,
+  //   zIndex:-1
+  // }
 });
 
 export default Account1;
